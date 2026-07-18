@@ -1,0 +1,406 @@
+{
+  "game_id": "avalon_20260629_190227",
+  "config": {
+    "model": "llama-3.3-70b-versatile",
+    "reasoning_effort": "low",
+    "mission_team_sizes": [
+      2,
+      3,
+      2,
+      3,
+      3
+    ],
+    "num_messages_per_player": 1,
+    "num_players": 5
+  },
+  "players": [
+    {
+      "name": "Alice",
+      "role": "assassin",
+      "is_good": false,
+      "special_knowledge": [
+        "Bob"
+      ]
+    },
+    {
+      "name": "Bob",
+      "role": "evil",
+      "is_good": false,
+      "special_knowledge": [
+        "Alice"
+      ]
+    },
+    {
+      "name": "Charlie",
+      "role": "good",
+      "is_good": true,
+      "special_knowledge": []
+    },
+    {
+      "name": "Diana",
+      "role": "good",
+      "is_good": true,
+      "special_knowledge": []
+    },
+    {
+      "name": "Eve",
+      "role": "merlin",
+      "is_good": true,
+      "special_knowledge": [
+        "Alice",
+        "Bob"
+      ]
+    }
+  ],
+  "missions": [
+    {
+      "mission_number": 1,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Alice",
+          "team_members": [
+            "Bob",
+            "Alice"
+          ],
+          "reasoning": "Based on trust and past mission results.",
+          "thinking_time": 0.051607370376586914,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "reject",
+              "comment": "I'm not sure about this team.",
+              "thinking_time": 0.052384376525878906,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "reject",
+              "comment": "I'm not sure about this team.",
+              "thinking_time": 0.05862593650817871,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.044100284576416016,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.04467439651489258,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.04489564895629883,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I need to think about this carefully...",
+          "timestamp": 0,
+          "global_turn_id": 0,
+          "phase": "discussion",
+          "thinking_time": 0.05346345901489258,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I need to think about this carefully...",
+          "timestamp": 1,
+          "global_turn_id": 1,
+          "phase": "discussion",
+          "thinking_time": 0.05263209342956543,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I need to think about this carefully...",
+          "timestamp": 2,
+          "global_turn_id": 2,
+          "phase": "discussion",
+          "thinking_time": 0.04779338836669922,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I need to think about this carefully...",
+          "timestamp": 3,
+          "global_turn_id": 3,
+          "phase": "discussion",
+          "thinking_time": 0.05300545692443848,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I need to think about this carefully...",
+          "timestamp": 4,
+          "global_turn_id": 4,
+          "phase": "discussion",
+          "thinking_time": 0.04784727096557617,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Bob",
+          "action": "fail"
+        },
+        {
+          "player": "Alice",
+          "action": "fail"
+        }
+      ],
+      "mission_result": "fail",
+      "fail_count": 2
+    },
+    {
+      "mission_number": 2,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Bob",
+          "team_members": [
+            "Diana",
+            "Bob",
+            "Alice"
+          ],
+          "reasoning": "Based on trust and past mission results.",
+          "thinking_time": 0.04615139961242676,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "reject",
+              "comment": "I'm not sure about this team.",
+              "thinking_time": 0.045110464096069336,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "reject",
+              "comment": "I'm not sure about this team.",
+              "thinking_time": 0.04682445526123047,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.04858255386352539,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.045685529708862305,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.04298281669616699,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I need to think about this carefully...",
+          "timestamp": 0,
+          "global_turn_id": 5,
+          "phase": "discussion",
+          "thinking_time": 0.050502777099609375,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I need to think about this carefully...",
+          "timestamp": 1,
+          "global_turn_id": 6,
+          "phase": "discussion",
+          "thinking_time": 0.043807268142700195,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I need to think about this carefully...",
+          "timestamp": 2,
+          "global_turn_id": 7,
+          "phase": "discussion",
+          "thinking_time": 0.0442204475402832,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I need to think about this carefully...",
+          "timestamp": 3,
+          "global_turn_id": 8,
+          "phase": "discussion",
+          "thinking_time": 0.048285722732543945,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I need to think about this carefully...",
+          "timestamp": 4,
+          "global_turn_id": 9,
+          "phase": "discussion",
+          "thinking_time": 0.05217313766479492,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Diana",
+          "action": "success"
+        },
+        {
+          "player": "Bob",
+          "action": "fail"
+        },
+        {
+          "player": "Alice",
+          "action": "fail"
+        }
+      ],
+      "mission_result": "fail",
+      "fail_count": 2
+    },
+    {
+      "mission_number": 3,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Charlie",
+          "team_members": [
+            "Charlie",
+            "Alice"
+          ],
+          "reasoning": "Based on trust and past mission results.",
+          "thinking_time": 0.048367977142333984,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "reject",
+              "comment": "I'm not sure about this team.",
+              "thinking_time": 0.046365976333618164,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.04933762550354004,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.06963491439819336,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.04199790954589844,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "I trust this team.",
+              "thinking_time": 0.046584367752075195,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I need to think about this carefully...",
+          "timestamp": 0,
+          "global_turn_id": 10,
+          "phase": "discussion",
+          "thinking_time": 0.04995560646057129,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I need to think about this carefully...",
+          "timestamp": 1,
+          "global_turn_id": 11,
+          "phase": "discussion",
+          "thinking_time": 0.05182147026062012,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I need to think about this carefully...",
+          "timestamp": 2,
+          "global_turn_id": 12,
+          "phase": "discussion",
+          "thinking_time": 0.04960942268371582,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I need to think about this carefully...",
+          "timestamp": 3,
+          "global_turn_id": 13,
+          "phase": "discussion",
+          "thinking_time": 0.04910731315612793,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I need to think about this carefully...",
+          "timestamp": 4,
+          "global_turn_id": 14,
+          "phase": "discussion",
+          "thinking_time": 0.04554152488708496,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Charlie",
+          "action": "success"
+        },
+        {
+          "player": "Alice",
+          "action": "fail"
+        }
+      ],
+      "mission_result": "fail",
+      "fail_count": 1
+    }
+  ],
+  "winner": "evil",
+  "assassin_phase": null
+}

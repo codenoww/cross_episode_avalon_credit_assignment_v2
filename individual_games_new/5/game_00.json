@@ -1,0 +1,674 @@
+{
+  "game_id": "avalon_20260629_185500",
+  "config": {
+    "model": "llama-3.3-70b-versatile",
+    "reasoning_effort": "low",
+    "mission_team_sizes": [
+      2,
+      3,
+      2,
+      3,
+      3
+    ],
+    "num_messages_per_player": 1,
+    "num_players": 5
+  },
+  "players": [
+    {
+      "name": "Alice",
+      "role": "merlin",
+      "is_good": true,
+      "special_knowledge": [
+        "Diana",
+        "Eve"
+      ]
+    },
+    {
+      "name": "Bob",
+      "role": "good",
+      "is_good": true,
+      "special_knowledge": []
+    },
+    {
+      "name": "Charlie",
+      "role": "good",
+      "is_good": true,
+      "special_knowledge": []
+    },
+    {
+      "name": "Diana",
+      "role": "assassin",
+      "is_good": false,
+      "special_knowledge": [
+        "Eve"
+      ]
+    },
+    {
+      "name": "Eve",
+      "role": "evil",
+      "is_good": false,
+      "special_knowledge": [
+        "Diana"
+      ]
+    }
+  ],
+  "missions": [
+    {
+      "mission_number": 1,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Eve",
+          "team_members": [
+            "Diana",
+            "Eve"
+          ],
+          "reasoning": "I chose this team because it allows me to work with my evil teammate Diana, increasing the chances of sabotaging the mission, while also making it seem like I'm working with a balanced team since I've been somewhat vocal and Diana has been quiet, making it harder for the good players to suspect our true intentions.",
+          "thinking_time": 0.5638227462768555,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "reject",
+              "comment": "both proposed team members are suspicious",
+              "thinking_time": 0.3540313243865967,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "reject",
+              "comment": "Diana has been quiet, and pairing her with Eve, who has been vocal, raises suspicions",
+              "thinking_time": 0.41067934036254883,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "reject",
+              "comment": "Diana's been too quiet, don't know enough about her",
+              "thinking_time": 0.4109945297241211,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "Team balance and chance to read Diana",
+              "thinking_time": 0.41141724586486816,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "seems balanced",
+              "thinking_time": 0.1851820945739746,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "rejected"
+        },
+        {
+          "proposal_id": 1,
+          "leader": "Alice",
+          "team_members": [
+            "Bob",
+            "Charlie"
+          ],
+          "reasoning": "I chose Bob and Charlie because they both seem like trustworthy players, and Charlie has been vocal about his thoughts, while Bob has been relatively quiet but has made a sensible suggestion. This team composition allows us to assess their skills and dynamics without including any potentially suspicious players, like Diana and Eve, whom I have some reservations about.",
+          "thinking_time": 0.593834638595581,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "approve",
+              "comment": "seems like a balanced team",
+              "thinking_time": 0.34060072898864746,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "seems like a balanced team",
+              "thinking_time": 0.31172990798950195,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "seems like a balanced team",
+              "thinking_time": 0.5061824321746826,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "reject",
+              "comment": "Want to be on the team",
+              "thinking_time": 1.4351232051849365,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "reject",
+              "comment": "trying to split good players",
+              "thinking_time": 0.4091525077819824,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 1,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I think we should choose a team with a good balance of experienced and fresh perspectives, maybe someone like Bob who's been quiet so far, and another player who's been more vocal, like Charlie. That way, we can get a sense of how everyone works together and make more informed decisions for future quests.",
+          "timestamp": 0,
+          "global_turn_id": 0,
+          "phase": "discussion",
+          "thinking_time": 1.2204780578613281,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I think Alice's suggestion is a good starting point, but I'd like to throw Diana into the mix as well, since she's been relatively quiet and it would be good to get a read on her before we move forward with more crucial quests. Maybe a team of Charlie and Diana could work, and we can see how they perform under pressure.",
+          "timestamp": 1,
+          "global_turn_id": 1,
+          "phase": "discussion",
+          "thinking_time": 0.7114427089691162,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I think Alice's idea of balancing experienced and fresh perspectives is a good one, and pairing me with Diana could be a good test, but I'm a bit wary of going in blind with someone who's been as quiet as Diana, so maybe we should consider Eve as an alternative. Eve has been pretty vocal so far, so we have a bit more of a read on her, and it could be useful to see how she performs under pressure.",
+          "timestamp": 2,
+          "global_turn_id": 2,
+          "phase": "discussion",
+          "thinking_time": 0.7093801498413086,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I think Charlie's concerns about me being quiet are valid, but I'm happy to work with anyone and prove myself, and actually, I'd be more inclined to trust a team with Bob and Charlie, they seem like a solid duo. This way, we can also keep an eye on how they work together and see if they're a good fit for future quests.",
+          "timestamp": 3,
+          "global_turn_id": 3,
+          "phase": "discussion",
+          "thinking_time": 1.780977725982666,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I think Charlie's suggestion to consider me as an alternative is a good one, and I'm happy to work with Diana to prove ourselves, but I also understand Diana's reservations about working with someone as vocal as me, so maybe a team with Bob and me could be a good compromise. This way, we can also keep an eye on how Bob performs under pressure, and I'm sure he'll be able to provide some valuable insights.",
+          "timestamp": 4,
+          "global_turn_id": 4,
+          "phase": "discussion",
+          "thinking_time": 0.68160080909729,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Bob",
+          "action": "success"
+        },
+        {
+          "player": "Charlie",
+          "action": "success"
+        }
+      ],
+      "mission_result": "success",
+      "fail_count": 0
+    },
+    {
+      "mission_number": 2,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Bob",
+          "team_members": [
+            "Alice",
+            "Charlie",
+            "Diana"
+          ],
+          "reasoning": "I chose Alice for her leadership experience in the previous mission, Charlie for his proven loyalty in the first successful mission, and Diana as a new player to gauge her commitment and add diversity to the team composition.",
+          "thinking_time": 0.5027210712432861,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "approve",
+              "comment": "trusted players with a new face to gauge loyalty",
+              "thinking_time": 0.4114553928375244,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "diverse team with a mix of experience and new faces",
+              "thinking_time": 0.3153865337371826,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "diverse team with a mix of experience and new faces",
+              "thinking_time": 2.5519087314605713,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "diverse team with mix of experience and new face",
+              "thinking_time": 3.3815982341766357,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "reject",
+              "comment": "Diana is a potential evil, I don't want her on the team",
+              "thinking_time": 3.4316840171813965,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I think it's crucial we get some diversity in the team composition this time around, so let's consider putting some new faces on the mission, maybe someone who hasn't been on a quest yet or someone who was on the opposing side of the vote last time. This way, we can get a better sense of who's truly committed to the cause and who might be hiding something.",
+          "timestamp": 0,
+          "global_turn_id": 5,
+          "phase": "discussion",
+          "thinking_time": 0.7124710083007812,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I think it's a good idea to mix it up, Alice, and considering Diana and Eve haven't been on a mission yet, it might be wise to include one of them to gauge their commitment. Maybe we can also bring Charlie back in, since they were with me on the first successful mission and we know they're at least not working against us at this point.",
+          "timestamp": 1,
+          "global_turn_id": 6,
+          "phase": "discussion",
+          "thinking_time": 0.7241592407226562,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I agree with Alice and Bob, bringing in someone new like Diana or Eve could be a good move, and pairing them with trusted players like myself and either Alice or Bob could help us gauge their loyalty. Since I've already worked with Bob on a successful mission, I think it could be beneficial to have Alice join us this time, to get a sense of her commitment beyond just leading the team selection.",
+          "timestamp": 2,
+          "global_turn_id": 7,
+          "phase": "discussion",
+          "thinking_time": 0.8173713684082031,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I think it's a great idea to bring in some fresh faces, and I'd be happy to join the mission, but I'm a bit concerned about Eve's enthusiasm to participate - maybe we should get to know her a bit better before sending her on a critical quest. Charlie and Alice seem like a solid foundation for the team, and adding Bob could provide some good continuity from the previous mission.",
+          "timestamp": 3,
+          "global_turn_id": 8,
+          "phase": "discussion",
+          "thinking_time": 0.7054708003997803,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I think it's a good idea to bring in some fresh faces, and I'm happy to join the mission, but I do have some reservations about Bob, he seemed a bit too eager to suggest Diana and I join without really knowing us, which makes me wonder if he's trying to set us up for failure or just get a closer look at us. Maybe Alice and Charlie should join me on the mission, that way we can get a sense of each other's commitment to the cause.",
+          "timestamp": 4,
+          "global_turn_id": 9,
+          "phase": "discussion",
+          "thinking_time": 0.8306312561035156,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Alice",
+          "action": "success"
+        },
+        {
+          "player": "Charlie",
+          "action": "success"
+        },
+        {
+          "player": "Diana",
+          "action": "fail"
+        }
+      ],
+      "mission_result": "fail",
+      "fail_count": 1
+    },
+    {
+      "mission_number": 3,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Charlie",
+          "team_members": [
+            "Charlie",
+            "Eve"
+          ],
+          "reasoning": "I chose this team because Charlie was on the successful first mission and has been suggested by Alice and Bob, while Eve is a fresh face who hasn't been on a mission yet and was suggested by Bob and Charlie as a way to bring a new perspective and gauge her loyalty.",
+          "thinking_time": 3.589184284210205,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "approve",
+              "comment": "mix of experienced and new member",
+              "thinking_time": 4.502140998840332,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "mix of experienced and new player",
+              "thinking_time": 3.470446825027466,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "fresh perspective with Eve and Charlie's past success",
+              "thinking_time": 3.4885904788970947,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "Eve is my evil teammate and I want to sabotage the mission",
+              "thinking_time": 3.4854788780212402,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "let's see how Eve performs",
+              "thinking_time": 3.3143069744110107,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I think we should consider putting Charlie on the next mission, they've been pretty quiet so far but they were on the successful first mission, so maybe they can bring some good luck again. Let's also make sure to mix it up a bit and not put the same people together as the previous failed mission, just to keep things fresh.",
+          "timestamp": 0,
+          "global_turn_id": 10,
+          "phase": "discussion",
+          "thinking_time": 1.6821141242980957,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I agree with Alice that Charlie could be a good pick, but I'm also a bit wary of Diana after the last mission failed with her on the team, so maybe we should consider Eve as the second member to bring a fresh perspective. Let's see how others feel about Eve's involvement before making a decision.",
+          "timestamp": 1,
+          "global_turn_id": 11,
+          "phase": "discussion",
+          "thinking_time": 2.562469244003296,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I think it's a good idea to bring Eve in, like Bob suggested, since we haven't seen how she'll perform on a mission yet, and pairing her with me could help us gauge her loyalty. Plus, it's true that we should be cautious about Diana after the last mission failed, so let's hold off on putting her on this team for now.",
+          "timestamp": 2,
+          "global_turn_id": 12,
+          "phase": "discussion",
+          "thinking_time": 1.6347696781158447,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I think it's a good idea to bring Eve in, like Bob suggested, but at the same time, I'm not sure we should be so quick to dismiss me after just one failed mission, especially since I was on a team with Alice, who we all seem to trust. Maybe we should consider Charlie and me together, since we haven't had a chance to work together yet and it could be a good opportunity to clear the air.",
+          "timestamp": 3,
+          "global_turn_id": 13,
+          "phase": "discussion",
+          "thinking_time": 2.732114553451538,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I think it's a good idea to give Charlie and me a chance to work together, as Charlie suggested, but I'm also a bit concerned about Charlie's lack of participation so far, maybe they're just lucky they were on the first successful mission. Let's see how others feel about Charlie's involvement before making a decision, perhaps we should consider alternative team compositions that include Diana, to clear the air and give her a chance to prove herself.",
+          "timestamp": 4,
+          "global_turn_id": 14,
+          "phase": "discussion",
+          "thinking_time": 3.7179603576660156,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Charlie",
+          "action": "success"
+        },
+        {
+          "player": "Eve",
+          "action": "fail"
+        }
+      ],
+      "mission_result": "fail",
+      "fail_count": 1
+    },
+    {
+      "mission_number": 4,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Diana",
+          "team_members": [
+            "Bob",
+            "Charlie",
+            "Eve"
+          ],
+          "reasoning": "I chose this team because it includes a mix of players with different experiences, Bob was on a successful mission, Charlie has led both a successful and a failed mission, and Eve is relatively unknown and was on a failed mission, this combination allows for a good balance of perspectives and skills, and also allows me to work with my fellow evil teammate Eve",
+          "thinking_time": 3.694998264312744,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "reject",
+              "comment": "Eve is suspicious and was on a failed mission",
+              "thinking_time": 3.4688923358917236,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "reject",
+              "comment": "Eve's inexperience and Charlie's failed leadership on Mission 3 raise concerns",
+              "thinking_time": 3.4825551509857178,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "reject",
+              "comment": "Eve was on a failed mission and leader's reasoning seems suspicious",
+              "thinking_time": 4.515503168106079,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "team balance and evil teammate Eve included",
+              "thinking_time": 3.4875521659851074,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "team balance and opportunity to evaluate Eve",
+              "thinking_time": 3.4329845905303955,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "rejected"
+        },
+        {
+          "proposal_id": 1,
+          "leader": "Eve",
+          "team_members": [
+            "Bob",
+            "Charlie",
+            "Diana"
+          ],
+          "reasoning": "I've chosen a team with a mix of experienced players, including Bob who had a successful mission, Charlie who has led both successful and failed missions, and Diana, my fellow evil teammate, to increase the chances of sabotaging the mission without arousing suspicion.",
+          "thinking_time": 3.623225212097168,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "reject",
+              "comment": "Diana's involvement raises suspicions",
+              "thinking_time": 4.298313617706299,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "reject",
+              "comment": "Concerns about Charlie's failed leadership and Diana's unknown intentions",
+              "thinking_time": 3.47822642326355,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "reject",
+              "comment": "Diana was on a failed mission and is now leading, suspect evil influence",
+              "thinking_time": 4.600169658660889,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "team composition seems balanced",
+              "thinking_time": 3.384977340698242,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "good mix of experienced players",
+              "thinking_time": 3.3870420455932617,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "rejected"
+        },
+        {
+          "proposal_id": 2,
+          "leader": "Alice",
+          "team_members": [
+            "Bob",
+            "Charlie",
+            "Eve"
+          ],
+          "reasoning": "I chose this team to balance experience and unknowns. Bob led a successful mission, Charlie has led both successful and failed missions, and Eve is relatively unknown, having only been on one failed mission. This combination allows us to evaluate Eve's loyalty and intentions while leveraging Bob's and Charlie's experience.",
+          "thinking_time": 3.6677446365356445,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "reject",
+              "comment": "Eve is evil, including her may lead to mission failure",
+              "thinking_time": 4.729047060012817,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "balancing experience and unknowns",
+              "thinking_time": 3.3663227558135986,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "balanced team with good mix of experience",
+              "thinking_time": 4.6215643882751465,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "balance of experience and unknowns",
+              "thinking_time": 4.39771294593811,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "team balance",
+              "thinking_time": 3.46733021736145,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 2,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I think we should consider putting together a team with a good mix of people who have been on successful and unsuccessful missions, that way we can get a better sense of who's working together effectively. Maybe we can include Bob, since his mission was successful, and pair him with someone who hasn't been on a team yet or has been on a failed mission, like me.",
+          "timestamp": 0,
+          "global_turn_id": 15,
+          "phase": "discussion",
+          "thinking_time": 2.643479585647583,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I think Alice's idea has merit, but I'm a bit wary of including her on the team since she was on the failed Mission 2, so maybe we should consider pairing me with Charlie and Eve instead, given that Charlie's had a mix of success and failure as a leader and Eve's only been on one mission.",
+          "timestamp": 1,
+          "global_turn_id": 16,
+          "phase": "discussion",
+          "thinking_time": 1.6666169166564941,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I think we should definitely consider Bob's suggestion of pairing him with me and Eve, since we've all had different experiences and it could help us get a better read on each other. Plus, Eve's only been on one mission, so including her could give us a chance to evaluate her loyalty and intentions more closely.",
+          "timestamp": 2,
+          "global_turn_id": 17,
+          "phase": "discussion",
+          "thinking_time": 2.454576253890991,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I think Bob's suggestion to pair him with Charlie and Eve is a good one, since Charlie's experience as a leader and Eve's relatively unknown intentions could create an interesting dynamic. However, I'm a bit concerned that Alice is being left out of the conversation, and I think it's worth considering whether she might be a good addition to the team, just to make sure we're not accidentally leaving out a valuable ally.",
+          "timestamp": 3,
+          "global_turn_id": 18,
+          "phase": "discussion",
+          "thinking_time": 3.5900509357452393,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I think Bob's suggestion to team up with Charlie and me is a solid one, but I'm also a bit concerned about Charlie's leadership on Mission 3, which did end in failure, so maybe we should consider bringing Alice in to balance things out.",
+          "timestamp": 4,
+          "global_turn_id": 19,
+          "phase": "discussion",
+          "thinking_time": 3.5735416412353516,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Bob",
+          "action": "success"
+        },
+        {
+          "player": "Charlie",
+          "action": "success"
+        },
+        {
+          "player": "Eve",
+          "action": "fail"
+        }
+      ],
+      "mission_result": "fail",
+      "fail_count": 1
+    }
+  ],
+  "winner": "evil",
+  "assassin_phase": null
+}

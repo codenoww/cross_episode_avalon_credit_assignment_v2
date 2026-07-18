@@ -1,5 +1,7 @@
 import os
+import sys
 import json
+import subprocess
 from datetime import datetime
 from typing import List, Dict
 from dataclasses import dataclass, asdict
@@ -50,7 +52,7 @@ class PlayerMemory:
 
 
 class LearningAvalonGame(AvalonGame):
-    def __init__(self, player_memories: Dict[str, PlayerMemory], num_players: int = 5, model: str = None, reasoning_effort: str = None):
+    def __init__(self, player_memories: Dict[str, PlayerMemory], num_players: int = 5, model: str = None, reasoning_effort: str = None, game_number: int = 1, game_id: str = None):
         if model is None:
             from main import MODEL as DEFAULT_MODEL
             model = DEFAULT_MODEL
@@ -60,6 +62,16 @@ class LearningAvalonGame(AvalonGame):
         
         super().__init__(num_players=num_players, model=model, reasoning_effort=reasoning_effort)
         self.player_memories = player_memories
+        self.game_number = game_number
+        if game_id is not None:
+            self.game_id = game_id  # explicit override, if one was actually given
+        # else: keep the real timestamp-based game_id that super().__init__() already
+        # set -- previously this unconditionally overwrote it with None, since
+        # run_tournament() never passes game_id= when constructing this class,
+        # which was the root cause of "Episode: None" in the pipeline banner.
+        self._injection_logged = set()  # players already logged this game, so the
+                                         # [INJECTED -> name] line prints once per
+                                         # game per player, not on every context rebuild
     
     def get_player_context(self, player: Player, mission_num: int) -> str:
         context = super().get_player_context(player, mission_num)
@@ -69,6 +81,30 @@ class LearningAvalonGame(AvalonGame):
             parts = context.split("\nALL PLAYERS:")
             if len(parts) == 2:
                 context = parts[0] + memory_context + "\nALL PLAYERS:" + parts[1]
+        
+        # ── FEEDBACK INJECTION ──────────────────────────────────
+        # Use game_id (string) for DB lookup if available, else game_number
+        from injection import build_injected_system_prompt
+        episode_ref = self.game_id if self.game_id else str(self.game_number)
+        context = build_injected_system_prompt(
+            base_system_prompt=context,
+            agent_id=player.name,
+            current_episode_id=episode_ref
+        )
+
+        # Show injection happening in terminal -- once per player per game,
+        # since the injected note is constant for the whole episode, not
+        # something that changes turn to turn.
+        if self.game_number > 1 and player.name not in self._injection_logged:
+            try:
+                from injection import get_latest_one_liner
+                result = get_latest_one_liner(player.name, episode_ref)
+                if result:
+                    print(f"  [INJECTED → {player.name}]: {result['one_liner'][:80]}...")
+                    self._injection_logged.add(player.name)
+            except Exception:
+                pass
+        # ────────────────────────────────────────────────────────
         
         return context
 
@@ -90,12 +126,9 @@ class MultiGameRunner:
         self.reasoning_effort = reasoning_effort
         self.player_names = ROLE_CONFIGS[num_players]["names"]
         
-        # Only create memories for specified players
         if memory_enabled_players is None:
-            # Default: all players have memory
             self.memory_enabled_players = self.player_names
         else:
-            # Only specified players have memory
             self.memory_enabled_players = [p for p in memory_enabled_players if p in self.player_names]
         
         self.player_memories: Dict[str, PlayerMemory] = {
@@ -121,7 +154,6 @@ class MultiGameRunner:
         game_reflections = []
         
         for player in game_state.players:
-            # Only run reflections for memory-enabled players
             if player.name not in self.memory_enabled_players:
                 print(f"\n  {player.name} ({player.role}) - skipping reflection (no memory)")
                 continue
@@ -181,15 +213,18 @@ class MultiGameRunner:
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
                     ],
-                    reasoning_effort=self.reasoning_effort
+                    response_format={"type": "json_object"}
                 )
                 thinking_time = time.time() - start_time
                 response_text = response.choices[0].message.content.strip()
-                
+                # Defensive: strip markdown fences in case the model wraps
+                # its JSON in ```json ... ``` despite response_format.
+                response_text = response_text.replace("```json", "").replace("```", "").strip()
+
                 data = json.loads(response_text)
                 self_assessment = data.get("self_assessment", "No reflection provided.")
                 player_observations = data.get("player_observations", {})
-                
+
             except Exception as e:
                 thinking_time = time.time() - start_time
                 print(f"    Error during reflection: {e}")
@@ -213,7 +248,137 @@ class MultiGameRunner:
             print(f"    Observations: {len(player_observations)} players")
         
         self.game_reflections[game_number] = game_reflections
-    
+
+    def run_full_pipeline(self, game_state: GameState, game_num: int):
+        """
+        Runs the full attribution + feedback pipeline after each game.
+        Step 1: Causal graph (teammate's component)
+        Step 2: Feedback generation (your component)
+        Step 3: Pipeline report
+        Step 4: Dashboard export
+        """
+        episode_id = game_state.game_id
+        winner = game_state.winner
+        outcome = "Good team won" if winner == "good" else "Evil team won"
+
+        print(f"\n{'#'*60}")
+        print(f"  RUNNING ATTRIBUTION + FEEDBACK PIPELINE")
+        print(f"  Game {game_num} | Episode: {episode_id}")
+        print(f"{'#'*60}")
+
+        # ── Step 0: Component 1 -- baseline credit scoring ──────
+        # Ingests THIS game's individual_games/game_XX.json (just written by
+        # save_progress()) and writes baseline_credit. Nothing downstream
+        # (embeddings, causal_graph.py, causal_score) has real data without this.
+        game_json_path = os.path.join(
+            self.tournament_dir, "individual_games", f"game_{game_num:02d}.json"
+        )
+        print(f"\n[Pipeline Step 0] Running Component 1 (baseline credit scorer)...")
+        try:
+            subprocess.run(
+                [sys.executable, "run_component1.py", "--file", game_json_path],
+                check=True
+            )
+            print(f"  ✓ Baseline credit complete")
+        except subprocess.CalledProcessError as e:
+            print(f"  ✗ Component 1 failed: {e}")
+            print(f"  Stopping this game's pipeline -- nothing downstream will have real data.")
+            return
+        except FileNotFoundError:
+            print(f"  ✗ run_component1.py not found — stopping this game's pipeline")
+            return
+
+        # ── Step 0.5: Backfill embeddings for this episode ──────
+        # causal_graph.py's Gate 1 similarity search needs embeddings on
+        # every message it compares against, not just this episode's --
+        # a NULL embedding anywhere in a comparison crashes the pgvector
+        # distance query. --all covers this episode plus any others still
+        # missing embeddings.
+        print(f"\n[Pipeline Step 0.5] Backfilling embeddings...")
+        try:
+            subprocess.run([sys.executable, "generate_embeddings.py", "--all"], check=True)
+            print(f"  ✓ Embeddings complete")
+        except subprocess.CalledProcessError as e:
+            print(f"  ✗ Embeddings failed: {e}")
+            print(f"  Continuing -- causal_graph.py may fail without embeddings.")
+        except FileNotFoundError:
+            print(f"  ✗ generate_embeddings.py not found — skipping")
+
+        # ── Step 0.7: Merge this game into Component 2's canonical dataset files ──
+        # Without this, causal_graph.py's mission-outcome lookup, episode
+        # ordering, and exposure verification never see this game at all --
+        # they read fixed DATA_PATH/MEMORY_PATH files, not this tournament's
+        # own generated ones. Skipping this step means every new game can
+        # only ever produce intra-episode confirmed edges.
+        print(f"\n[Pipeline Step 0.7] Merging into canonical dataset files...")
+        try:
+            subprocess.run([sys.executable, "merge_new_games.py", self.tournament_dir], check=True)
+            print(f"  ✓ Canonical dataset merge complete")
+        except subprocess.CalledProcessError as e:
+            print(f"  ✗ Dataset merge failed: {e}")
+            print(f"  Continuing -- this game's cross-episode edges will be incomplete.")
+        except FileNotFoundError:
+            print(f"  ✗ merge_new_games.py not found — skipping")
+
+        # ── Step 1: Causal graph (teammate 2) ───────────────────
+        print(f"\n[Pipeline Step 1] Running causal graph...")
+        try:
+            subprocess.run(
+                [sys.executable, "causal_graph.py", "--episode", episode_id],
+                check=True
+            )
+            print(f"  ✓ Causal graph complete")
+        except subprocess.CalledProcessError as e:
+            print(f"  ✗ Causal graph failed: {e}")
+            print(f"  Continuing with whatever credit scores exist...")
+        except FileNotFoundError:
+            print(f"  ✗ causal_graph.py not found — skipping")
+
+        # ── Step 1.5: causal_score + final_credit ───────────────
+        # Recomputes globally (safe/idempotent) so feedback_generator.py
+        # below has a real final_credit to rank this game's messages by.
+        print(f"\n[Pipeline Step 1.5] Computing causal_score + final_credit...")
+        try:
+            subprocess.run([sys.executable, "compute_causal_score.py"], check=True)
+            print(f"  ✓ causal_score/final_credit complete")
+        except subprocess.CalledProcessError as e:
+            print(f"  ✗ causal_score computation failed: {e}")
+            print(f"  Continuing -- feedback_generator.py may rank by stale/NULL final_credit.")
+        except FileNotFoundError:
+            print(f"  ✗ compute_causal_score.py not found — skipping")
+
+        # ── Step 2: Feedback generation (your component) ────────
+        print(f"\n[Pipeline Step 2] Generating feedback for all agents...")
+        from feedback_generator import generate_feedback
+        for player in game_state.players:
+            try:
+                generate_feedback(
+                    episode_id=episode_id,
+                    agent_id=player.name,
+                    agent_role=player.role,
+                    outcome=outcome,
+                    episode_number=game_num
+                )
+            except Exception as e:
+                print(f"  ✗ Feedback failed for {player.name}: {e}")
+        print(f"  ✓ Feedback generation complete")
+
+        # ── Step 3: Pipeline report ──────────────────────────────
+        print(f"\n[Pipeline Step 3] Generating pipeline report...")
+        try:
+            from pipeline_report import generate_pipeline_report
+            generate_pipeline_report(episode_id, game_num, winner)
+        except Exception as e:
+            print(f"  ✗ Pipeline report failed: {e}")
+
+        # ── Step 4: Export to dashboard ──────────────────────────
+        print(f"\n[Pipeline Step 4] Exporting to dashboard...")
+        try:
+            subprocess.run([sys.executable, "analytics_export.py"], check=True)
+            print(f"  ✓ Dashboard export complete — refresh avalon_dashboard.html")
+        except Exception as e:
+            print(f"  ✗ Dashboard export failed: {e}")
+
     def run_tournament(self):
         print(f"\n{'='*60}")
         print(f"STARTING AVALON TOURNAMENT: {self.session_id}")
@@ -229,12 +394,25 @@ class MultiGameRunner:
                 player_memories=self.player_memories,
                 num_players=self.num_players,
                 model=self.model,
-                reasoning_effort=self.reasoning_effort
+                reasoning_effort=self.reasoning_effort,
+                game_number=game_num
             )
             game_state = game.play_game()
             self.game_results.append(game_state)
+
+            # Post game reflection
             self.run_post_game_reflection(game_state, game_num)
+
+            # Save progress FIRST -- writes this game's individual_games/game_XX.json,
+            # all_games.json, and player_memories.json to disk. The pipeline below
+            # (Component 1 file ingest, gate2.py's mission-outcome lookup, and
+            # exposure_check.py's memory reads) all depend on these files existing
+            # for THIS game, not just prior ones -- so this must run before the
+            # pipeline, not after.
             self.save_progress()
+
+            # Full attribution + feedback pipeline
+            self.run_full_pipeline(game_state, game_num)
         
         print("\n\n" + "="*60)
         print("TOURNAMENT COMPLETE!")
@@ -259,13 +437,13 @@ class MultiGameRunner:
         
         print("\nPLAYER REFLECTION SUMMARY:")
         for player_name in self.player_names:
-            reflections = self.player_memories[player_name].reflections
-            wins = sum(1 for r in reflections if r.game_result == "won")
-            print(f"  {player_name}: {wins}/{len(reflections)} games won ({wins/len(reflections)*100:.1f}%)")
+            if player_name in self.player_memories:
+                reflections = self.player_memories[player_name].reflections
+                wins = sum(1 for r in reflections if r.game_result == "won")
+                print(f"  {player_name}: {wins}/{len(reflections)} games won ({wins/len(reflections)*100:.1f}%)")
     
     def save_tournament_summary(self):
         summary_file = os.path.join(self.tournament_dir, "tournament_summary.txt")
-        
         total_games = len(self.game_results)
         good_wins = sum(1 for g in self.game_results if g.winner == "good")
         evil_wins = total_games - good_wins
@@ -275,8 +453,6 @@ class MultiGameRunner:
             f.write("="*60 + "\n\n")
             f.write(f"Session ID: {self.session_id}\n")
             f.write(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-            
-            # Add memory configuration info
             f.write("MEMORY CONFIGURATION:\n")
             if len(self.memory_enabled_players) == len(self.player_names):
                 f.write("  All players have memory enabled\n")
@@ -308,19 +484,14 @@ class MultiGameRunner:
             f.write("PLAYER STATISTICS:\n")
             for player_name in self.player_names:
                 f.write(f"  {player_name}:")
-                
-                # Indicate if player has memory
                 if player_name in self.memory_enabled_players:
                     f.write(" [MEMORY ENABLED]\n")
                 else:
                     f.write(" [NO MEMORY]\n")
-                
-                # Only show reflection stats for memory-enabled players
                 if player_name in self.player_memories:
                     reflections = self.player_memories[player_name].reflections
                     wins = sum(1 for r in reflections if r.game_result == "won")
                     f.write(f"    Games Won: {wins}/{len(reflections)} ({wins/len(reflections)*100:.1f}%)\n")
-                    
                     roles = {}
                     for r in reflections:
                         roles[r.role_played] = roles.get(r.role_played, 0) + 1
@@ -329,11 +500,6 @@ class MultiGameRunner:
                     f.write("    (No reflection data - memory disabled)\n")
             
             f.write("\n" + "="*60 + "\n")
-            f.write("Files Generated:\n")
-            f.write("  - player_memories.json: All player reflections and observations\n")
-            f.write(f"  - all_games.json: Complete data for all {total_games} games\n")
-            f.write("  - individual_games/: Individual JSON files for each game\n")
-            f.write("  - tournament_summary.txt: This summary file\n")
         
         print("\n📊 Tournament summary saved to: tournament_summary.txt")
     
@@ -381,41 +547,29 @@ class MultiGameRunner:
         
         for idx, game in enumerate(self.game_results, 1):
             game_dict = convert_to_dict(game)
-            
             if idx in self.game_reflections:
                 game_dict["post_game_reflections"] = [
                     asdict(reflection) for reflection in self.game_reflections[idx]
                 ]
-            
             individual_game_file = os.path.join(games_dir, f"game_{idx:02d}.json")
             with open(individual_game_file, 'w') as f:
                 json.dump(game_dict, f, indent=2)
         
         print(f"\n📁 Progress saved to: {self.tournament_dir}")
-        print("    - player_memories.json")
-        print("    - all_games.json")
-        print(f"    - individual_games/ (game_01.json - game_{len(self.game_results):02d}.json)")
 
 
 def main():
-    """Main entry point for multi-game tournament."""
-    
-    # Check for API key
-    if not os.environ.get("OPENAI_API_KEY"):
-        print("Error: OPENAI_API_KEY environment variable not set!")
-        print("Please set it with: export OPENAI_API_KEY='your-api-key'")
+    if not os.environ.get("GROQ_API_KEY"):
+        print("Error: GROQ_API_KEY environment variable not set!")
         return
     
-    # Parse command line arguments
     import sys
-    
     num_games = 10
     num_players = 5
-    model = None  # Will use default from main.py
-    reasoning_effort = None  # Will use default from main.py
-    memory_enabled_players = None  # Default: all players have memory
+    model = None
+    reasoning_effort = None
+    memory_enabled_players = None
     
-    # Simple argument parsing
     for i, arg in enumerate(sys.argv[1:]):
         if arg == "--num-games" and i + 1 < len(sys.argv) - 1:
             num_games = int(sys.argv[i + 2])
@@ -426,10 +580,8 @@ def main():
         elif arg == "--reasoning-effort" and i + 1 < len(sys.argv) - 1:
             reasoning_effort = sys.argv[i + 2]
         elif arg == "--memory-players" and i + 1 < len(sys.argv) - 1:
-            # Comma-separated list of player names
             memory_enabled_players = [p.strip() for p in sys.argv[i + 2].split(',')]
     
-    # Create and run tournament
     runner = MultiGameRunner(
         num_games=num_games,
         num_players=num_players,
@@ -438,12 +590,7 @@ def main():
         memory_enabled_players=memory_enabled_players
     )
     runner.run_tournament()
-    
-    print("\n" + "="*60)
-    print("TOURNAMENT GENERATION COMPLETE!")
-    print("="*60)
 
 
 if __name__ == "__main__":
     main()
-

@@ -5,12 +5,9 @@ import time
 from datetime import datetime
 from typing import List, Optional
 from dataclasses import dataclass, asdict
-from openai import OpenAI
+from groq_keys import call_groq
 
-# Initialize OpenAI client
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-
-MODEL = "gpt-5.1"
+MODEL = "llama-3.1-8b-instant"
 REASONING_EFFORT = "low"
 NUM_MESSAGES_PER_PLAYER = 1
 
@@ -267,21 +264,30 @@ class AvalonGame:
         return context
     
     def call_llm(self, system_prompt: str, user_prompt: str, response_format: str = "text") -> tuple[str, float, Optional[str]]:
-        """Call OpenAI API with reasoning effort. Returns (response, time_taken, reasoning_summary)."""
+        """Call OpenAI API with reasoning effort. Returns (response, time_taken, reasoning_summary).
+
+        response_format="json" forces strict JSON mode -- use for any call
+        whose result gets parsed with json.loads(). Smaller/faster models
+        are much less reliable at following "respond ONLY with JSON" as a
+        plain instruction; strict mode meaningfully reduces (not eliminates)
+        malformed/empty responses. Leave as "text" for natural-language
+        calls like discussion, where JSON mode would be wrong."""
         start_time = time.time()
         try:
-            response = client.chat.completions.create(
+            response = call_groq(
+                messages=[{"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}],
                 model=self.model,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                reasoning_effort=self.reasoning_effort
+                response_format={"type": "json_object"} if response_format == "json" else None,
             )
             elapsed_time = time.time() - start_time
             
             # Extract response content
             content = response.choices[0].message.content.strip()
+            if response_format == "json":
+                # Defensive: strip markdown fences in case the model wraps
+                # its JSON despite strict mode.
+                content = content.replace("```json", "").replace("```", "").strip()
             
             # Extract reasoning summary if available
             # Check various possible locations for reasoning content
@@ -369,14 +375,21 @@ class AvalonGame:
         user_prompt += "Available players: {}\n".format(', '.join(player_names))
         user_prompt += "Respond ONLY with a JSON object: {{\"team\": [\"Name1\", \"Name2\", ...], \"reasoning\": \"why you chose this team\"}}"
         
-        response, thinking_time, reasoning_content = self.call_llm(system_prompt, user_prompt)
+        response, thinking_time, reasoning_content = self.call_llm(system_prompt, user_prompt, response_format="json")
         
         # Parse response
         try:
             data = json.loads(response)
             team = data["team"][:team_size]  # Ensure correct size
             reasoning = data["reasoning"]
-        except (json.JSONDecodeError, KeyError):
+            # Validate every proposed name is an actual player -- a
+            # structurally-valid JSON response can still contain a
+            # hallucinated/mistyped name (more likely with smaller models),
+            # which would otherwise silently propagate through voting and
+            # crash much later in execute_mission() with a StopIteration.
+            if not all(name in player_names for name in team) or len(team) != team_size:
+                raise ValueError(f"Invalid team proposal: {team}")
+        except (json.JSONDecodeError, KeyError, TypeError, ValueError):
             # Fallback: random team
             team = random.sample(player_names, team_size)
             reasoning = "Based on trust and past mission results."
@@ -423,13 +436,13 @@ class AvalonGame:
             system_prompt = context
             user_prompt = "Vote on this team proposal. Respond ONLY with JSON: {\"vote\": \"approve\" or \"reject\", \"comment\": \"brief reason\"}"
             
-            response, thinking_time, reasoning_content = self.call_llm(system_prompt, user_prompt)
+            response, thinking_time, reasoning_content = self.call_llm(system_prompt, user_prompt, response_format="json")
             
             try:
                 data = json.loads(response)
                 vote_choice = data["vote"]
                 comment = data["comment"]
-            except (json.JSONDecodeError, KeyError):
+            except (json.JSONDecodeError, KeyError, TypeError):
                 # Strategic fallback
                 if player.role in ["evil", "assassin"]:
                     # Evil players more likely to reject good teams
@@ -455,7 +468,13 @@ class AvalonGame:
         actions = []
         
         for player_name in proposal.team_members:
-            player = next(p for p in self.players if p.name == player_name)
+            player = next((p for p in self.players if p.name == player_name), None)
+            if player is None:
+                # Defense-in-depth: team names are validated at proposal time,
+                # but if a bad name ever reaches here it must not crash the whole
+                # game mid-mission. Skip the unknown name and continue.
+                print(f"  [warning] proposed team member '{player_name}' is not a real player, skipping")
+                continue
             context = self.get_player_context(player, quest_num)
             
             system_prompt = context
@@ -464,11 +483,11 @@ class AvalonGame:
                 action_choice = "success"
             else:
                 user_prompt = "You're on the mission. As an evil player, choose 'success' or 'fail' strategically. Respond with JSON: {\"action\": \"success\" or \"fail\", \"reasoning\": \"why\"}"
-                response, thinking_time, reasoning_content = self.call_llm(system_prompt, user_prompt)
+                response, thinking_time, reasoning_content = self.call_llm(system_prompt, user_prompt, response_format="json")
                 try:
                     data = json.loads(response)
                     action_choice = data["action"]
-                except (json.JSONDecodeError, KeyError):
+                except (json.JSONDecodeError, KeyError, TypeError):
                     action_choice = "fail"
             
             action = MissionAction(player=player_name, action=action_choice)
@@ -564,8 +583,13 @@ class AvalonGame:
         print("\n=== Assassin Phase ===")
         
         # Find the assassin (could be dedicated assassin role or a dual-role player)
-        assassin = next(p for p in self.players if p.role == self.assassin_role)
-        merlin = next(p for p in self.players if p.role == "merlin")
+        assassin = next((p for p in self.players if p.role == self.assassin_role), None)
+        merlin = next((p for p in self.players if p.role == "merlin"), None)
+        if assassin is None or merlin is None:
+            # No assassin or no Merlin in this configuration -- skip the phase
+            # rather than crash the game at the very end.
+            print("  [warning] assassin or merlin role not present, skipping assassin phase")
+            return None
         evil_players = [p for p in self.players if not p.is_good]
         
         print("\n🗡️  Evil team reveals themselves and discusses who Merlin might be...")
@@ -636,13 +660,13 @@ class AvalonGame:
         system_prompt = context
         user_prompt = "Based on all the discussions and your teammates' analysis, choose who you think is Merlin from the good players. Respond ONLY with JSON: {{\"guess\": \"PlayerName\", \"reasoning\": \"your analysis in 2-3 sentences\"}}"
         
-        response, thinking_time, reasoning_content = self.call_llm(system_prompt, user_prompt)
+        response, thinking_time, reasoning_content = self.call_llm(system_prompt, user_prompt, response_format="json")
         
         try:
             data = json.loads(response)
             guess = data["guess"]
             reasoning = data["reasoning"]
-        except (json.JSONDecodeError, KeyError):
+        except (json.JSONDecodeError, KeyError, TypeError):
             good_players = [p.name for p in self.players if p.is_good]
             guess = random.choice(good_players)
             reasoning = "Based on their behavior throughout the game."
@@ -683,7 +707,7 @@ class AvalonGame:
         if self.good_wins >= 3:
             # Assassin phase
             assassin_phase = self.run_assassin_phase()
-            if assassin_phase.correct:
+            if assassin_phase is not None and assassin_phase.correct:
                 winner = "evil"
                 print("\n🗡️  EVIL WINS! The Assassin killed Merlin!")
             else:
@@ -732,8 +756,8 @@ class AvalonGame:
 
 
 def main():
-    if not os.environ.get("OPENAI_API_KEY"):
-        print("Error: OPENAI_API_KEY environment variable not set!")
+    if not os.environ.get("GROQ_API_KEYS") and not os.environ.get("GROQ_API_KEY"):
+        print("Error: neither GROQ_API_KEYS nor GROQ_API_KEY environment variable is set!")
         return
     
     import sys
@@ -759,4 +783,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
