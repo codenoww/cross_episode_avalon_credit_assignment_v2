@@ -42,26 +42,54 @@ if not _keys:
         "DIFFERENT Groq accounts) or GROQ_API_KEY (single key)."
     )
 
-_clients = [OpenAI(api_key=k, base_url="https://api.groq.com/openai/v1") for k in _keys]
+# Explicit request timeout -- the OpenAI SDK's default is 600s (10 min).
+# Without this, a single bad connection (dropped wifi, a hung Groq edge
+# node, etc.) blocks for the full 10 minutes before failing, and since it
+# doesn't look like a rate-limit error, it never even rotates to another
+# key first. 30s is generous for a single chat completion; if a request
+# hasn't come back by then, waiting longer isn't going to help --
+# retrying (possibly on a different key) is more useful than waiting.
+REQUEST_TIMEOUT_SECONDS = 30
+
+_clients = [
+    OpenAI(api_key=k, base_url="https://api.groq.com/openai/v1", timeout=REQUEST_TIMEOUT_SECONDS)
+    for k in _keys
+]
 _current = 0
 
-print(f"[groq_keys] Loaded {len(_clients)} key(s) for rotation.")
+print(f"[groq_keys] Loaded {len(_clients)} key(s) for rotation (timeout={REQUEST_TIMEOUT_SECONDS}s).")
+
+
+def _is_recoverable(error_msg: str) -> bool:
+    """
+    True if this looks like a transient/per-key issue worth rotating past
+    (rate limit, connection drop, timeout) rather than a real bug in the
+    request itself (bad model name, malformed messages, auth failure on
+    ALL keys, etc.) where rotating and retrying would just waste time.
+    """
+    msg = error_msg.lower()
+    recoverable_signals = [
+        "rate_limit", "429",
+        "connection error", "connection reset", "connection aborted",
+        "timeout", "timed out",
+        "temporarily unavailable", "service unavailable", "502", "503", "504",
+    ]
+    return any(sig in msg for sig in recoverable_signals)
 
 
 def call_groq(messages, model, response_format=None, max_cycles=1, **extra_kwargs):
     """
-    Tries the current key. On a rate-limit error, rotates to the next
-    key and retries immediately -- no waiting, since a different key
-    (different org) isn't affected by the first one's limit.
+    Tries the current key. On a rate-limit OR connection/timeout error,
+    rotates to the next key and retries immediately -- a dropped
+    connection or a slow edge node on one key doesn't mean the others
+    are affected, so it's worth trying them before giving up.
 
     Any extra keyword arguments (e.g. temperature=0.0) are passed
     straight through to the underlying chat.completions.create call.
 
-    If EVERY key is rate-limited in one pass (max_cycles=1), raises the
-    last error rather than looping forever. Set max_cycles higher only
-    if you want it to wait and re-try the whole key list again (rarely
-    useful -- if all your accounts are limited, waiting a few seconds
-    won't fix that).
+    If EVERY key fails in one pass (max_cycles=1), raises the last error
+    rather than looping forever. Set max_cycles higher only if you want
+    it to wait and re-try the whole key list again.
     """
     global _current
     n = len(_clients)
@@ -79,15 +107,18 @@ def call_groq(messages, model, response_format=None, max_cycles=1, **extra_kwarg
             except Exception as e:
                 msg = str(e)
                 last_error = e
-                if "rate_limit" in msg.lower() or "429" in msg:
-                    print(f"  [groq_keys] key #{key_num}/{n} rate-limited, rotating to next key...")
+                if _is_recoverable(msg):
+                    reason = "rate-limited" if ("rate_limit" in msg.lower() or "429" in msg) else "connection issue"
+                    print(f"  [groq_keys] key #{key_num}/{n} {reason} ({msg[:80]}), rotating to next key...")
                     _current = (_current + 1) % n
                     continue
                 else:
-                    # not a rate-limit error -- don't rotate, just fail through
+                    # Not a transient issue -- rotating won't help (e.g. a
+                    # genuinely malformed request), so fail immediately
+                    # rather than burning through every key pointlessly.
                     raise
         if cycle < max_cycles - 1:
-            print(f"  [groq_keys] all {n} keys rate-limited, waiting 30s before next cycle...")
+            print(f"  [groq_keys] all {n} keys failed this pass, waiting 30s before next cycle...")
             time.sleep(30)
 
     raise last_error
