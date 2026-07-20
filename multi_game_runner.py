@@ -188,7 +188,7 @@ class MultiGameRunner:
             for p in game_state.players:
                 context += f"  {p.name}: {p.role}\n"
             
-            from main import client
+            from groq_keys import call_groq
             import time
             
             system_prompt = context
@@ -207,7 +207,7 @@ class MultiGameRunner:
             
             start_time = time.time()
             try:
-                response = client.chat.completions.create(
+                response = call_groq(
                     model=self.model,
                     messages=[
                         {"role": "system", "content": system_prompt},
