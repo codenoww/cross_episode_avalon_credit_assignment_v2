@@ -199,6 +199,18 @@ def generate_feedback(episode_id, agent_id, agent_role, outcome, episode_number)
     feedback_text = compressed["report"]
     one_liner = compressed["one_liner"]
 
+    # Defensive: the model sometimes returns "report" as nested JSON
+    # (e.g. {"what_worked": "...", "pattern": "..."}) instead of a flat
+    # string, since the prompt describes multiple sections. psycopg2 can't
+    # adapt a raw dict into a text column, so flatten it here rather than
+    # let the whole episode's feedback generation silently fail.
+    if isinstance(feedback_text, dict):
+        feedback_text = "\n".join(f"{k}: {v}" for k, v in feedback_text.items())
+    if isinstance(one_liner, dict):
+        one_liner = " ".join(str(v) for v in one_liner.values())
+    feedback_text = str(feedback_text)
+    one_liner = str(one_liner)
+
     feedback_id = store_feedback(
         episode_id, agent_id, feedback_text, one_liner,
         top_message["id"], bottom_message["id"]
