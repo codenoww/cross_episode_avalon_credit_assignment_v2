@@ -27,8 +27,12 @@ Usage (replaces direct OpenAI client calls):
     text = response.choices[0].message.content
 """
 import os
+import re
 import time
+from dotenv import load_dotenv
 from openai import OpenAI
+
+load_dotenv()
 
 _keys = [k.strip() for k in os.environ.get("GROQ_API_KEYS", "").split(",") if k.strip()]
 if not _keys:
@@ -77,7 +81,30 @@ def _is_recoverable(error_msg: str) -> bool:
     return any(sig in msg for sig in recoverable_signals)
 
 
-def call_groq(messages, model, response_format=None, max_cycles=1, **extra_kwargs):
+_WAIT_PATTERN = re.compile(r"try again in (\d+(?:\.\d+)?)\s*(ms|s|m|h)?", re.IGNORECASE)
+_DEFAULT_WAIT_SECONDS = 30
+_MAX_WAIT_SECONDS = 6 * 60 * 60  # 6h safety cap -- if this undershoots a longer reset,
+                                  # the next attempt just re-parses a fresh error and waits again.
+
+
+def _parse_wait_seconds(error_msg: str) -> float:
+    """
+    Groq's 429 body includes a suggested wait, e.g. "...try again in 7.66s".
+    Parse it so the retry sleeps roughly as long as needed instead of a
+    blind fixed backoff. If the real message uses a compound duration this
+    only catches the leading component -- harmless, since undershooting
+    just means the next attempt hits another 429 and re-parses.
+    """
+    match = _WAIT_PATTERN.search(error_msg)
+    if not match:
+        return _DEFAULT_WAIT_SECONDS
+    value = float(match.group(1))
+    unit = (match.group(2) or "s").lower()
+    multiplier = {"ms": 0.001, "s": 1, "m": 60, "h": 3600}.get(unit, 1)
+    return min(value * multiplier, _MAX_WAIT_SECONDS)
+
+
+def call_groq(messages, model, response_format=None, max_cycles=None, **extra_kwargs):
     """
     Tries the current key. On a rate-limit OR connection/timeout error,
     rotates to the next key and retries immediately -- a dropped
@@ -87,15 +114,25 @@ def call_groq(messages, model, response_format=None, max_cycles=1, **extra_kwarg
     Any extra keyword arguments (e.g. temperature=0.0) are passed
     straight through to the underlying chat.completions.create call.
 
-    If EVERY key fails in one pass (max_cycles=1), raises the last error
-    rather than looping forever. Set max_cycles higher only if you want
-    it to wait and re-try the whole key list again.
+    If EVERY key fails one pass with a RECOVERABLE error (rate limit,
+    connection issue), this waits out Groq's own suggested retry time
+    (parsed from the error body -- exact for per-minute limits, and for a
+    full daily-quota exhaustion this can be hours) and tries the whole
+    key list again, indefinitely, rather than raising -- an unattended
+    multi-hour batch run should survive a quota reset without needing a
+    manual restart. A genuinely non-recoverable error (bad model name,
+    malformed request, permanent auth failure) still raises immediately,
+    since no amount of waiting fixes those.
+
+    max_cycles caps how many full passes to attempt before giving up;
+    None (default) means retry forever on recoverable errors.
     """
     global _current
     n = len(_clients)
     last_error = None
+    cycle = 0
 
-    for cycle in range(max_cycles):
+    while max_cycles is None or cycle < max_cycles:
         for _ in range(n):
             client = _clients[_current]
             key_num = _current + 1
@@ -117,9 +154,14 @@ def call_groq(messages, model, response_format=None, max_cycles=1, **extra_kwarg
                     # genuinely malformed request), so fail immediately
                     # rather than burning through every key pointlessly.
                     raise
-        if cycle < max_cycles - 1:
-            print(f"  [groq_keys] all {n} keys failed this pass, waiting 30s before next cycle...")
-            time.sleep(30)
+
+        wait_seconds = _parse_wait_seconds(str(last_error))
+        cycle += 1
+        print(
+            f"  [groq_keys] all {n} keys rate-limited/unreachable this pass, "
+            f"waiting {wait_seconds:.0f}s (per Groq's own retry hint) before trying again..."
+        )
+        time.sleep(wait_seconds)
 
     raise last_error
 

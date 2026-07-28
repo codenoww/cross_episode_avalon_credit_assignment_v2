@@ -7,6 +7,16 @@ from typing import List, Dict
 from dataclasses import dataclass, asdict
 from main import AvalonGame, Player, GameState
 
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if sys.stderr.encoding and sys.stderr.encoding.lower() != "utf-8":
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
+# Passed to every pipeline subprocess so their stdout/stderr don't fall
+# back to cp1252 (default on Windows when not attached to a console) --
+# those scripts print unicode/emoji too and would otherwise crash.
+_SUBPROCESS_ENV = {**os.environ, "PYTHONIOENCODING": "utf-8"}
+
 @dataclass
 class PlayerReflection:
     game_number: int
@@ -52,7 +62,7 @@ class PlayerMemory:
 
 
 class LearningAvalonGame(AvalonGame):
-    def __init__(self, player_memories: Dict[str, PlayerMemory], num_players: int = 5, model: str = None, reasoning_effort: str = None, game_number: int = 1, game_id: str = None):
+    def __init__(self, player_memories: Dict[str, PlayerMemory], num_players: int = 5, model: str = None, reasoning_effort: str = None, game_number: int = 1, game_id: str = None, control_mode: bool = False):
         if model is None:
             from main import MODEL as DEFAULT_MODEL
             model = DEFAULT_MODEL
@@ -63,6 +73,7 @@ class LearningAvalonGame(AvalonGame):
         super().__init__(num_players=num_players, model=model, reasoning_effort=reasoning_effort)
         self.player_memories = player_memories
         self.game_number = game_number
+        self.control_mode = control_mode
         if game_id is not None:
             self.game_id = game_id  # explicit override, if one was actually given
         # else: keep the real timestamp-based game_id that super().__init__() already
@@ -83,34 +94,38 @@ class LearningAvalonGame(AvalonGame):
                 context = parts[0] + memory_context + "\nALL PLAYERS:" + parts[1]
         
         # ── FEEDBACK INJECTION ──────────────────────────────────
-        # Use game_id (string) for DB lookup if available, else game_number
-        from injection import build_injected_system_prompt
-        episode_ref = self.game_id if self.game_id else str(self.game_number)
-        context = build_injected_system_prompt(
-            base_system_prompt=context,
-            agent_id=player.name,
-            current_episode_id=episode_ref
-        )
+        # Skipped entirely in control_mode, so control games get the same
+        # base environment (memory included) minus only the coaching loop --
+        # the one variable a treatment-vs-control comparison needs isolated.
+        if not self.control_mode:
+            # Use game_id (string) for DB lookup if available, else game_number
+            from injection import build_injected_system_prompt
+            episode_ref = self.game_id if self.game_id else str(self.game_number)
+            context = build_injected_system_prompt(
+                base_system_prompt=context,
+                agent_id=player.name,
+                current_episode_id=episode_ref
+            )
 
-        # Show injection happening in terminal -- once per player per game,
-        # since the injected note is constant for the whole episode, not
-        # something that changes turn to turn.
-        if self.game_number > 1 and player.name not in self._injection_logged:
-            try:
-                from injection import get_latest_one_liner
-                result = get_latest_one_liner(player.name, episode_ref)
-                if result:
-                    print(f"  [INJECTED → {player.name}]: {result['one_liner'][:80]}...")
-                    self._injection_logged.add(player.name)
-            except Exception:
-                pass
+            # Show injection happening in terminal -- once per player per game,
+            # since the injected note is constant for the whole episode, not
+            # something that changes turn to turn.
+            if self.game_number > 1 and player.name not in self._injection_logged:
+                try:
+                    from injection import get_latest_one_liner
+                    result = get_latest_one_liner(player.name, episode_ref)
+                    if result:
+                        print(f"  [INJECTED → {player.name}]: {result['one_liner'][:80]}...")
+                        self._injection_logged.add(player.name)
+                except Exception:
+                    pass
         # ────────────────────────────────────────────────────────
-        
+
         return context
 
 
 class MultiGameRunner:
-    def __init__(self, num_games: int = 10, num_players: int = 5, model: str = None, reasoning_effort: str = None, memory_enabled_players: List[str] = None):
+    def __init__(self, num_games: int = 10, num_players: int = 5, model: str = None, reasoning_effort: str = None, memory_enabled_players: List[str] = None, control_mode: bool = False):
         if model is None:
             from main import MODEL as DEFAULT_MODEL
             model = DEFAULT_MODEL
@@ -124,6 +139,7 @@ class MultiGameRunner:
         self.num_players = num_players
         self.model = model
         self.reasoning_effort = reasoning_effort
+        self.control_mode = control_mode
         self.player_names = ROLE_CONFIGS[num_players]["names"]
         
         if memory_enabled_players is None:
@@ -145,6 +161,7 @@ class MultiGameRunner:
         print(f"Tournament folder created: {self.tournament_dir}")
         print(f"Players: {self.num_players}, Model: {self.model}, Reasoning: {self.reasoning_effort}")
         print(f"Memory-enabled players: {', '.join(self.memory_enabled_players)}")
+        print(f"Mode: {'CONTROL (no feedback injection)' if self.control_mode else 'TREATMENT (feedback injection enabled)'}")
     
     def run_post_game_reflection(self, game_state: GameState, game_number: int):
         print(f"\n{'='*60}")
@@ -277,7 +294,7 @@ class MultiGameRunner:
         try:
             subprocess.run(
                 [sys.executable, "run_component1.py", "--file", game_json_path],
-                check=True
+                check=True, env=_SUBPROCESS_ENV
             )
             print(f"  ✓ Baseline credit complete")
         except subprocess.CalledProcessError as e:
@@ -296,7 +313,7 @@ class MultiGameRunner:
         # missing embeddings.
         print(f"\n[Pipeline Step 0.5] Backfilling embeddings...")
         try:
-            subprocess.run([sys.executable, "generate_embeddings.py", "--all"], check=True)
+            subprocess.run([sys.executable, "generate_embeddings.py", "--all"], check=True, env=_SUBPROCESS_ENV)
             print(f"  ✓ Embeddings complete")
         except subprocess.CalledProcessError as e:
             print(f"  ✗ Embeddings failed: {e}")
@@ -312,7 +329,7 @@ class MultiGameRunner:
         # only ever produce intra-episode confirmed edges.
         print(f"\n[Pipeline Step 0.7] Merging into canonical dataset files...")
         try:
-            subprocess.run([sys.executable, "merge_new_games.py", self.tournament_dir], check=True)
+            subprocess.run([sys.executable, "merge_new_games.py", self.tournament_dir], check=True, env=_SUBPROCESS_ENV)
             print(f"  ✓ Canonical dataset merge complete")
         except subprocess.CalledProcessError as e:
             print(f"  ✗ Dataset merge failed: {e}")
@@ -325,7 +342,7 @@ class MultiGameRunner:
         try:
             subprocess.run(
                 [sys.executable, "causal_graph.py", "--episode", episode_id],
-                check=True
+                check=True, env=_SUBPROCESS_ENV
             )
             print(f"  ✓ Causal graph complete")
         except subprocess.CalledProcessError as e:
@@ -339,7 +356,7 @@ class MultiGameRunner:
         # below has a real final_credit to rank this game's messages by.
         print(f"\n[Pipeline Step 1.5] Computing causal_score + final_credit...")
         try:
-            subprocess.run([sys.executable, "compute_causal_score.py"], check=True)
+            subprocess.run([sys.executable, "compute_causal_score.py"], check=True, env=_SUBPROCESS_ENV)
             print(f"  ✓ causal_score/final_credit complete")
         except subprocess.CalledProcessError as e:
             print(f"  ✗ causal_score computation failed: {e}")
@@ -374,7 +391,7 @@ class MultiGameRunner:
         # ── Step 4: Export to dashboard ──────────────────────────
         print(f"\n[Pipeline Step 4] Exporting to dashboard...")
         try:
-            subprocess.run([sys.executable, "analytics_export.py"], check=True)
+            subprocess.run([sys.executable, "analytics_export.py"], check=True, env=_SUBPROCESS_ENV)
             print(f"  ✓ Dashboard export complete — refresh avalon_dashboard.html")
         except Exception as e:
             print(f"  ✗ Dashboard export failed: {e}")
@@ -395,7 +412,8 @@ class MultiGameRunner:
                 num_players=self.num_players,
                 model=self.model,
                 reasoning_effort=self.reasoning_effort,
-                game_number=game_num
+                game_number=game_num,
+                control_mode=self.control_mode
             )
             game_state = game.play_game()
             self.game_results.append(game_state)
@@ -411,8 +429,15 @@ class MultiGameRunner:
             # pipeline, not after.
             self.save_progress()
 
-            # Full attribution + feedback pipeline
-            self.run_full_pipeline(game_state, game_num)
+            # Control games are raw gameplay only -- no Component 1 (baseline
+            # scoring), Component 2 (causal graph), or Component 3 (feedback/
+            # injection). Those were all added after the original 50-game
+            # dataset was generated, so a control run mirrors that: the only
+            # variable vs. the original set is the model, not the pipeline.
+            if not self.control_mode:
+                self.run_full_pipeline(game_state, game_num)
+            else:
+                print(f"\n[Control mode] Skipping attribution pipeline for game {game_num} -- raw gameplay only.")
         
         print("\n\n" + "="*60)
         print("TOURNAMENT COMPLETE!")
@@ -559,8 +584,8 @@ class MultiGameRunner:
 
 
 def main():
-    if not os.environ.get("GROQ_API_KEY"):
-        print("Error: GROQ_API_KEY environment variable not set!")
+    if not os.environ.get("GROQ_API_KEYS") and not os.environ.get("GROQ_API_KEY"):
+        print("Error: neither GROQ_API_KEYS nor GROQ_API_KEY environment variable is set!")
         return
     
     import sys
@@ -569,7 +594,8 @@ def main():
     model = None
     reasoning_effort = None
     memory_enabled_players = None
-    
+    control_mode = False
+
     for i, arg in enumerate(sys.argv[1:]):
         if arg == "--num-games" and i + 1 < len(sys.argv) - 1:
             num_games = int(sys.argv[i + 2])
@@ -581,13 +607,16 @@ def main():
             reasoning_effort = sys.argv[i + 2]
         elif arg == "--memory-players" and i + 1 < len(sys.argv) - 1:
             memory_enabled_players = [p.strip() for p in sys.argv[i + 2].split(',')]
-    
+        elif arg == "--control":
+            control_mode = True
+
     runner = MultiGameRunner(
         num_games=num_games,
         num_players=num_players,
         model=model,
         reasoning_effort=reasoning_effort,
-        memory_enabled_players=memory_enabled_players
+        memory_enabled_players=memory_enabled_players,
+        control_mode=control_mode
     )
     runner.run_tournament()
 

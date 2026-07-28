@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import random
 import time
@@ -6,6 +7,14 @@ from datetime import datetime
 from typing import List, Optional
 from dataclasses import dataclass, asdict
 from groq_keys import call_groq
+
+# Windows defaults stdout/stderr to cp1252 whenever they aren't a live
+# console (redirected to a file, piped from a subprocess) -- crashes on
+# every emoji this file and its callers print.
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if sys.stderr.encoding and sys.stderr.encoding.lower() != "utf-8":
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 MODEL = "llama-3.1-8b-instant"
 REASONING_EFFORT = "low"
