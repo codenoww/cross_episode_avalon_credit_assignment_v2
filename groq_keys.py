@@ -26,6 +26,7 @@ Usage (replaces direct OpenAI client calls):
     )
     text = response.choices[0].message.content
 """
+import concurrent.futures
 import os
 import re
 import time
@@ -53,7 +54,20 @@ if not _keys:
 # key first. 30s is generous for a single chat completion; if a request
 # hasn't come back by then, waiting longer isn't going to help --
 # retrying (possibly on a different key) is more useful than waiting.
+#
+# IMPORTANT: this is NOT a true wall-clock cap. httpx (which the OpenAI SDK
+# is built on) treats a bare float timeout as connect/read/write/pool
+# timeouts, and the read timeout resets on every chunk received -- a
+# connection that trickles keep-alive bytes slower than every 30s but
+# never actually completes the response can stay "alive" indefinitely
+# without ever raising. This is exactly what happened on the first live
+# 70b run: one request sat for 2+ hours with an established connection,
+# near-zero CPU, and never timed out. HARD_TIMEOUT_SECONDS below is the
+# real fix -- a genuine wall-clock cap enforced from outside the request.
 REQUEST_TIMEOUT_SECONDS = 30
+HARD_TIMEOUT_SECONDS = 45  # slightly above REQUEST_TIMEOUT_SECONDS to give a
+                           # legitimately-slow-but-progressing response some
+                           # grace, while still bounding the true worst case.
 
 _clients = [
     OpenAI(api_key=k, base_url="https://api.groq.com/openai/v1", timeout=REQUEST_TIMEOUT_SECONDS)
@@ -61,7 +75,14 @@ _clients = [
 ]
 _current = 0
 
-print(f"[groq_keys] Loaded {len(_clients)} key(s) for rotation (timeout={REQUEST_TIMEOUT_SECONDS}s).")
+# Runs each API call in a worker thread so call_groq can enforce
+# HARD_TIMEOUT_SECONDS as a real wall-clock deadline via future.result(timeout=...),
+# instead of trusting the client's own (chunk-resetting) timeout. A thread
+# that's abandoned after a timeout keeps running until its socket read
+# eventually errors on its own -- harmless, since nothing waits on it.
+_executor = concurrent.futures.ThreadPoolExecutor(max_workers=8, thread_name_prefix="groq_call")
+
+print(f"[groq_keys] Loaded {len(_clients)} key(s) for rotation (timeout={REQUEST_TIMEOUT_SECONDS}s, hard cap={HARD_TIMEOUT_SECONDS}s).")
 
 
 def _is_recoverable(error_msg: str) -> bool:
@@ -77,6 +98,13 @@ def _is_recoverable(error_msg: str) -> bool:
         "connection error", "connection reset", "connection aborted",
         "timeout", "timed out",
         "temporarily unavailable", "service unavailable", "502", "503", "504",
+        # "403 - Access denied. Please check your network settings." showed up
+        # twice during a long unattended run and looked transient (later calls
+        # on the same key succeeded with no other change) -- rotating/retrying
+        # instead of failing outright cost nothing when it's really transient,
+        # and still gives up eventually via the caller's own retry cap if it
+        # turns out to be a genuine permanent block.
+        "403", "access denied",
     ]
     return any(sig in msg for sig in recoverable_signals)
 
@@ -140,7 +168,18 @@ def call_groq(messages, model, response_format=None, max_cycles=None, **extra_kw
                 kwargs = dict(model=model, messages=messages, **extra_kwargs)
                 if response_format:
                     kwargs["response_format"] = response_format
-                return client.chat.completions.create(**kwargs)
+                future = _executor.submit(client.chat.completions.create, **kwargs)
+                try:
+                    return future.result(timeout=HARD_TIMEOUT_SECONDS)
+                except concurrent.futures.TimeoutError:
+                    # Real wall-clock deadline hit -- the client's own timeout
+                    # didn't fire (trickling keep-alive bytes reset it), so
+                    # force the issue here. The thread is abandoned, not
+                    # killed -- it'll error out on its own eventually.
+                    raise TimeoutError(
+                        f"hard wall-clock timeout after {HARD_TIMEOUT_SECONDS}s "
+                        f"(client-level timeout never fired)"
+                    )
             except Exception as e:
                 msg = str(e)
                 last_error = e

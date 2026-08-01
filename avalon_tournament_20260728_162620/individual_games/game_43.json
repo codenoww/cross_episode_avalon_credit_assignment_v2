@@ -1,0 +1,504 @@
+{
+  "game_id": "avalon_20260729_211007",
+  "config": {
+    "model": "llama-3.1-8b-instant",
+    "reasoning_effort": "low",
+    "mission_team_sizes": [
+      2,
+      3,
+      2,
+      3,
+      3
+    ],
+    "num_messages_per_player": 1,
+    "num_players": 5
+  },
+  "players": [
+    {
+      "name": "Alice",
+      "role": "merlin",
+      "is_good": true,
+      "special_knowledge": [
+        "Bob",
+        "Diana"
+      ]
+    },
+    {
+      "name": "Bob",
+      "role": "assassin",
+      "is_good": false,
+      "special_knowledge": [
+        "Diana"
+      ]
+    },
+    {
+      "name": "Charlie",
+      "role": "good",
+      "is_good": true,
+      "special_knowledge": []
+    },
+    {
+      "name": "Diana",
+      "role": "evil",
+      "is_good": false,
+      "special_knowledge": [
+        "Bob"
+      ]
+    },
+    {
+      "name": "Eve",
+      "role": "good",
+      "is_good": true,
+      "special_knowledge": []
+    }
+  ],
+  "missions": [
+    {
+      "mission_number": 1,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Bob",
+          "team_members": [
+            "Alice",
+            "Diana"
+          ],
+          "reasoning": "I chose Alice and Diana because Alice's level-headedness can provide a sense of trustworthiness, while Diana's cautious nature can balance Alice's potential overconfidence, making it a good balance for this mission.",
+          "thinking_time": 15.547388553619385,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "approve",
+              "comment": "Alice and Diana seems like a stable and reasonable team.",
+              "thinking_time": 20.45657968521118,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "Alice's level-headedness and Diana's caution make for a balanced team",
+              "thinking_time": 16.376818418502808,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "reject",
+              "comment": "Alice and Diana may present an overcautious team dynamic for such a crucial mission, potentially leading to missed opportunities.",
+              "thinking_time": 14.340302228927612,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approove",
+              "comment": "Seems to be a fair balance of player perspectives and dynamics, worth exploring",
+              "thinking_time": 14.541410446166992,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "Strong team composition, good balance of trusting Alice's instincts with Diana's cautious nature.",
+              "thinking_time": 19.327528476715088,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "\"Hey team, considering our current score, I think it's worth trying to get some momentum going - maybe Alice and I could work together on this first mission?\"",
+          "timestamp": 0,
+          "global_turn_id": 0,
+          "phase": "discussion",
+          "thinking_time": 15.59422492980957,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "\"Honestly, I think Alice's idea is spot on, and I trust her completely - she's always been one of the more level-headed players we've had on the team. I think I'd be happy to join her on the mission, and Bob, you're always so reliable, maybe you should lead the rest of the team on the second mission to give us some extra support?\"",
+          "timestamp": 1,
+          "global_turn_id": 1,
+          "phase": "discussion",
+          "thinking_time": 13.536992073059082,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "\"I think Alice and Bob are moving a bit too fast here, Bob's reliability is definitely something to rely on, but we don't want to give away too much information too soon - why don't I join them on the first mission with Alice, that way we can keep an eye on what's happening and get a better sense of the dynamics going into the second mission?\"",
+          "timestamp": 2,
+          "global_turn_id": 2,
+          "phase": "discussion",
+          "thinking_time": 12.456346273422241,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "\"I think Charlie's idea has a lot of merit - it's always good to have a closer eye on what's going on, and I trust Alice's instincts on this one. Why don't I join Charlie on the first mission instead, that way we can provide some extra support from the side and get a better feel for how the game is unfolding?\"",
+          "timestamp": 3,
+          "global_turn_id": 3,
+          "phase": "discussion",
+          "thinking_time": 13.4349524974823,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "\"I think it's smart to trust Bob's instincts, and I'm inclined to agree with his proposal, but I'm not entirely sure about Alice joining either - we'll need to keep a close eye on how the first mission plays out and see if her actions align with what she's saying.\"",
+          "timestamp": 4,
+          "global_turn_id": 4,
+          "phase": "discussion",
+          "thinking_time": 18.482691049575806,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Alice",
+          "action": "success"
+        },
+        {
+          "player": "Diana",
+          "action": "success"
+        }
+      ],
+      "mission_result": "success",
+      "fail_count": 0
+    },
+    {
+      "mission_number": 2,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Charlie",
+          "team_members": [
+            "Alice",
+            "Diana",
+            "Charlie"
+          ],
+          "reasoning": "I chose this team due to their combination of strong past performance and different strengths. Alice has shown value in previous games with her strategic thinking, Diana has a good sense of judgment, and I, Charlie, bring experience as a leader. With this team, we can leverage our individual skills to balance each other out and increase the chances of success.",
+          "thinking_time": 13.616427898406982,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "approve",
+              "comment": "Good balance of strategic thinking and leadership experience",
+              "thinking_time": 23.029156923294067,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "strong combination of skills and experience",
+              "thinking_time": 17.40819787979126,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "I'm confident in my teammates' abilities and the diverse set of skills we bring to the table.",
+              "thinking_time": 14.464927911758423,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "reject",
+              "comment": "Trust concerns due to Charlie's recent role suggestions",
+              "thinking_time": 15.53340744972229,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "Team composition looks balanced, and Alice and Charlie have shown promise in previous games.",
+              "thinking_time": 20.70507526397705,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "\"I think we should definitely consider trusting Charlie on our next mission - his experience with taking the lead has been impressive so far, and it would be great to see him work with someone else from our group to get a better sense of how he operates. Perhaps a smaller team with Alice, Charlie, and I could be a good starting point, but we should also keep an open mind and see how the others feel about it.\"",
+          "timestamp": 0,
+          "global_turn_id": 5,
+          "phase": "discussion",
+          "thinking_time": 17.63856816291809,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "\"I think Alice's suggestion about trusting Charlie is a great idea, considering his past experience as a leader - I mean, who wouldn't want to see him work with new teammates and build some more relationships within our group?\"",
+          "timestamp": 1,
+          "global_turn_id": 6,
+          "phase": "discussion",
+          "thinking_time": 12.438025712966919,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "\"I'm leaning towards trusting Alice and Diana on our next mission - they've both shown a good sense of judgment in the past, and having a more balanced team composition could really help us avoid any potential sabotage from within. Plus, it'd be great to see Diana's strategic thinking in action alongside Alice, who's always brought some valuable insights to the table.\"",
+          "timestamp": 2,
+          "global_turn_id": 7,
+          "phase": "discussion",
+          "thinking_time": 13.47090768814087,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "\"I think Alice has a great point about Charlie taking the lead, and I believe it would be wise to keep the dynamic between Alice and Charlie intact, as they've shown a great working relationship already. Perhaps a team consisting of Alice, Charlie, and Bob would be a solid choice for our next mission, and I'd be happy to provide some additional support to help them succeed!\"",
+          "timestamp": 3,
+          "global_turn_id": 8,
+          "phase": "discussion",
+          "thinking_time": 13.567179441452026,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "\"I'm a bit worried that Charlie's suggestion of trusting Alice and Diana might be setting us up for blind loyalty - I think we should keep our options open and avoid committing to a team with just a few good players, especially since we only have a few FAIL cards left.\"",
+          "timestamp": 4,
+          "global_turn_id": 9,
+          "phase": "discussion",
+          "thinking_time": 20.412977933883667,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Alice",
+          "action": "success"
+        },
+        {
+          "player": "Diana",
+          "action": "success"
+        },
+        {
+          "player": "Charlie",
+          "action": "success"
+        }
+      ],
+      "mission_result": "success",
+      "fail_count": 0
+    },
+    {
+      "mission_number": 3,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Diana",
+          "team_members": [
+            "Diana",
+            "Charlie"
+          ],
+          "reasoning": "I have a good dynamic with Charlie, and I believe we have made strong leadership and team contributions. With Charlie's quick thinking and my strategic decision-making, we have a solid foundation for success. I trust his instincts and believe we'll make a formidable team.",
+          "thinking_time": 15.598527431488037,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "reject",
+              "comment": "Worried about over-reliance on familiarity and missing chance to diversify and balance the team",
+              "thinking_time": 24.843076705932617,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "reject",
+              "comment": "I don't think I can blindly trust Charlie's quick thinking in a critical mission, given Eve's experience could be the difference maker.",
+              "thinking_time": 16.47662925720215,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "Strong leadership and strategic decision-making from both of us",
+              "thinking_time": 16.594566583633423,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "Based on my past experience, I think trust is key. Charlie has been a valuable asset to our team, and I believe our existing dynamic would be advantageous in this mission.",
+              "thinking_time": 16.487433671951294,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "Trust in established dynamic and believe leadership potential",
+              "thinking_time": 21.64849328994751,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "\"Based on the momentum we've built up so far, I think we should lean towards having a team that's been proven to make solid decisions, maybe with someone who's shown they can take the lead and deliver results. I'm not sure if including Bob would be a safe bet, considering his track record might be a mixed bag at this point.\"",
+          "timestamp": 0,
+          "global_turn_id": 10,
+          "phase": "discussion",
+          "thinking_time": 18.48895287513733,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "\"I think it's great that we're considering Alice's suggestions, and I agree that Diana has made some solid decisions so far, but shouldn't we also consider the value of having a bit more variety and unpredictability on our team? Bob, in particular, brings a fresh perspective that could really shake things up in a positive way, and I think he'd make a great addition to our little experiment.\"",
+          "timestamp": 1,
+          "global_turn_id": 11,
+          "phase": "discussion",
+          "thinking_time": 14.591247797012329,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "\"I think Diana and I have worked well together so far, and we've got a good vibe going on - I'd love to have her on the next mission to keep that momentum going. Plus, with Bob's mixed record, I'm not entirely convinced he's a safe bet to send out, especially considering the risk of having to take an extra vote into account with a team of just two.\"",
+          "timestamp": 2,
+          "global_turn_id": 12,
+          "phase": "discussion",
+          "thinking_time": 13.534605741500854,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "\"I completely agree with Charlie on that point about trusting our existing dynamics, and I think having Diana and him work together again would be a solid play - she's proven her leadership skills and he's shown some really sharp instincts on our team so far. And as for Bob, I think he's definitely earned a second chance, and his ability to bring a fresh perspective could really pay off in a mission with some tough decisions to make.\"",
+          "timestamp": 3,
+          "global_turn_id": 13,
+          "phase": "discussion",
+          "thinking_time": 14.706778764724731,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "\"I think we should prioritize keeping Eve on the team - given the mixed signals we're getting about Bob's past record, it's hard to trust him fully, and having a more experienced member like Eve on board could help us make more informed decisions under pressure.\"",
+          "timestamp": 4,
+          "global_turn_id": 14,
+          "phase": "discussion",
+          "thinking_time": 19.5656316280365,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Diana",
+          "action": "success"
+        },
+        {
+          "player": "Charlie",
+          "action": "success"
+        }
+      ],
+      "mission_result": "success",
+      "fail_count": 0
+    }
+  ],
+  "winner": "evil",
+  "assassin_phase": {
+    "assassin": "Bob",
+    "evil_discussion": [
+      {
+        "player": "Bob",
+        "content": "\"Hey guys, I've been paying close attention to Alice's behavior and statements throughout the game. She consistently shows a willingness to trust her fellow good players, even when it's not the safest option, especially when choosing her allies for missions. Her trust in me and her open-mindedness on Charlie's leadership make me think she might be Merlin, she's really trying to keep a sense of cooperation and good vibes in the game.\"",
+        "timestamp": 0,
+        "global_turn_id": 15,
+        "phase": "evil_discussion",
+        "thinking_time": 12.587220668792725,
+        "reasoning_content": null
+      },
+      {
+        "player": "Diana",
+        "content": "I think Merlin is likely Charlie - his suggestions for trusting players like Alice and myself on the first mission, and his willingness to take the lead and build relationships within the group all seem like attempts to gain an upper hand without arousing immediate suspicion. He's also shown a willingness to pivot and adjust his strategies as the game unfolds, which is a trait of a skilled Merlin trying to maximize their impact without giving away their true intentions. Overall, Charlie's measured approach and focus on building trust resonate with me as a hallmark of Merlin's subtle yet effective gameplay.",
+        "timestamp": 1,
+        "global_turn_id": 16,
+        "phase": "evil_discussion",
+        "thinking_time": 14.723252773284912,
+        "reasoning_content": null
+      }
+    ],
+    "guess": "Alice",
+    "reasoning": "Alice's consistent willingness to trust her fellow good players and her open-mindedness regarding Charlie's leadership suggest a Merlin-like behavior, attempting to create a sense of cooperation without arousing suspicion. She has also shown a tendency to prioritize dynamics and relationships within the group, which is a trait often associated with Merlin. Her trust in me, in particular, makes me think she might be using our dynamic to gather information and stay under the radar.",
+    "correct": true,
+    "thinking_time": 15.765033483505249,
+    "reasoning_content": null
+  },
+  "post_game_reflections": [
+    {
+      "game_number": 43,
+      "player_name": "Alice",
+      "role_played": "merlin",
+      "game_result": "lost",
+      "self_assessment": "Unable to reflect on this game.",
+      "player_observations": {},
+      "thinking_time": 4.711178302764893
+    },
+    {
+      "game_number": 43,
+      "player_name": "Bob",
+      "role_played": "assassin",
+      "game_result": "won",
+      "self_assessment": "As the Assassin, my stealth and observation allowed me to identify and eliminate Merlin (Alice) early in the game, ultimately securing the evil team's victory. My performance demonstrates effective role play, timing, and strategic decisions. I could have considered eliminating Charlie as potentially Merlin or even Good, which might have further strengthened my team's victory.",
+      "player_observations": {
+        "Alice": "Tactically blind and failed to recognize my Assassin role, ultimately leading to her demise.",
+        "Bob": "Lacked clear leadership and coordination between the evil and good teams, which gave the evil team an advantage.",
+        "Charlie": "Played it too safe and waited for others to act, which made him less impactful on the game.",
+        "Diana": "Effectively balanced her evil actions without being detected, demonstrating excellent role play and teamwork with me.",
+        "Eve": "Played too passively, failing to make significant moves or disrupt the evil team's plans."
+      },
+      "thinking_time": 4.842111110687256
+    },
+    {
+      "game_number": 43,
+      "player_name": "Charlie",
+      "role_played": "good",
+      "game_result": "lost",
+      "self_assessment": "Despite being the actual Merlin, I performed poorly in the game, failing to achieve my main objective of guiding the team to victory. I could have done better by trusting my instincts and being more suspicious of potential traitors. With hindsight, I realize I was too trusting of others and made mistakes in my voting decisions.",
+      "player_observations": {
+        "Alice": "Alice played a double role extremely well, managing to deceive the team into believing she was Merlin, and I underestimated her acting abilities. She was successful in keeping her true identity hidden until the end.",
+        "Bob": "Bob's performance was somewhat surprising given his role, but as the actual Assassin, he executed his task flawlessly, making accurate guesses and taking out key targets. His influence in the game was significant.",
+        "Charlie": "As a player, I noticed Charlie was quite observant and vocal during discussions, often providing valuable insights. However, I believe she may have been too trusting of others and didn't scrutinize their claims enough.",
+        "Diana": "Diana's playstyle was more aggressive, and she was successful in influencing the team's decisions to suit her own agenda. She was an effective Evil player, making the most of the opportunities she had.",
+        "Eve": "Eve played a relatively safe game, contributing positively to the discussions but avoiding taking any unnecessary risks. She was cautious but also somewhat passive at times, which may have helped the team in the short run but ultimately led to our downfall."
+      },
+      "thinking_time": 5.0220794677734375
+    },
+    {
+      "game_number": 43,
+      "player_name": "Diana",
+      "role_played": "evil",
+      "game_result": "won",
+      "self_assessment": "I played a solid game as the Evil, effectively convincing the other players to doubt Alice's Merlin identity. I kept my own identity hidden until the crucial Assassin phase. One area for improvement would be to more actively participate in discussions and hint more subtly to avoid raising suspicions.",
+      "player_observations": {
+        "Alice": "Alice played Merlin convincingly but was unfortunately discovered as the Assassin in the final phase, which suggests she may have been too confident in her abilities or didn't manage her risks well.",
+        "Bob": "Bob had a surprisingly good grasp of the game dynamics, given he was the actual Assassin. His failure to guess my identity was likely due to my effective deception, but he played well enough to make it a close game.",
+        "Charlie": "Charlie seemed to be the most naive good player, easily convinced by my lies and ultimately falling for the Evil's plan. He didn't make any significant mistakes, but his inexperience and trusting nature made him an easier target.",
+        "Diana": "This is actually referring to myself, but it's a note for future self-improvement, as I've documented above.",
+        "Eve": "Eve played a fairly safe game, always erring on the side of caution and being reluctant to make accusations. While this made her a good player, it also meant she was less likely to take risks and potentially sway the game in her favor."
+      },
+      "thinking_time": 7.062000036239624
+    },
+    {
+      "game_number": 43,
+      "player_name": "Eve",
+      "role_played": "good",
+      "game_result": "lost",
+      "self_assessment": "I could have done a better job at communicating my suspicions about Alice's allegiance since we were a 3-player team. I underestimated the strength of our enemy's team and allowed the evil players to manipulate our decisions. Overall, it was a learning experience for me to play with and against stronger opponents.",
+      "player_observations": {
+        "Alice": "Alice was able to effectively balance between providing helpful information as the Merlin and keeping her evil allegiance hidden, making it challenging to gauge her trustworthiness.",
+        "Bob": "Bob's playstyle was very strategic and focused on gathering information from other players, which ultimately led to his success in eliminating the true Merlin (me).",
+        "Charlie": "Charlie's decisions seemed a bit random and not well thought out, which may have been part of a well-planned strategy from his side, though it was hard to determine his intentions.",
+        "Diana": "Diana played extremely well and managed to keep her role hidden while still influencing the game's outcome, giving us an extremely hard time to win.",
+        "Eve": "Wait, I'm observing myself. Let me skip that one."
+      },
+      "thinking_time": 5.9354307651519775
+    }
+  ]
+}

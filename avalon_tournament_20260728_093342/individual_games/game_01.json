@@ -1,0 +1,505 @@
+{
+  "game_id": "avalon_20260728_093342",
+  "config": {
+    "model": "llama-3.3-70b-versatile",
+    "reasoning_effort": "low",
+    "mission_team_sizes": [
+      2,
+      3,
+      2,
+      3,
+      3
+    ],
+    "num_messages_per_player": 1,
+    "num_players": 5
+  },
+  "players": [
+    {
+      "name": "Alice",
+      "role": "assassin",
+      "is_good": false,
+      "special_knowledge": [
+        "Bob"
+      ]
+    },
+    {
+      "name": "Bob",
+      "role": "evil",
+      "is_good": false,
+      "special_knowledge": [
+        "Alice"
+      ]
+    },
+    {
+      "name": "Charlie",
+      "role": "merlin",
+      "is_good": true,
+      "special_knowledge": [
+        "Alice",
+        "Bob"
+      ]
+    },
+    {
+      "name": "Diana",
+      "role": "good",
+      "is_good": true,
+      "special_knowledge": []
+    },
+    {
+      "name": "Eve",
+      "role": "good",
+      "is_good": true,
+      "special_knowledge": []
+    }
+  ],
+  "missions": [
+    {
+      "mission_number": 1,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Bob",
+          "team_members": [
+            "Charlie",
+            "Diana"
+          ],
+          "reasoning": "I chose Charlie and Diana based on Alice's initial suggestion, as it allows us to gauge their dynamic and decision-making without introducing too many unknowns on the first mission.",
+          "thinking_time": 0.3704690933227539,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "approve",
+              "comment": "Initial suggestion seems reasonable for assessing Charlie and Diana's dynamic",
+              "thinking_time": 0.22053265571594238,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "Let's see how Charlie and Diana work together",
+              "thinking_time": 0.19019198417663574,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "Simple team, good for initial assessment",
+              "thinking_time": 0.34052300453186035,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "Original suggestion seems reasonable",
+              "thinking_time": 0.19059514999389648,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "lets gauge Charlie and Diana's dynamic",
+              "thinking_time": 0.20112276077270508,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I think Charlie and Diana would be a good team for this first mission, they both seem like they'd work well together and we can get a sense of their decision-making. Plus, it keeps the rest of us out of the spotlight for now, which might be a good thing considering we don't know each other's tendencies yet.",
+          "timestamp": 0,
+          "global_turn_id": 0,
+          "phase": "discussion",
+          "thinking_time": 6.347622394561768,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I think Alice makes a good point about Charlie and Diana, but I'm a bit hesitant to put them together on the first mission, especially since Eve has been pretty quiet so far and I'm not sure what to make of her yet. Maybe we should consider adding Eve to the team instead, just to get a better read on her?",
+          "timestamp": 1,
+          "global_turn_id": 1,
+          "phase": "discussion",
+          "thinking_time": 0.48440074920654297,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I think it's a good idea to get a read on Eve, but at the same time, we shouldn't overlook the suggestion of Charlie and Diana just because Eve has been quiet - sometimes the quiet ones are just observing and waiting for the right moment to contribute. Maybe we could consider a team with a mix of personalities, like Charlie and Eve, to get a better sense of how everyone works together?",
+          "timestamp": 2,
+          "global_turn_id": 2,
+          "phase": "discussion",
+          "thinking_time": 0.6512670516967773,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I think Alice's initial suggestion of Charlie and me makes sense, but I also agree with Bob that we should get a better read on Eve, so maybe a team of Charlie, Eve, and one other isn't a bad idea, but that would be one too many for this mission. How about we stick with the original suggestion and see how Charlie and I do, then we can reassess and bring Eve in on the next one?",
+          "timestamp": 3,
+          "global_turn_id": 3,
+          "phase": "discussion",
+          "thinking_time": 0.6013805866241455,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I think it's a good idea to start with Alice's original suggestion of Charlie and Diana, as it allows us to gauge their dynamic without putting too many unknowns on the first mission. By keeping the team small and observing how they work together, we can get a better sense of their trustworthiness before bringing others, including myself, into the mix.",
+          "timestamp": 4,
+          "global_turn_id": 4,
+          "phase": "discussion",
+          "thinking_time": 0.42707037925720215,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Charlie",
+          "action": "success"
+        },
+        {
+          "player": "Diana",
+          "action": "success"
+        }
+      ],
+      "mission_result": "success",
+      "fail_count": 0
+    },
+    {
+      "mission_number": 2,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Charlie",
+          "team_members": [
+            "Charlie",
+            "Diana",
+            "Eve"
+          ],
+          "reasoning": "I chose this team because Charlie and Diana have a proven track record of success from the previous mission. Adding Eve to the team will give us insight into her intentions and allow us to assess her loyalty.",
+          "thinking_time": 0.5473525524139404,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "approve",
+              "comment": "Team has a good mix of known and unknown players to gather more intel",
+              "thinking_time": 0.35838961601257324,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "Team seems well-balanced and includes a mix of known good and untested players",
+              "thinking_time": 0.3135852813720703,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "Team has a good mix of proven success and unknowns to assess loyalty",
+              "thinking_time": 0.3533499240875244,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "Charlie and Diana's past success and adding Eve for assessment",
+              "thinking_time": 0.3012235164642334,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "Charlie and Diana's past success and addition of Eve for assessment",
+              "thinking_time": 0.31435084342956543,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I think we should consider putting Charlie and Diana on the mission again, since they already proved themselves to be a successful team last time, and maybe add Eve to the mix to get a better sense of where everyone stands. This way, we can also keep an eye on Bob, who as our leader, might be under a lot of pressure and scrutiny from the rest of us.",
+          "timestamp": 0,
+          "global_turn_id": 5,
+          "phase": "discussion",
+          "thinking_time": 0.6714367866516113,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I think Alice's suggestion to put Charlie and Diana on the mission again is a good one, but I'm not sure about adding Eve, I've noticed she's been a bit quiet so far and I'm not getting a clear read on her intentions. Maybe we should consider adding Alice to the team instead, that way we can ensure at least one of our... most invested players is on the mission.",
+          "timestamp": 1,
+          "global_turn_id": 6,
+          "phase": "discussion",
+          "thinking_time": 0.5152397155761719,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I think it's a good idea to mix things up a bit and not put the same two people on the mission again, so maybe we can consider a team with a bit more diversity, like Alice, Diana, and Eve. This way, we can get a better sense of how everyone contributes to the team's success.",
+          "timestamp": 2,
+          "global_turn_id": 7,
+          "phase": "discussion",
+          "thinking_time": 0.5672318935394287,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I think Charlie makes a good point about mixing things up, but I also trust Charlie from our successful mission last time, so I'd like to see Charlie on the team again, possibly with Alice and Eve to get a better read on them. This way, we can balance familiarity with getting more information on the others.",
+          "timestamp": 3,
+          "global_turn_id": 8,
+          "phase": "discussion",
+          "thinking_time": 0.5007607936859131,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I think Diana's suggestion to include Charlie again is a good idea, since we know they're at least one good player, and pairing them with Alice and me could give us a better sense of where Alice stands. By doing so, we can also see how Alice's actions align with their words, which could help us make more informed decisions in future missions.",
+          "timestamp": 4,
+          "global_turn_id": 9,
+          "phase": "discussion",
+          "thinking_time": 0.48490047454833984,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Charlie",
+          "action": "success"
+        },
+        {
+          "player": "Diana",
+          "action": "success"
+        },
+        {
+          "player": "Eve",
+          "action": "success"
+        }
+      ],
+      "mission_result": "success",
+      "fail_count": 0
+    },
+    {
+      "mission_number": 3,
+      "proposals": [
+        {
+          "proposal_id": 0,
+          "leader": "Diana",
+          "team_members": [
+            "Charlie",
+            "Eve"
+          ],
+          "reasoning": "I chose Charlie because they have already been on a successful mission and have proven themselves to be trustworthy. I chose Eve because she hasn't been on a team yet and this will give us a chance to test her loyalty and get a read on her actions.",
+          "thinking_time": 3.4626541137695312,
+          "reasoning_content": null,
+          "votes": [
+            {
+              "player": "Alice",
+              "vote": "reject",
+              "comment": "Eve is untested and Charlie's trustworthiness is not fully confirmed",
+              "thinking_time": 4.289422988891602,
+              "reasoning_content": null
+            },
+            {
+              "player": "Bob",
+              "vote": "approve",
+              "comment": "seems like a good way to test Eve's loyalty",
+              "thinking_time": 3.389514446258545,
+              "reasoning_content": null
+            },
+            {
+              "player": "Charlie",
+              "vote": "approve",
+              "comment": "Team composition seems reasonable, Charlie's experience paired with Eve's untested loyalty could provide valuable insight",
+              "thinking_time": 4.520711898803711,
+              "reasoning_content": null
+            },
+            {
+              "player": "Diana",
+              "vote": "approve",
+              "comment": "Charlie's reliability and Eve's need to be tested",
+              "thinking_time": 3.263028383255005,
+              "reasoning_content": null
+            },
+            {
+              "player": "Eve",
+              "vote": "approve",
+              "comment": "Charlie's proven trustworthiness and Eve's need to be tested make this a reasonable team",
+              "thinking_time": 4.519200086593628,
+              "reasoning_content": null
+            }
+          ],
+          "vote_result": "approved"
+        }
+      ],
+      "final_team_index": 0,
+      "discussion": [
+        {
+          "player": "Alice",
+          "content": "I think we should be cautious about putting Eve on this next mission, I mean, she hasn't been on a team yet and we don't know much about her, whereas Diana and Charlie have already proven themselves to be trustworthy on the previous missions. Maybe we should stick with a team of Bob and Diana, that way we can build on the success they had on the first mission.",
+          "timestamp": 0,
+          "global_turn_id": 10,
+          "phase": "discussion",
+          "thinking_time": 0.5419933795928955,
+          "reasoning_content": null
+        },
+        {
+          "player": "Bob",
+          "content": "I agree that Diana has been reliable so far, but I'm not sure about excluding Eve entirely - maybe we should give her a chance to prove herself alongside someone we trust, like Charlie, to see how she performs under pressure. This way, we can also get a better read on Charlie's loyalty, since they've been leading the charge on these missions so far.",
+          "timestamp": 1,
+          "global_turn_id": 11,
+          "phase": "discussion",
+          "thinking_time": 0.44941282272338867,
+          "reasoning_content": null
+        },
+        {
+          "player": "Charlie",
+          "content": "I think it's a good point that Diana has been reliable so far, and pairing her with Eve could be a good way to get a read on Eve's loyalty, but I'm also concerned that we don't want to put all our eggs in one basket by relying too heavily on the same group of people. Maybe we should consider mixing it up a bit and seeing how others perform in different combinations, like pairing Eve with someone like me, who's already been on a successful mission.",
+          "timestamp": 2,
+          "global_turn_id": 12,
+          "phase": "discussion",
+          "thinking_time": 0.7411038875579834,
+          "reasoning_content": null
+        },
+        {
+          "player": "Diana",
+          "content": "I think it's a good idea to pair Eve with someone we trust, like Charlie, to get a read on her loyalty, and since Charlie and I have already worked together successfully, it might be useful to see how Charlie works with Eve on this mission. This way, we can also keep an eye on Charlie's actions, just to confirm that they're still on our side.",
+          "timestamp": 3,
+          "global_turn_id": 13,
+          "phase": "discussion",
+          "thinking_time": 0.6301689147949219,
+          "reasoning_content": null
+        },
+        {
+          "player": "Eve",
+          "content": "I think it's a good idea to pair me with Charlie, like Bob suggested, since Charlie has already been on a successful mission and it would be a good test of both of our loyalties. Plus, it would give Diana a break and let her observe from the outside, which could be useful in case anything goes wrong on this mission.",
+          "timestamp": 4,
+          "global_turn_id": 14,
+          "phase": "discussion",
+          "thinking_time": 3.483616828918457,
+          "reasoning_content": null
+        }
+      ],
+      "quest_actions": [
+        {
+          "player": "Charlie",
+          "action": "success"
+        },
+        {
+          "player": "Eve",
+          "action": "success"
+        }
+      ],
+      "mission_result": "success",
+      "fail_count": 0
+    }
+  ],
+  "winner": "good",
+  "assassin_phase": {
+    "assassin": "Alice",
+    "evil_discussion": [
+      {
+        "player": "Alice",
+        "content": "Guys, I've been thinking, and I'm starting to suspect that Diana might be Merlin - she's been consistently level-headed and has made some strategic suggestions, like pairing Charlie and me together to get a read on both of us. Her comments often seem to be probing for information without being too obvious, like when she suggested keeping the team small on the first mission to gauge Charlie's dynamic. I think her cautious yet thoughtful approach could be a sign that she's trying to gather intel without arousing suspicion.",
+        "timestamp": 0,
+        "global_turn_id": 15,
+        "phase": "evil_discussion",
+        "thinking_time": 7.7930803298950195,
+        "reasoning_content": null
+      },
+      {
+        "player": "Bob",
+        "content": "I've been observing the discussions, and I think Charlie might be Merlin - they've been consistently suggesting mixed teams and trying to get a read on everyone's loyalty, which seems like a clever way to gather intel without being too obvious. I've noticed that Charlie often responds thoughtfully to others' suggestions, which could be a sign that they're trying to build trust and gain a better understanding of the group's dynamics. Their ability to balance agreement and disagreement in their comments also strikes me as a strategic move to avoid suspicion.",
+        "timestamp": 1,
+        "global_turn_id": 16,
+        "phase": "evil_discussion",
+        "thinking_time": 6.725089073181152,
+        "reasoning_content": null
+      }
+    ],
+    "guess": "Diana",
+    "reasoning": "I chose Diana as Merlin due to her consistently level-headed and strategic suggestions throughout the discussions. Her ability to balance caution with thoughtful probing for information, such as suggesting to keep the team small on the first mission, seems like a clever way to gather intel without arousing suspicion. Additionally, her comments often appear to be carefully crafted to elicit reactions from others, which aligns with the behavior of Merlin trying to discern loyalists from minions.",
+    "correct": false,
+    "thinking_time": 8.753039121627808,
+    "reasoning_content": null
+  },
+  "post_game_reflections": [
+    {
+      "game_number": 1,
+      "player_name": "Alice",
+      "role_played": "assassin",
+      "game_result": "lost",
+      "self_assessment": "I failed to correctly identify Merlin, which cost me the game. I could improve by paying closer attention to the mission teams and their results. I should also consider the leaders and their potential roles in the game.",
+      "player_observations": {
+        "Bob": "Bob's role as evil was not immediately apparent, suggesting he played carefully to avoid detection.",
+        "Charlie": "Charlie's leadership and team selections did not raise suspicion, effectively hiding their Merlin role.",
+        "Diana": "Diana's consistent inclusion in successful missions made them appear as a strong good player, which might have been a deliberate strategy to avoid suspicion.",
+        "Eve": "Eve's participation in successful missions, especially Mission 2 and 3, indicated they were likely a good player, but their role was not as crucial as Diana's or Charlie's in hiding Merlin's identity."
+      },
+      "thinking_time": 1.932610273361206
+    },
+    {
+      "game_number": 1,
+      "player_name": "Bob",
+      "role_played": "evil",
+      "game_result": "lost",
+      "self_assessment": "I failed to accurately determine the loyalty of other players, leading to my eventual loss. I successfully led a mission but was unable to prevent subsequent missions from succeeding. I should have tried to sabotage a mission or gathered more information about other players' roles.",
+      "player_observations": {
+        "Alice": "Seemed inactive and didn't reveal much about her role, but her guess during the assassin phase was incorrect, which was expected from the assassin.",
+        "Charlie": "Appeared very cooperative and didn't raise any suspicion, which made sense given their role as Merlin. They also didn't make any obvious mistakes that would have given away their role.",
+        "Diana": "Seemed genuinely invested in the success of the missions, which aligns with her role as a good player. Her leadership during Mission 3 was successful, further solidifying her innocent appearance.",
+        "Eve": "Was relatively quiet and didn't take any bold actions, but her participation in successful missions suggested she was likely a good player. Her behavior didn't arouse significant suspicion, which helped the good team achieve their goals."
+      },
+      "thinking_time": 3.1137452125549316
+    },
+    {
+      "game_number": 1,
+      "player_name": "Charlie",
+      "role_played": "merlin",
+      "game_result": "won",
+      "self_assessment": "I effectively hid my role as Merlin, and my mission choices contributed to the successes. However, I could have been more cautious in my interactions to avoid raising suspicion. Additionally, I should have paid closer attention to the behavior of the Assassin, Alice.",
+      "player_observations": {
+        "Alice": "Seemed generally quiet and didn't draw much attention to herself, which might have been a strategy to avoid suspicion, but her guess of Diana in the Assassin phase was incorrect.",
+        "Bob": "Showed a bit of reluctance in the first mission, which could be perceived as a red flag, but his participation didn't outright reveal his evil alignment.",
+        "Diana": "Acted consistently in a manner that suggested she was good, leading the third mission to success and not showing any behavior that would indicate she was evil, which was confirmed at the end.",
+        "Eve": "Participated in two successful missions and didn't exhibit any behavior that would strongly indicate she was evil; her actions aligned with those of a good player."
+      },
+      "thinking_time": 3.221351146697998
+    },
+    {
+      "game_number": 1,
+      "player_name": "Diana",
+      "role_played": "good",
+      "game_result": "won",
+      "self_assessment": "I contributed to the successful missions, but could have potentially provided more insight during discussions. My choice of team for the mission I led seemed to work out, but I relied heavily on the trust built from earlier missions. I could improve by being more proactive in gathering information and sharing my thoughts.",
+      "player_observations": {
+        "Alice": "Seemed quiet and unassuming, which may have been a deliberate attempt to avoid drawing attention, ultimately failing to correctly identify Merlin.",
+        "Bob": "Was fairly quiet as well, but being part of the first successful mission made me initially trust him, though his true allegiance was later revealed to be evil.",
+        "Charlie": "Was very active in discussions and provided meaningful insights, which in hindsight was consistent with the role of Merlin, using their abilities to guide the team towards success without being too obvious.",
+        "Eve": "Participated well in discussions and was part of two successful missions, which suggests she was genuinely working towards the good team's goals, reinforcing her revealed role as a good player."
+      },
+      "thinking_time": 2.272336483001709
+    },
+    {
+      "game_number": 1,
+      "player_name": "Eve",
+      "role_played": "good",
+      "game_result": "won",
+      "self_assessment": "I contributed to the team's success by participating in successful missions, but I could improve by being more active in discussions and trying to gather more information about other players' roles. I also could have paid closer attention to the assassin's potential moves. Overall, I was fortunate to be on a team with a strong Merlin, Charlie, who helped guide us to victory.",
+      "player_observations": {
+        "Alice": "Alice was quiet and did not reveal much information, which was consistent with an assassin's typical playstyle of laying low and waiting for the right moment to strike.",
+        "Bob": "Bob's decision-making as a leader seemed somewhat arbitrary, but it's possible he was trying to throw us off his trail as an evil player.",
+        "Charlie": "Charlie demonstrated strong leadership skills and made wise decisions, which ultimately led to our team's success; in hindsight, his confidence and guidance were characteristic of a Merlin.",
+        "Diana": "Diana played a fairly straight game, participating in successful missions and not raising much suspicion, which was consistent with her role as a good player."
+      },
+      "thinking_time": 3.2389042377471924
+    }
+  ]
+}
