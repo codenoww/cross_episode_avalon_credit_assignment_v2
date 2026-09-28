@@ -1,0 +1,2318 @@
+Found 16 control episodes across 2 tournament dirs.
+
+============================================================
+  Component 1 batch scoring: avalon_tournament_20260805_091208
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe run_component1_batch.py --pattern avalon_tournament_20260805_091208\individual_games\*.json --delay 2
+============================================================
+[groq_keys] Loaded 4 key(s) for rotation (timeout=30s, hard cap=45s).
+Found 10 game file(s) matching: avalon_tournament_20260805_091208\individual_games\*.json
+
+[1/10] game_01.json
+  done: avalon_20260805_091208 — 21 messages scored
+
+[2/10] game_02.json
+  done: avalon_20260805_091654 — 20 messages scored
+
+[3/10] game_03.json
+  done: avalon_20260805_092540 — 24 messages scored
+
+[4/10] game_04.json
+  done: avalon_20260805_093448 — 31 messages scored
+
+[5/10] game_05.json
+  done: avalon_20260805_094914 — 19 messages scored
+
+[6/10] game_06.json
+  done: avalon_20260805_100035 — 18 messages scored
+
+[7/10] game_07.json
+  done: avalon_20260805_100819 — 18 messages scored
+
+[8/10] game_08.json
+  done: avalon_20260805_101600 — 25 messages scored
+
+[9/10] game_09.json
+  done: avalon_20260805_102737 — 20 messages scored
+
+[10/10] game_10.json
+  done: avalon_20260805_113329 — 25 messages scored
+
+=== BATCH DONE in 22.3 min ===
+  Succeeded: 10
+  Failed: 0
+  done: Component 1 batch scoring: avalon_tournament_20260805_091208
+
+============================================================
+  Component 1 batch scoring: avalon_tournament_20260805_115905
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe run_component1_batch.py --pattern avalon_tournament_20260805_115905\individual_games\*.json --delay 2
+============================================================
+[groq_keys] Loaded 4 key(s) for rotation (timeout=30s, hard cap=45s).
+Found 6 game file(s) matching: avalon_tournament_20260805_115905\individual_games\*.json
+
+[1/6] game_01.json
+  done: avalon_20260805_115905 — 21 messages scored
+
+[2/6] game_02.json
+  done: avalon_20260805_120509 — 30 messages scored
+
+[3/6] game_03.json
+  FAILED: value too long for type character varying(20)
+
+
+[4/6] game_04.json
+  done: avalon_20260805_122803 — 32 messages scored
+
+[5/6] game_05.json
+  done: avalon_20260805_140652 — 31 messages scored
+
+[6/6] game_06.json
+  done: avalon_20260805_142150 — 19 messages scored
+
+=== BATCH DONE in 13.3 min ===
+  Succeeded: 5
+  Failed: 1
+  done: Component 1 batch scoring: avalon_tournament_20260805_115905
+
+============================================================
+  Backfill embeddings
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe generate_embeddings.py --all
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading model (all-MiniLM-L6-v2)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2448.53it/s]
+Found 15 episode(s) missing embeddings: ['avalon_20260805_091208', 'avalon_20260805_091654', 'avalon_20260805_092540', 'avalon_20260805_093448', 'avalon_20260805_094914', 'avalon_20260805_100035', 'avalon_20260805_100819', 'avalon_20260805_101600', 'avalon_20260805_102737', 'avalon_20260805_113329', 'avalon_20260805_115905', 'avalon_20260805_120509', 'avalon_20260805_122803', 'avalon_20260805_140652', 'avalon_20260805_142150']
+
+Found 21 messages missing embeddings for avalon_20260805_091208
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.63it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.63it/s]
+Updated 21 messages with embeddings for avalon_20260805_091208
+
+Found 20 messages missing embeddings for avalon_20260805_091654
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.12it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.12it/s]
+Updated 20 messages with embeddings for avalon_20260805_091654
+
+Found 24 messages missing embeddings for avalon_20260805_092540
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.72it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.72it/s]
+Updated 24 messages with embeddings for avalon_20260805_092540
+
+Found 31 messages missing embeddings for avalon_20260805_093448
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.36it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.36it/s]
+Updated 31 messages with embeddings for avalon_20260805_093448
+
+Found 19 messages missing embeddings for avalon_20260805_094914
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.03it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.03it/s]
+Updated 19 messages with embeddings for avalon_20260805_094914
+
+Found 18 messages missing embeddings for avalon_20260805_100035
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.65it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.65it/s]
+Updated 18 messages with embeddings for avalon_20260805_100035
+
+Found 18 messages missing embeddings for avalon_20260805_100819
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.32it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.32it/s]
+Updated 18 messages with embeddings for avalon_20260805_100819
+
+Found 25 messages missing embeddings for avalon_20260805_101600
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.47it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.47it/s]
+Updated 25 messages with embeddings for avalon_20260805_101600
+
+Found 20 messages missing embeddings for avalon_20260805_102737
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.43it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.42it/s]
+Updated 20 messages with embeddings for avalon_20260805_102737
+
+Found 25 messages missing embeddings for avalon_20260805_113329
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.33it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.33it/s]
+Updated 25 messages with embeddings for avalon_20260805_113329
+
+Found 21 messages missing embeddings for avalon_20260805_115905
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.05it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.05it/s]
+Updated 21 messages with embeddings for avalon_20260805_115905
+
+Found 30 messages missing embeddings for avalon_20260805_120509
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.70it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.64it/s]
+Updated 30 messages with embeddings for avalon_20260805_120509
+
+Found 32 messages missing embeddings for avalon_20260805_122803
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.22it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.21it/s]
+Updated 32 messages with embeddings for avalon_20260805_122803
+
+Found 31 messages missing embeddings for avalon_20260805_140652
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.38it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.38it/s]
+Updated 31 messages with embeddings for avalon_20260805_140652
+
+Found 19 messages missing embeddings for avalon_20260805_142150
+Encoding...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.87it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.86it/s]
+Updated 19 messages with embeddings for avalon_20260805_142150
+
+=== DONE: 354 messages updated across 15 episodes ===
+  done: Backfill embeddings
+
+============================================================
+  Merge into canonical dataset: avalon_tournament_20260805_091208
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe merge_new_games.py avalon_tournament_20260805_091208
+============================================================
+Merging avalon_tournament_20260805_091208 into canonical dataset files...
+  Merged 10 new game(s) into C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\dataset\1_cross_game_learning_50g\all_games.json (now 177 total)
+  Merged 0 new reflection(s) into C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\dataset\1_cross_game_learning_50g\player_memories.json
+  done: Merge into canonical dataset: avalon_tournament_20260805_091208
+
+============================================================
+  Merge into canonical dataset: avalon_tournament_20260805_115905
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe merge_new_games.py avalon_tournament_20260805_115905
+============================================================
+Merging avalon_tournament_20260805_115905 into canonical dataset files...
+  Merged 6 new game(s) into C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\dataset\1_cross_game_learning_50g\all_games.json (now 183 total)
+  Merged 0 new reflection(s) into C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\dataset\1_cross_game_learning_50g\player_memories.json
+  done: Merge into canonical dataset: avalon_tournament_20260805_115905
+
+[1/16] Causal graph for avalon_20260805_091208
+
+============================================================
+  Causal graph: avalon_20260805_091208
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_091208
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_091208...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6511.03it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 2555 -> 5508 (effect=0.099, type=same_team_propagation)
+  CONFIRMED: 3840 -> 5508 (effect=0.098, type=same_team_propagation)
+  CONFIRMED: 5369 -> 5508 (effect=0.098, type=cross_team_adaptation)
+  CONFIRMED: 4450 -> 5508 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 3174 -> 5508 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 3090 -> 5508 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 3469 -> 5508 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 2762 -> 5508 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 4041 -> 5511 (effect=-0.058, type=same_team_propagation)
+  CONFIRMED: 5456 -> 5511 (effect=-0.058, type=cross_team_adaptation)
+  CONFIRMED: 4649 -> 5511 (effect=-0.057, type=same_team_propagation)
+  CONFIRMED: 3956 -> 5511 (effect=-0.057, type=cross_team_adaptation)
+  CONFIRMED: 4059 -> 5511 (effect=-0.056, type=cross_team_adaptation)
+  CONFIRMED: 3349 -> 5511 (effect=-0.056, type=cross_team_adaptation)
+  CONFIRMED: 4285 -> 5511 (effect=-0.056, type=same_team_propagation)
+  CONFIRMED: 4629 -> 5511 (effect=-0.056, type=same_team_propagation)
+  CONFIRMED: 2735 -> 5511 (effect=-0.056, type=same_team_propagation)
+  CONFIRMED: 3399 -> 5513 (effect=0.026, type=cross_team_adaptation)
+  CONFIRMED: 4805 -> 5513 (effect=0.026, type=cross_team_adaptation)
+  CONFIRMED: 5176 -> 5513 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 4438 -> 5515 (effect=-0.053, type=same_team_propagation)
+  CONFIRMED: 5057 -> 5515 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 5036 -> 5515 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 3599 -> 5515 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 4619 -> 5515 (effect=-0.052, type=same_team_propagation)
+  CONFIRMED: 3232 -> 5515 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 3856 -> 5515 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 4049 -> 5515 (effect=-0.052, type=same_team_propagation)
+  CONFIRMED: 3246 -> 5515 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 2592 -> 5515 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 3587 -> 5519 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 5493 -> 5519 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 4187 -> 5519 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 4503 -> 5519 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 3973 -> 5519 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 3460 -> 5519 (effect=0.038, type=same_team_propagation)
+  CONFIRMED: 2772 -> 5519 (effect=0.038, type=same_team_propagation)
+  CONFIRMED: 4894 -> 5519 (effect=0.038, type=same_team_propagation)
+  CONFIRMED: 5417 -> 5520 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 4542 -> 5520 (effect=0.057, type=same_team_propagation)
+  CONFIRMED: 2850 -> 5520 (effect=0.057, type=cross_team_adaptation)
+  CONFIRMED: 3312 -> 5520 (effect=0.056, type=same_team_propagation)
+  CONFIRMED: 2544 -> 5520 (effect=0.056, type=cross_team_adaptation)
+  CONFIRMED: 4405 -> 5520 (effect=0.056, type=cross_team_adaptation)
+  CONFIRMED: 3105 -> 5520 (effect=0.056, type=same_team_propagation)
+  CONFIRMED: 2668 -> 5520 (effect=0.056, type=same_team_propagation)
+  CONFIRMED: 2789 -> 5520 (effect=0.056, type=cross_team_adaptation)
+  CONFIRMED: 4762 -> 5520 (effect=0.055, type=same_team_propagation)
+  CONFIRMED: 4077 -> 5521 (effect=-0.044, type=cross_team_adaptation)
+  CONFIRMED: 3962 -> 5521 (effect=-0.044, type=cross_team_adaptation)
+  CONFIRMED: 4831 -> 5521 (effect=-0.044, type=cross_team_adaptation)
+  CONFIRMED: 5247 -> 5521 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 3399 -> 5521 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 3030 -> 5521 (effect=-0.043, type=cross_team_adaptation)
+  CONFIRMED: 4649 -> 5521 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 3375 -> 5521 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 5110 -> 5510 (effect=0.116, type=cross_team_adaptation)
+  CONFIRMED: 3655 -> 5510 (effect=0.116, type=same_team_propagation)
+  CONFIRMED: 2633 -> 5510 (effect=0.115, type=same_team_propagation)
+  CONFIRMED: 4983 -> 5510 (effect=0.114, type=same_team_propagation)
+  CONFIRMED: 2928 -> 5510 (effect=0.113, type=same_team_propagation)
+  CONFIRMED: 3692 -> 5516 (effect=0.081, type=cross_team_adaptation)
+  CONFIRMED: 3378 -> 5516 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 3863 -> 5516 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 5447 -> 5516 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 3698 -> 5516 (effect=0.076, type=same_team_propagation)
+  CONFIRMED: 4915 -> 5516 (effect=0.076, type=same_team_propagation)
+  CONFIRMED: 3354 -> 5516 (effect=0.076, type=same_team_propagation)
+  CONFIRMED: 2721 -> 5516 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 4834 -> 5516 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 3303 -> 5517 (effect=0.061, type=same_team_propagation)
+  CONFIRMED: 4688 -> 5517 (effect=0.060, type=same_team_propagation)
+  CONFIRMED: 3939 -> 5517 (effect=0.058, type=same_team_propagation)
+  CONFIRMED: 5334 -> 5517 (effect=0.058, type=same_team_propagation)
+  CONFIRMED: 5479 -> 5517 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 3785 -> 5517 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 3315 -> 5517 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 4527 -> 5517 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 4952 -> 5523 (effect=0.146, type=cross_team_adaptation)
+  CONFIRMED: 3179 -> 5523 (effect=0.131, type=cross_team_adaptation)
+  CONFIRMED: 3687 -> 5523 (effect=0.131, type=same_team_propagation)
+  CONFIRMED: 3938 -> 5523 (effect=0.128, type=same_team_propagation)
+  CONFIRMED: 3271 -> 5523 (effect=0.126, type=same_team_propagation)
+  CONFIRMED: 2872 -> 5523 (effect=0.126, type=same_team_propagation)
+  CONFIRMED: 2760 -> 5523 (effect=0.126, type=same_team_propagation)
+  CONFIRMED: 3478 -> 5523 (effect=0.125, type=same_team_propagation)
+  CONFIRMED: 3773 -> 5524 (effect=0.164, type=same_team_propagation)
+  CONFIRMED: 2566 -> 5524 (effect=0.161, type=cross_team_adaptation)
+  CONFIRMED: 3842 -> 5524 (effect=0.161, type=cross_team_adaptation)
+  CONFIRMED: 3308 -> 5524 (effect=0.160, type=same_team_propagation)
+  CONFIRMED: 3273 -> 5524 (effect=0.158, type=cross_team_adaptation)
+  CONFIRMED: 3235 -> 5524 (effect=0.157, type=cross_team_adaptation)
+  CONFIRMED: 2110 -> 5524 (effect=0.156, type=cross_team_adaptation)
+
+Episode avalon_20260805_091208 funnel: {'gate1_candidates_found': 104, 'rejected_no_exposure': 86, 'skipped_no_credit_data': 0, 'gate2_evaluated': 104, 'gate2_passed': 93, 'confirmed': 93}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 104
+  rejected_no_exposure: 86
+  skipped_no_credit_data: 0
+  gate2_evaluated: 104
+  gate2_passed: 93
+  confirmed: 93
+  done: Causal graph: avalon_20260805_091208
+
+[2/16] Causal graph for avalon_20260805_091654
+
+============================================================
+  Causal graph: avalon_20260805_091654
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_091654
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_091654...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1638.07it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 4969 -> 5525 (effect=-0.026, type=cross_team_adaptation)
+  CONFIRMED: 4230 -> 5525 (effect=-0.026, type=same_team_propagation)
+  CONFIRMED: 4181 -> 5525 (effect=-0.026, type=same_team_propagation)
+  CONFIRMED: 5032 -> 5525 (effect=-0.025, type=same_team_propagation)
+  CONFIRMED: 3533 -> 5526 (effect=-0.115, type=same_team_propagation)
+  CONFIRMED: 4569 -> 5526 (effect=-0.114, type=same_team_propagation)
+  CONFIRMED: 3911 -> 5526 (effect=-0.114, type=same_team_propagation)
+  CONFIRMED: 4929 -> 5526 (effect=-0.114, type=same_team_propagation)
+  CONFIRMED: 5414 -> 5526 (effect=-0.114, type=same_team_propagation)
+  CONFIRMED: 4014 -> 5526 (effect=-0.113, type=cross_team_adaptation)
+  CONFIRMED: 4837 -> 5526 (effect=-0.113, type=same_team_propagation)
+  CONFIRMED: 4626 -> 5526 (effect=-0.113, type=cross_team_adaptation)
+  CONFIRMED: 3719 -> 5527 (effect=0.155, type=cross_team_adaptation)
+  CONFIRMED: 3805 -> 5527 (effect=0.154, type=cross_team_adaptation)
+  CONFIRMED: 4406 -> 5527 (effect=0.153, type=cross_team_adaptation)
+  CONFIRMED: 2563 -> 5527 (effect=0.152, type=cross_team_adaptation)
+  CONFIRMED: 5057 -> 5527 (effect=0.152, type=cross_team_adaptation)
+  CONFIRMED: 3263 -> 5527 (effect=0.151, type=cross_team_adaptation)
+  CONFIRMED: 3796 -> 5527 (effect=0.151, type=cross_team_adaptation)
+  CONFIRMED: 4784 -> 5528 (effect=0.092, type=cross_team_adaptation)
+  CONFIRMED: 5109 -> 5528 (effect=0.087, type=same_team_propagation)
+  CONFIRMED: 4913 -> 5528 (effect=0.087, type=same_team_propagation)
+  CONFIRMED: 4627 -> 5528 (effect=0.087, type=cross_team_adaptation)
+  CONFIRMED: 4259 -> 5528 (effect=0.086, type=same_team_propagation)
+  CONFIRMED: 5122 -> 5528 (effect=0.086, type=same_team_propagation)
+  CONFIRMED: 3084 -> 5531 (effect=0.050, type=same_team_propagation)
+  CONFIRMED: 5525 -> 5531 (effect=0.050, type=intra_episode)
+  CONFIRMED: 3665 -> 5531 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 4230 -> 5531 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 4181 -> 5531 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 4627 -> 5531 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 3343 -> 5531 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 5400 -> 5532 (effect=0.073, type=cross_team_adaptation)
+  CONFIRMED: 2988 -> 5532 (effect=0.071, type=cross_team_adaptation)
+  CONFIRMED: 4213 -> 5532 (effect=0.071, type=same_team_propagation)
+  CONFIRMED: 5022 -> 5532 (effect=0.070, type=same_team_propagation)
+  CONFIRMED: 4196 -> 5532 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 4973 -> 5532 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 3012 -> 5532 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 4746 -> 5532 (effect=0.069, type=cross_team_adaptation)
+  CONFIRMED: 4430 -> 5533 (effect=0.080, type=cross_team_adaptation)
+  CONFIRMED: 4691 -> 5533 (effect=0.079, type=cross_team_adaptation)
+  CONFIRMED: 4714 -> 5533 (effect=0.078, type=cross_team_adaptation)
+  CONFIRMED: 4667 -> 5533 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 4330 -> 5533 (effect=0.078, type=cross_team_adaptation)
+  CONFIRMED: 3755 -> 5533 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 4713 -> 5534 (effect=0.099, type=same_team_propagation)
+  CONFIRMED: 5029 -> 5534 (effect=0.098, type=same_team_propagation)
+  CONFIRMED: 4579 -> 5534 (effect=0.098, type=cross_team_adaptation)
+  CONFIRMED: 4590 -> 5534 (effect=0.098, type=same_team_propagation)
+  CONFIRMED: 5021 -> 5534 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 3098 -> 5534 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 3812 -> 5535 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 5205 -> 5535 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 2788 -> 5539 (effect=-0.065, type=same_team_propagation)
+  CONFIRMED: 3311 -> 5539 (effect=-0.065, type=same_team_propagation)
+  CONFIRMED: 4613 -> 5539 (effect=-0.065, type=same_team_propagation)
+  CONFIRMED: 4238 -> 5539 (effect=-0.065, type=same_team_propagation)
+  CONFIRMED: 5241 -> 5539 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 2662 -> 5539 (effect=-0.064, type=same_team_propagation)
+  CONFIRMED: 4188 -> 5539 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 4505 -> 5539 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 5029 -> 5540 (effect=0.074, type=same_team_propagation)
+  CONFIRMED: 4579 -> 5540 (effect=0.073, type=cross_team_adaptation)
+  CONFIRMED: 4164 -> 5540 (effect=0.073, type=cross_team_adaptation)
+  CONFIRMED: 3616 -> 5540 (effect=0.073, type=cross_team_adaptation)
+  CONFIRMED: 3873 -> 5540 (effect=0.072, type=same_team_propagation)
+  CONFIRMED: 4830 -> 5540 (effect=0.072, type=same_team_propagation)
+  CONFIRMED: 3911 -> 5541 (effect=0.044, type=same_team_propagation)
+  CONFIRMED: 4537 -> 5541 (effect=0.044, type=cross_team_adaptation)
+  CONFIRMED: 4079 -> 5541 (effect=0.044, type=cross_team_adaptation)
+  CONFIRMED: 4626 -> 5541 (effect=0.044, type=cross_team_adaptation)
+  CONFIRMED: 3840 -> 5541 (effect=0.043, type=same_team_propagation)
+  CONFIRMED: 3902 -> 5541 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 2607 -> 5541 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 4837 -> 5541 (effect=0.043, type=same_team_propagation)
+  CONFIRMED: 4090 -> 5541 (effect=0.043, type=same_team_propagation)
+  CONFIRMED: 4014 -> 5541 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 4969 -> 5542 (effect=0.036, type=cross_team_adaptation)
+  CONFIRMED: 2849 -> 5542 (effect=0.035, type=cross_team_adaptation)
+  CONFIRMED: 5033 -> 5542 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 3246 -> 5542 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 3858 -> 5542 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 4110 -> 5542 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 4250 -> 5542 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 3387 -> 5542 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 5002 -> 5542 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 3689 -> 5530 (effect=0.180, type=cross_team_adaptation)
+  CONFIRMED: 3474 -> 5530 (effect=0.180, type=same_team_propagation)
+  CONFIRMED: 2877 -> 5530 (effect=0.180, type=same_team_propagation)
+  CONFIRMED: 4496 -> 5530 (effect=0.177, type=same_team_propagation)
+  CONFIRMED: 3108 -> 5530 (effect=0.177, type=same_team_propagation)
+  CONFIRMED: 4688 -> 5530 (effect=0.177, type=cross_team_adaptation)
+  CONFIRMED: 3250 -> 5530 (effect=0.176, type=same_team_propagation)
+  CONFIRMED: 4333 -> 5536 (effect=-0.065, type=same_team_propagation)
+  CONFIRMED: 5074 -> 5536 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 5201 -> 5536 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 4559 -> 5536 (effect=-0.062, type=cross_team_adaptation)
+  CONFIRMED: 4990 -> 5536 (effect=-0.062, type=cross_team_adaptation)
+  CONFIRMED: 4891 -> 5536 (effect=-0.062, type=cross_team_adaptation)
+  CONFIRMED: 4939 -> 5536 (effect=-0.062, type=same_team_propagation)
+  CONFIRMED: 5013 -> 5536 (effect=-0.062, type=same_team_propagation)
+  CONFIRMED: 4272 -> 5536 (effect=-0.062, type=same_team_propagation)
+  CONFIRMED: 5136 -> 5537 (effect=-0.067, type=same_team_propagation)
+  CONFIRMED: 4945 -> 5537 (effect=-0.066, type=cross_team_adaptation)
+  CONFIRMED: 3152 -> 5537 (effect=-0.063, type=cross_team_adaptation)
+  CONFIRMED: 5000 -> 5537 (effect=-0.062, type=same_team_propagation)
+  CONFIRMED: 3415 -> 5537 (effect=-0.062, type=same_team_propagation)
+  CONFIRMED: 4750 -> 5537 (effect=-0.061, type=cross_team_adaptation)
+  CONFIRMED: 4916 -> 5537 (effect=-0.061, type=cross_team_adaptation)
+  CONFIRMED: 3057 -> 5537 (effect=-0.061, type=same_team_propagation)
+  CONFIRMED: 5503 -> 5537 (effect=-0.061, type=same_team_propagation)
+  CONFIRMED: 3980 -> 5543 (effect=0.126, type=same_team_propagation)
+  CONFIRMED: 2884 -> 5543 (effect=0.126, type=same_team_propagation)
+  CONFIRMED: 2815 -> 5543 (effect=0.125, type=cross_team_adaptation)
+  CONFIRMED: 3574 -> 5543 (effect=0.124, type=same_team_propagation)
+  CONFIRMED: 3693 -> 5543 (effect=0.124, type=cross_team_adaptation)
+  CONFIRMED: 3881 -> 5543 (effect=0.124, type=same_team_propagation)
+  CONFIRMED: 4777 -> 5543 (effect=0.123, type=same_team_propagation)
+  CONFIRMED: 4511 -> 5543 (effect=0.123, type=cross_team_adaptation)
+  CONFIRMED: 4627 -> 5543 (effect=0.122, type=same_team_propagation)
+  CONFIRMED: 3159 -> 5544 (effect=0.170, type=same_team_propagation)
+  CONFIRMED: 4502 -> 5544 (effect=0.166, type=same_team_propagation)
+  CONFIRMED: 4465 -> 5544 (effect=0.164, type=cross_team_adaptation)
+  CONFIRMED: 3186 -> 5544 (effect=0.163, type=same_team_propagation)
+  CONFIRMED: 2559 -> 5544 (effect=0.161, type=same_team_propagation)
+  CONFIRMED: 2547 -> 5544 (effect=0.161, type=cross_team_adaptation)
+  CONFIRMED: 3071 -> 5544 (effect=0.160, type=same_team_propagation)
+  CONFIRMED: 4990 -> 5544 (effect=0.158, type=cross_team_adaptation)
+
+Episode avalon_20260805_091654 funnel: {'gate1_candidates_found': 150, 'rejected_no_exposure': 24, 'skipped_no_credit_data': 0, 'gate2_evaluated': 150, 'gate2_passed': 129, 'confirmed': 129}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 150
+  rejected_no_exposure: 24
+  skipped_no_credit_data: 0
+  gate2_evaluated: 150
+  gate2_passed: 129
+  confirmed: 129
+  done: Causal graph: avalon_20260805_091654
+
+[3/16] Causal graph for avalon_20260805_092540
+
+============================================================
+  Causal graph: avalon_20260805_092540
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_092540
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_092540...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3052.58it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 3537 -> 5546 (effect=-0.039, type=cross_team_adaptation)
+  CONFIRMED: 5099 -> 5546 (effect=-0.036, type=cross_team_adaptation)
+  CONFIRMED: 4310 -> 5546 (effect=-0.036, type=same_team_propagation)
+  CONFIRMED: 4037 -> 5547 (effect=-0.026, type=cross_team_adaptation)
+  CONFIRMED: 2822 -> 5547 (effect=-0.026, type=cross_team_adaptation)
+  CONFIRMED: 4617 -> 5547 (effect=-0.026, type=cross_team_adaptation)
+  CONFIRMED: 4969 -> 5548 (effect=0.098, type=same_team_propagation)
+  CONFIRMED: 3220 -> 5548 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 2988 -> 5548 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 3451 -> 5548 (effect=0.096, type=same_team_propagation)
+  CONFIRMED: 4863 -> 5548 (effect=0.095, type=cross_team_adaptation)
+  CONFIRMED: 5542 -> 5548 (effect=0.094, type=cross_team_adaptation)
+  CONFIRMED: 4967 -> 5548 (effect=0.094, type=same_team_propagation)
+  CONFIRMED: 4591 -> 5548 (effect=0.094, type=cross_team_adaptation)
+  CONFIRMED: 5546 -> 5549 (effect=0.100, type=intra_episode)
+  CONFIRMED: 3858 -> 5549 (effect=0.100, type=same_team_propagation)
+  CONFIRMED: 3068 -> 5551 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 5277 -> 5551 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 4230 -> 5557 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 4181 -> 5557 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 3084 -> 5557 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 5531 -> 5557 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 5525 -> 5557 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 5075 -> 5557 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 4326 -> 5557 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 4969 -> 5557 (effect=0.032, type=cross_team_adaptation)
+  CONFIRMED: 3343 -> 5557 (effect=0.032, type=cross_team_adaptation)
+  CONFIRMED: 5500 -> 5558 (effect=0.032, type=cross_team_adaptation)
+  CONFIRMED: 2879 -> 5558 (effect=0.031, type=same_team_propagation)
+  CONFIRMED: 3338 -> 5558 (effect=0.031, type=cross_team_adaptation)
+  CONFIRMED: 3188 -> 5558 (effect=0.031, type=same_team_propagation)
+  CONFIRMED: 4600 -> 5558 (effect=0.031, type=cross_team_adaptation)
+  CONFIRMED: 5307 -> 5558 (effect=0.031, type=cross_team_adaptation)
+  CONFIRMED: 5022 -> 5558 (effect=0.031, type=same_team_propagation)
+  CONFIRMED: 3255 -> 5560 (effect=0.037, type=same_team_propagation)
+  CONFIRMED: 4110 -> 5560 (effect=0.037, type=same_team_propagation)
+  CONFIRMED: 4969 -> 5560 (effect=0.037, type=same_team_propagation)
+  CONFIRMED: 2867 -> 5560 (effect=0.036, type=same_team_propagation)
+  CONFIRMED: 2988 -> 5560 (effect=0.036, type=cross_team_adaptation)
+  CONFIRMED: 4863 -> 5560 (effect=0.036, type=cross_team_adaptation)
+  CONFIRMED: 5033 -> 5560 (effect=0.036, type=same_team_propagation)
+  CONFIRMED: 4201 -> 5560 (effect=0.036, type=same_team_propagation)
+  CONFIRMED: 2794 -> 5565 (effect=0.065, type=cross_team_adaptation)
+  CONFIRMED: 5564 -> 5565 (effect=0.064, type=intra_episode)
+  CONFIRMED: 4474 -> 5565 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 4916 -> 5565 (effect=0.063, type=cross_team_adaptation)
+  CONFIRMED: 4722 -> 5565 (effect=0.062, type=cross_team_adaptation)
+  CONFIRMED: 2867 -> 5565 (effect=0.062, type=cross_team_adaptation)
+  CONFIRMED: 4747 -> 5565 (effect=0.062, type=cross_team_adaptation)
+  CONFIRMED: 2988 -> 5565 (effect=0.062, type=same_team_propagation)
+  CONFIRMED: 4317 -> 5565 (effect=0.062, type=cross_team_adaptation)
+  CONFIRMED: 3300 -> 5566 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 3808 -> 5566 (effect=0.068, type=cross_team_adaptation)
+  CONFIRMED: 3036 -> 5566 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 4417 -> 5566 (effect=0.065, type=same_team_propagation)
+  CONFIRMED: 4440 -> 5550 (effect=0.054, type=cross_team_adaptation)
+  CONFIRMED: 4971 -> 5550 (effect=0.052, type=same_team_propagation)
+  CONFIRMED: 4452 -> 5550 (effect=0.052, type=same_team_propagation)
+  CONFIRMED: 3252 -> 5550 (effect=0.052, type=cross_team_adaptation)
+  CONFIRMED: 4230 -> 5550 (effect=0.051, type=same_team_propagation)
+  CONFIRMED: 5104 -> 5550 (effect=0.051, type=cross_team_adaptation)
+  CONFIRMED: 5075 -> 5550 (effect=0.050, type=cross_team_adaptation)
+  CONFIRMED: 4254 -> 5550 (effect=0.050, type=cross_team_adaptation)
+  CONFIRMED: 2947 -> 5556 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 5316 -> 5556 (effect=0.065, type=same_team_propagation)
+  CONFIRMED: 4533 -> 5556 (effect=0.064, type=cross_team_adaptation)
+  CONFIRMED: 4809 -> 5556 (effect=0.063, type=same_team_propagation)
+  CONFIRMED: 2871 -> 5556 (effect=0.063, type=same_team_propagation)
+  CONFIRMED: 4750 -> 5556 (effect=0.063, type=same_team_propagation)
+  CONFIRMED: 5497 -> 5556 (effect=0.062, type=same_team_propagation)
+  CONFIRMED: 4785 -> 5556 (effect=0.062, type=cross_team_adaptation)
+  CONFIRMED: 3958 -> 5556 (effect=0.062, type=same_team_propagation)
+  CONFIRMED: 3930 -> 5562 (effect=-0.091, type=same_team_propagation)
+  CONFIRMED: 3773 -> 5562 (effect=-0.088, type=same_team_propagation)
+  CONFIRMED: 5365 -> 5562 (effect=-0.085, type=same_team_propagation)
+  CONFIRMED: 2609 -> 5562 (effect=-0.083, type=cross_team_adaptation)
+  CONFIRMED: 1449 -> 5562 (effect=-0.082, type=cross_team_adaptation)
+  CONFIRMED: 1078 -> 5562 (effect=-0.081, type=cross_team_adaptation)
+  CONFIRMED: 1448 -> 5562 (effect=-0.081, type=cross_team_adaptation)
+  CONFIRMED: 1208 -> 5562 (effect=-0.081, type=cross_team_adaptation)
+  CONFIRMED: 4247 -> 5568 (effect=0.218, type=cross_team_adaptation)
+  CONFIRMED: 5074 -> 5568 (effect=0.213, type=cross_team_adaptation)
+  CONFIRMED: 4254 -> 5568 (effect=0.212, type=same_team_propagation)
+  CONFIRMED: 4559 -> 5568 (effect=0.211, type=cross_team_adaptation)
+  CONFIRMED: 4272 -> 5568 (effect=0.211, type=same_team_propagation)
+  CONFIRMED: 5104 -> 5568 (effect=0.208, type=same_team_propagation)
+  CONFIRMED: 3316 -> 5568 (effect=0.206, type=same_team_propagation)
+  CONFIRMED: 3077 -> 5568 (effect=0.206, type=same_team_propagation)
+  CONFIRMED: 4297 -> 5568 (effect=0.203, type=same_team_propagation)
+  CONFIRMED: 4939 -> 5568 (effect=0.202, type=same_team_propagation)
+
+Episode avalon_20260805_092540 funnel: {'gate1_candidates_found': 160, 'rejected_no_exposure': 56, 'skipped_no_credit_data': 0, 'gate2_evaluated': 160, 'gate2_passed': 90, 'confirmed': 90}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 160
+  rejected_no_exposure: 56
+  skipped_no_credit_data: 0
+  gate2_evaluated: 160
+  gate2_passed: 90
+  confirmed: 90
+  done: Causal graph: avalon_20260805_092540
+
+[4/16] Causal graph for avalon_20260805_093448
+
+============================================================
+  Causal graph: avalon_20260805_093448
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_093448
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_093448...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7007.63it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 3199 -> 5569 (effect=-0.076, type=same_team_propagation)
+  CONFIRMED: 3216 -> 5569 (effect=-0.074, type=same_team_propagation)
+  CONFIRMED: 4725 -> 5569 (effect=-0.073, type=cross_team_adaptation)
+  CONFIRMED: 3947 -> 5569 (effect=-0.072, type=same_team_propagation)
+  CONFIRMED: 3123 -> 5569 (effect=-0.072, type=cross_team_adaptation)
+  CONFIRMED: 3747 -> 5569 (effect=-0.070, type=cross_team_adaptation)
+  CONFIRMED: 3805 -> 5572 (effect=0.076, type=cross_team_adaptation)
+  CONFIRMED: 3719 -> 5572 (effect=0.076, type=cross_team_adaptation)
+  CONFIRMED: 3718 -> 5572 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 3263 -> 5572 (effect=0.075, type=cross_team_adaptation)
+  CONFIRMED: 3273 -> 5572 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 5057 -> 5572 (effect=0.075, type=cross_team_adaptation)
+  CONFIRMED: 5527 -> 5572 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 3599 -> 5572 (effect=0.075, type=cross_team_adaptation)
+  CONFIRMED: 4462 -> 5572 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 2563 -> 5572 (effect=0.074, type=cross_team_adaptation)
+  CONFIRMED: 5375 -> 5573 (effect=0.086, type=cross_team_adaptation)
+  CONFIRMED: 3437 -> 5573 (effect=0.084, type=cross_team_adaptation)
+  CONFIRMED: 4912 -> 5573 (effect=0.083, type=same_team_propagation)
+  CONFIRMED: 2594 -> 5573 (effect=0.083, type=cross_team_adaptation)
+  CONFIRMED: 5571 -> 5573 (effect=0.083, type=intra_episode)
+  CONFIRMED: 2638 -> 5573 (effect=0.083, type=same_team_propagation)
+  CONFIRMED: 4526 -> 5573 (effect=0.082, type=cross_team_adaptation)
+  CONFIRMED: 3554 -> 5573 (effect=0.082, type=cross_team_adaptation)
+  CONFIRMED: 3216 -> 5576 (effect=0.028, type=same_team_propagation)
+  CONFIRMED: 5252 -> 5576 (effect=0.027, type=same_team_propagation)
+  CONFIRMED: 3028 -> 5576 (effect=0.027, type=same_team_propagation)
+  CONFIRMED: 2561 -> 5576 (effect=0.027, type=cross_team_adaptation)
+  CONFIRMED: 3423 -> 5576 (effect=0.027, type=same_team_propagation)
+  CONFIRMED: 4725 -> 5576 (effect=0.027, type=cross_team_adaptation)
+  CONFIRMED: 3833 -> 5576 (effect=0.027, type=same_team_propagation)
+  CONFIRMED: 4583 -> 5578 (effect=0.060, type=cross_team_adaptation)
+  CONFIRMED: 3835 -> 5578 (effect=0.060, type=same_team_propagation)
+  CONFIRMED: 4325 -> 5578 (effect=0.060, type=cross_team_adaptation)
+  CONFIRMED: 5385 -> 5578 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 3812 -> 5578 (effect=0.059, type=cross_team_adaptation)
+  CONFIRMED: 5350 -> 5578 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 5392 -> 5578 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 4009 -> 5578 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 3085 -> 5578 (effect=0.059, type=cross_team_adaptation)
+  CONFIRMED: 4905 -> 5578 (effect=0.058, type=same_team_propagation)
+  CONFIRMED: 4831 -> 5579 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 4134 -> 5579 (effect=0.064, type=cross_team_adaptation)
+  CONFIRMED: 5302 -> 5579 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 4394 -> 5579 (effect=0.063, type=cross_team_adaptation)
+  CONFIRMED: 5178 -> 5579 (effect=0.063, type=cross_team_adaptation)
+  CONFIRMED: 3286 -> 5579 (effect=0.063, type=same_team_propagation)
+  CONFIRMED: 3623 -> 5579 (effect=0.063, type=same_team_propagation)
+  CONFIRMED: 4973 -> 5580 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 2988 -> 5580 (effect=0.067, type=cross_team_adaptation)
+  CONFIRMED: 4976 -> 5580 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 4213 -> 5580 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 2750 -> 5580 (effect=0.065, type=same_team_propagation)
+  CONFIRMED: 2968 -> 5580 (effect=0.065, type=cross_team_adaptation)
+  CONFIRMED: 4436 -> 5580 (effect=0.065, type=cross_team_adaptation)
+  CONFIRMED: 2861 -> 5580 (effect=0.065, type=same_team_propagation)
+  CONFIRMED: 4470 -> 5580 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 3367 -> 5582 (effect=0.035, type=cross_team_adaptation)
+  CONFIRMED: 2761 -> 5582 (effect=0.035, type=cross_team_adaptation)
+  CONFIRMED: 3372 -> 5582 (effect=0.035, type=cross_team_adaptation)
+  CONFIRMED: 3434 -> 5582 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 2853 -> 5582 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 3636 -> 5582 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 3378 -> 5582 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 2710 -> 5582 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 3593 -> 5582 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 4752 -> 5582 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 4747 -> 5583 (effect=0.041, type=same_team_propagation)
+  CONFIRMED: 5564 -> 5583 (effect=0.040, type=same_team_propagation)
+  CONFIRMED: 4196 -> 5583 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 2794 -> 5583 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 4474 -> 5583 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 4424 -> 5583 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 4864 -> 5583 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 5565 -> 5583 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 2867 -> 5583 (effect=0.038, type=same_team_propagation)
+  CONFIRMED: 4746 -> 5583 (effect=0.038, type=cross_team_adaptation)
+  CONFIRMED: 4193 -> 5584 (effect=0.040, type=cross_team_adaptation)
+  CONFIRMED: 5425 -> 5584 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 4917 -> 5584 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 4145 -> 5584 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 2795 -> 5584 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 5016 -> 5584 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 4136 -> 5584 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 4418 -> 5584 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 4942 -> 5584 (effect=0.038, type=cross_team_adaptation)
+  CONFIRMED: 4735 -> 5584 (effect=0.038, type=cross_team_adaptation)
+  CONFIRMED: 2889 -> 5585 (effect=0.071, type=same_team_propagation)
+  CONFIRMED: 4602 -> 5585 (effect=0.071, type=same_team_propagation)
+  CONFIRMED: 3910 -> 5586 (effect=0.105, type=cross_team_adaptation)
+  CONFIRMED: 4566 -> 5586 (effect=0.103, type=cross_team_adaptation)
+  CONFIRMED: 3399 -> 5586 (effect=0.102, type=cross_team_adaptation)
+  CONFIRMED: 3398 -> 5586 (effect=0.101, type=same_team_propagation)
+  CONFIRMED: 4537 -> 5586 (effect=0.101, type=cross_team_adaptation)
+  CONFIRMED: 4932 -> 5586 (effect=0.101, type=cross_team_adaptation)
+  CONFIRMED: 4341 -> 5588 (effect=-0.079, type=same_team_propagation)
+  CONFIRMED: 3808 -> 5588 (effect=-0.077, type=same_team_propagation)
+  CONFIRMED: 2592 -> 5588 (effect=-0.077, type=same_team_propagation)
+  CONFIRMED: 3674 -> 5588 (effect=-0.077, type=cross_team_adaptation)
+  CONFIRMED: 3448 -> 5588 (effect=-0.076, type=cross_team_adaptation)
+  CONFIRMED: 4892 -> 5588 (effect=-0.076, type=same_team_propagation)
+  CONFIRMED: 3486 -> 5588 (effect=-0.076, type=cross_team_adaptation)
+  CONFIRMED: 3965 -> 5588 (effect=-0.076, type=same_team_propagation)
+  CONFIRMED: 4838 -> 5589 (effect=0.068, type=same_team_propagation)
+  CONFIRMED: 3804 -> 5589 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 4621 -> 5589 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 4187 -> 5589 (effect=0.065, type=cross_team_adaptation)
+  CONFIRMED: 3056 -> 5589 (effect=0.065, type=cross_team_adaptation)
+  CONFIRMED: 4782 -> 5589 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 4643 -> 5589 (effect=0.064, type=cross_team_adaptation)
+  CONFIRMED: 4151 -> 5590 (effect=0.051, type=same_team_propagation)
+  CONFIRMED: 2956 -> 5590 (effect=0.051, type=same_team_propagation)
+  CONFIRMED: 3050 -> 5590 (effect=0.051, type=same_team_propagation)
+  CONFIRMED: 4083 -> 5590 (effect=0.051, type=same_team_propagation)
+  CONFIRMED: 5337 -> 5590 (effect=0.050, type=cross_team_adaptation)
+  CONFIRMED: 3312 -> 5590 (effect=0.050, type=cross_team_adaptation)
+  CONFIRMED: 3338 -> 5595 (effect=0.104, type=cross_team_adaptation)
+  CONFIRMED: 5022 -> 5595 (effect=0.104, type=same_team_propagation)
+  CONFIRMED: 5558 -> 5595 (effect=0.104, type=same_team_propagation)
+  CONFIRMED: 5103 -> 5595 (effect=0.103, type=same_team_propagation)
+  CONFIRMED: 3188 -> 5595 (effect=0.102, type=same_team_propagation)
+  CONFIRMED: 2879 -> 5595 (effect=0.102, type=same_team_propagation)
+  CONFIRMED: 3340 -> 5595 (effect=0.101, type=same_team_propagation)
+  CONFIRMED: 2790 -> 5595 (effect=0.101, type=same_team_propagation)
+  CONFIRMED: 2667 -> 5595 (effect=0.101, type=same_team_propagation)
+  CONFIRMED: 5396 -> 5595 (effect=0.101, type=same_team_propagation)
+  CONFIRMED: 2843 -> 5597 (effect=0.029, type=same_team_propagation)
+  CONFIRMED: 4134 -> 5597 (effect=0.029, type=cross_team_adaptation)
+  CONFIRMED: 3162 -> 5598 (effect=0.095, type=same_team_propagation)
+  CONFIRMED: 2714 -> 5598 (effect=0.095, type=same_team_propagation)
+  CONFIRMED: 5141 -> 5598 (effect=0.094, type=same_team_propagation)
+  CONFIRMED: 4796 -> 5598 (effect=0.094, type=cross_team_adaptation)
+  CONFIRMED: 3232 -> 5598 (effect=0.094, type=cross_team_adaptation)
+  CONFIRMED: 2581 -> 5598 (effect=0.093, type=same_team_propagation)
+  CONFIRMED: 5547 -> 5598 (effect=0.093, type=cross_team_adaptation)
+  CONFIRMED: 3572 -> 5598 (effect=0.093, type=cross_team_adaptation)
+  CONFIRMED: 3163 -> 5598 (effect=0.093, type=cross_team_adaptation)
+  CONFIRMED: 3256 -> 5598 (effect=0.092, type=cross_team_adaptation)
+  CONFIRMED: 3459 -> 5574 (effect=0.145, type=cross_team_adaptation)
+  CONFIRMED: 3336 -> 5574 (effect=0.142, type=cross_team_adaptation)
+  CONFIRMED: 5359 -> 5574 (effect=0.142, type=cross_team_adaptation)
+  CONFIRMED: 3905 -> 5574 (effect=0.139, type=cross_team_adaptation)
+  CONFIRMED: 2615 -> 5574 (effect=0.139, type=same_team_propagation)
+  CONFIRMED: 2890 -> 5574 (effect=0.138, type=cross_team_adaptation)
+  CONFIRMED: 5476 -> 5574 (effect=0.137, type=same_team_propagation)
+  CONFIRMED: 5391 -> 5574 (effect=0.136, type=cross_team_adaptation)
+  CONFIRMED: 2819 -> 5575 (effect=0.168, type=cross_team_adaptation)
+  CONFIRMED: 5365 -> 5575 (effect=0.167, type=cross_team_adaptation)
+  CONFIRMED: 4915 -> 5575 (effect=0.167, type=same_team_propagation)
+  CONFIRMED: 3607 -> 5575 (effect=0.166, type=same_team_propagation)
+  CONFIRMED: 4109 -> 5575 (effect=0.165, type=cross_team_adaptation)
+  CONFIRMED: 5516 -> 5575 (effect=0.165, type=same_team_propagation)
+  CONFIRMED: 4458 -> 5575 (effect=0.164, type=same_team_propagation)
+  CONFIRMED: 3385 -> 5575 (effect=0.164, type=same_team_propagation)
+  CONFIRMED: 4559 -> 5581 (effect=-0.218, type=cross_team_adaptation)
+  CONFIRMED: 4561 -> 5581 (effect=-0.216, type=same_team_propagation)
+  CONFIRMED: 4018 -> 5581 (effect=-0.216, type=cross_team_adaptation)
+  CONFIRMED: 3316 -> 5581 (effect=-0.215, type=same_team_propagation)
+  CONFIRMED: 4939 -> 5581 (effect=-0.211, type=same_team_propagation)
+  CONFIRMED: 3827 -> 5581 (effect=-0.210, type=same_team_propagation)
+  CONFIRMED: 5503 -> 5581 (effect=-0.209, type=cross_team_adaptation)
+  CONFIRMED: 4634 -> 5581 (effect=-0.209, type=same_team_propagation)
+  CONFIRMED: 5019 -> 5581 (effect=-0.206, type=cross_team_adaptation)
+  CONFIRMED: 3387 -> 5581 (effect=-0.206, type=cross_team_adaptation)
+  CONFIRMED: 4038 -> 5587 (effect=0.072, type=cross_team_adaptation)
+  CONFIRMED: 5340 -> 5593 (effect=0.159, type=same_team_propagation)
+  CONFIRMED: 5180 -> 5593 (effect=0.158, type=same_team_propagation)
+  CONFIRMED: 4192 -> 5593 (effect=0.157, type=cross_team_adaptation)
+  CONFIRMED: 4151 -> 5593 (effect=0.157, type=cross_team_adaptation)
+  CONFIRMED: 2877 -> 5593 (effect=0.156, type=same_team_propagation)
+  CONFIRMED: 4142 -> 5599 (effect=0.191, type=cross_team_adaptation)
+  CONFIRMED: 4828 -> 5599 (effect=0.185, type=cross_team_adaptation)
+  CONFIRMED: 3250 -> 5599 (effect=0.184, type=cross_team_adaptation)
+  CONFIRMED: 3234 -> 5599 (effect=0.183, type=cross_team_adaptation)
+  CONFIRMED: 2829 -> 5599 (effect=0.182, type=cross_team_adaptation)
+  CONFIRMED: 5346 -> 5599 (effect=0.181, type=cross_team_adaptation)
+  CONFIRMED: 4688 -> 5599 (effect=0.179, type=same_team_propagation)
+  CONFIRMED: 2804 -> 5599 (effect=0.178, type=same_team_propagation)
+  CONFIRMED: 2947 -> 5599 (effect=0.177, type=cross_team_adaptation)
+
+Episode avalon_20260805_093448 funnel: {'gate1_candidates_found': 208, 'rejected_no_exposure': 74, 'skipped_no_credit_data': 0, 'gate2_evaluated': 208, 'gate2_passed': 179, 'confirmed': 179}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 208
+  rejected_no_exposure: 74
+  skipped_no_credit_data: 0
+  gate2_evaluated: 208
+  gate2_passed: 179
+  confirmed: 179
+  done: Causal graph: avalon_20260805_093448
+
+[5/16] Causal graph for avalon_20260805_094914
+
+============================================================
+  Causal graph: avalon_20260805_094914
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_094914
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_094914...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5843.23it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 5588 -> 5600 (effect=-0.120, type=same_team_propagation)
+  CONFIRMED: 4341 -> 5600 (effect=-0.119, type=same_team_propagation)
+  CONFIRMED: 2592 -> 5600 (effect=-0.118, type=same_team_propagation)
+  CONFIRMED: 3304 -> 5600 (effect=-0.118, type=same_team_propagation)
+  CONFIRMED: 5213 -> 5600 (effect=-0.117, type=same_team_propagation)
+  CONFIRMED: 2909 -> 5600 (effect=-0.116, type=same_team_propagation)
+  CONFIRMED: 3448 -> 5600 (effect=-0.116, type=cross_team_adaptation)
+  CONFIRMED: 4892 -> 5600 (effect=-0.116, type=same_team_propagation)
+  CONFIRMED: 2956 -> 5601 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 3050 -> 5601 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 5590 -> 5601 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 4083 -> 5601 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 5520 -> 5601 (effect=0.031, type=cross_team_adaptation)
+  CONFIRMED: 5406 -> 5601 (effect=0.031, type=cross_team_adaptation)
+  CONFIRMED: 3832 -> 5601 (effect=0.031, type=same_team_propagation)
+  CONFIRMED: 5591 -> 5602 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 4331 -> 5602 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 3311 -> 5604 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 3267 -> 5604 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 3199 -> 5607 (effect=-0.047, type=same_team_propagation)
+  CONFIRMED: 5474 -> 5607 (effect=-0.046, type=same_team_propagation)
+  CONFIRMED: 3435 -> 5607 (effect=-0.045, type=same_team_propagation)
+  CONFIRMED: 5569 -> 5607 (effect=-0.045, type=same_team_propagation)
+  CONFIRMED: 3022 -> 5607 (effect=-0.044, type=same_team_propagation)
+  CONFIRMED: 3101 -> 5607 (effect=-0.044, type=same_team_propagation)
+  CONFIRMED: 5395 -> 5609 (effect=-0.038, type=same_team_propagation)
+  CONFIRMED: 5472 -> 5610 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 3859 -> 5611 (effect=0.050, type=same_team_propagation)
+  CONFIRMED: 3139 -> 5611 (effect=0.049, type=cross_team_adaptation)
+  CONFIRMED: 4694 -> 5611 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 4648 -> 5611 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 3039 -> 5611 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 2983 -> 5611 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 4460 -> 5611 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 3641 -> 5611 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 2819 -> 5611 (effect=0.047, type=cross_team_adaptation)
+  CONFIRMED: 4944 -> 5613 (effect=-0.064, type=same_team_propagation)
+  CONFIRMED: 4204 -> 5613 (effect=-0.064, type=same_team_propagation)
+  CONFIRMED: 4780 -> 5613 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 4923 -> 5613 (effect=-0.063, type=cross_team_adaptation)
+  CONFIRMED: 3052 -> 5613 (effect=-0.063, type=cross_team_adaptation)
+  CONFIRMED: 4810 -> 5613 (effect=-0.063, type=cross_team_adaptation)
+  CONFIRMED: 2682 -> 5613 (effect=-0.063, type=same_team_propagation)
+  CONFIRMED: 4617 -> 5613 (effect=-0.063, type=cross_team_adaptation)
+  CONFIRMED: 5146 -> 5613 (effect=-0.063, type=same_team_propagation)
+  CONFIRMED: 4600 -> 5614 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 5558 -> 5614 (effect=-0.042, type=cross_team_adaptation)
+  CONFIRMED: 2904 -> 5614 (effect=-0.042, type=same_team_propagation)
+  CONFIRMED: 3191 -> 5614 (effect=-0.042, type=cross_team_adaptation)
+  CONFIRMED: 3730 -> 5614 (effect=-0.042, type=cross_team_adaptation)
+  CONFIRMED: 2794 -> 5614 (effect=-0.042, type=cross_team_adaptation)
+  CONFIRMED: 3960 -> 5614 (effect=-0.041, type=cross_team_adaptation)
+  CONFIRMED: 3960 -> 5615 (effect=0.129, type=same_team_propagation)
+  CONFIRMED: 2730 -> 5616 (effect=0.133, type=cross_team_adaptation)
+  CONFIRMED: 3960 -> 5616 (effect=0.133, type=same_team_propagation)
+  CONFIRMED: 3399 -> 5616 (effect=0.133, type=cross_team_adaptation)
+  CONFIRMED: 3987 -> 5616 (effect=0.133, type=cross_team_adaptation)
+  CONFIRMED: 2806 -> 5616 (effect=0.132, type=cross_team_adaptation)
+  CONFIRMED: 2885 -> 5617 (effect=0.135, type=cross_team_adaptation)
+  CONFIRMED: 3475 -> 5617 (effect=0.132, type=cross_team_adaptation)
+  CONFIRMED: 3616 -> 5617 (effect=0.132, type=cross_team_adaptation)
+  CONFIRMED: 3176 -> 5617 (effect=0.131, type=cross_team_adaptation)
+  CONFIRMED: 4590 -> 5617 (effect=0.131, type=same_team_propagation)
+  CONFIRMED: 5167 -> 5617 (effect=0.131, type=same_team_propagation)
+  CONFIRMED: 3732 -> 5617 (effect=0.131, type=cross_team_adaptation)
+  CONFIRMED: 3873 -> 5617 (effect=0.131, type=same_team_propagation)
+  CONFIRMED: 3471 -> 5605 (effect=0.159, type=cross_team_adaptation)
+  CONFIRMED: 4779 -> 5605 (effect=0.151, type=same_team_propagation)
+  CONFIRMED: 3728 -> 5606 (effect=0.127, type=cross_team_adaptation)
+  CONFIRMED: 3248 -> 5606 (effect=0.126, type=cross_team_adaptation)
+  CONFIRMED: 5055 -> 5606 (effect=0.124, type=cross_team_adaptation)
+  CONFIRMED: 2645 -> 5606 (effect=0.124, type=same_team_propagation)
+  CONFIRMED: 3247 -> 5606 (effect=0.123, type=same_team_propagation)
+  CONFIRMED: 3440 -> 5606 (effect=0.122, type=cross_team_adaptation)
+  CONFIRMED: 3436 -> 5606 (effect=0.122, type=same_team_propagation)
+  CONFIRMED: 4356 -> 5606 (effect=0.121, type=same_team_propagation)
+  CONFIRMED: 4654 -> 5612 (effect=-0.142, type=cross_team_adaptation)
+  CONFIRMED: 2653 -> 5612 (effect=-0.137, type=cross_team_adaptation)
+  CONFIRMED: 4785 -> 5612 (effect=-0.137, type=same_team_propagation)
+  CONFIRMED: 3958 -> 5612 (effect=-0.135, type=cross_team_adaptation)
+  CONFIRMED: 5497 -> 5612 (effect=-0.134, type=cross_team_adaptation)
+  CONFIRMED: 2883 -> 5612 (effect=-0.133, type=same_team_propagation)
+  CONFIRMED: 4696 -> 5612 (effect=-0.132, type=cross_team_adaptation)
+  CONFIRMED: 4123 -> 5612 (effect=-0.132, type=cross_team_adaptation)
+  CONFIRMED: 4664 -> 5612 (effect=-0.132, type=cross_team_adaptation)
+  CONFIRMED: 5352 -> 5612 (effect=-0.131, type=cross_team_adaptation)
+
+Episode avalon_20260805_094914 funnel: {'gate1_candidates_found': 102, 'rejected_no_exposure': 69, 'skipped_no_credit_data': 0, 'gate2_evaluated': 102, 'gate2_passed': 86, 'confirmed': 86}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 102
+  rejected_no_exposure: 69
+  skipped_no_credit_data: 0
+  gate2_evaluated: 102
+  gate2_passed: 86
+  confirmed: 86
+  done: Causal graph: avalon_20260805_094914
+
+[6/16] Causal graph for avalon_20260805_100035
+
+============================================================
+  Causal graph: avalon_20260805_100035
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_100035
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_100035...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4075.98it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 3375 -> 5621 (effect=-0.109, type=same_team_propagation)
+  CONFIRMED: 5534 -> 5621 (effect=-0.108, type=cross_team_adaptation)
+  CONFIRMED: 3744 -> 5621 (effect=-0.107, type=same_team_propagation)
+  CONFIRMED: 3987 -> 5621 (effect=-0.107, type=same_team_propagation)
+  CONFIRMED: 5021 -> 5621 (effect=-0.106, type=cross_team_adaptation)
+  CONFIRMED: 2918 -> 5621 (effect=-0.106, type=same_team_propagation)
+  CONFIRMED: 5029 -> 5621 (effect=-0.105, type=cross_team_adaptation)
+  CONFIRMED: 4656 -> 5622 (effect=0.073, type=same_team_propagation)
+  CONFIRMED: 3960 -> 5622 (effect=0.073, type=same_team_propagation)
+  CONFIRMED: 5112 -> 5622 (effect=0.073, type=same_team_propagation)
+  CONFIRMED: 5426 -> 5623 (effect=-0.155, type=same_team_propagation)
+  CONFIRMED: 5095 -> 5623 (effect=-0.154, type=same_team_propagation)
+  CONFIRMED: 3986 -> 5623 (effect=-0.150, type=same_team_propagation)
+  CONFIRMED: 3438 -> 5623 (effect=-0.149, type=cross_team_adaptation)
+  CONFIRMED: 3311 -> 5623 (effect=-0.148, type=cross_team_adaptation)
+  CONFIRMED: 3915 -> 5623 (effect=-0.147, type=cross_team_adaptation)
+  CONFIRMED: 4489 -> 5623 (effect=-0.147, type=cross_team_adaptation)
+  CONFIRMED: 4849 -> 5623 (effect=-0.147, type=cross_team_adaptation)
+  CONFIRMED: 3007 -> 5623 (effect=-0.147, type=cross_team_adaptation)
+  CONFIRMED: 2937 -> 5623 (effect=-0.147, type=cross_team_adaptation)
+  CONFIRMED: 3753 -> 5625 (effect=0.045, type=same_team_propagation)
+  CONFIRMED: 4922 -> 5625 (effect=0.044, type=same_team_propagation)
+  CONFIRMED: 3748 -> 5625 (effect=0.044, type=same_team_propagation)
+  CONFIRMED: 2984 -> 5625 (effect=0.044, type=same_team_propagation)
+  CONFIRMED: 2787 -> 5625 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 2799 -> 5625 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 3895 -> 5625 (effect=0.043, type=same_team_propagation)
+  CONFIRMED: 2951 -> 5625 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 5396 -> 5627 (effect=-0.040, type=cross_team_adaptation)
+  CONFIRMED: 4600 -> 5627 (effect=-0.039, type=same_team_propagation)
+  CONFIRMED: 5558 -> 5627 (effect=-0.039, type=cross_team_adaptation)
+  CONFIRMED: 4979 -> 5627 (effect=-0.038, type=cross_team_adaptation)
+  CONFIRMED: 3730 -> 5627 (effect=-0.038, type=cross_team_adaptation)
+  CONFIRMED: 2873 -> 5627 (effect=-0.038, type=cross_team_adaptation)
+  CONFIRMED: 5595 -> 5627 (effect=-0.038, type=cross_team_adaptation)
+  CONFIRMED: 4149 -> 5631 (effect=0.038, type=same_team_propagation)
+  CONFIRMED: 3262 -> 5631 (effect=0.038, type=same_team_propagation)
+  CONFIRMED: 5139 -> 5631 (effect=0.037, type=cross_team_adaptation)
+  CONFIRMED: 4488 -> 5631 (effect=0.037, type=same_team_propagation)
+  CONFIRMED: 4726 -> 5631 (effect=0.037, type=cross_team_adaptation)
+  CONFIRMED: 4667 -> 5631 (effect=0.037, type=same_team_propagation)
+  CONFIRMED: 2700 -> 5631 (effect=0.037, type=cross_team_adaptation)
+  CONFIRMED: 4518 -> 5631 (effect=0.037, type=same_team_propagation)
+  CONFIRMED: 5111 -> 5631 (effect=0.037, type=cross_team_adaptation)
+  CONFIRMED: 3169 -> 5631 (effect=0.037, type=same_team_propagation)
+  CONFIRMED: 5563 -> 5632 (effect=0.064, type=cross_team_adaptation)
+  CONFIRMED: 4188 -> 5632 (effect=0.061, type=cross_team_adaptation)
+  CONFIRMED: 4542 -> 5634 (effect=0.080, type=same_team_propagation)
+  CONFIRMED: 5417 -> 5634 (effect=0.080, type=cross_team_adaptation)
+  CONFIRMED: 2636 -> 5634 (effect=0.080, type=cross_team_adaptation)
+  CONFIRMED: 3486 -> 5634 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 4144 -> 5634 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 5248 -> 5634 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 3312 -> 5634 (effect=0.077, type=same_team_propagation)
+  CONFIRMED: 4349 -> 5634 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 2662 -> 5634 (effect=0.077, type=same_team_propagation)
+  CONFIRMED: 3802 -> 5635 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 5145 -> 5635 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 3798 -> 5635 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 3265 -> 5635 (effect=0.038, type=cross_team_adaptation)
+  CONFIRMED: 2895 -> 5635 (effect=0.038, type=cross_team_adaptation)
+  CONFIRMED: 5618 -> 5624 (effect=0.130, type=cross_team_adaptation)
+  CONFIRMED: 5180 -> 5624 (effect=0.129, type=same_team_propagation)
+  CONFIRMED: 2559 -> 5624 (effect=0.127, type=same_team_propagation)
+  CONFIRMED: 5304 -> 5624 (effect=0.125, type=same_team_propagation)
+  CONFIRMED: 3071 -> 5624 (effect=0.125, type=same_team_propagation)
+  CONFIRMED: 4502 -> 5624 (effect=0.124, type=same_team_propagation)
+  CONFIRMED: 5352 -> 5624 (effect=0.124, type=same_team_propagation)
+  CONFIRMED: 3479 -> 5624 (effect=0.124, type=same_team_propagation)
+  CONFIRMED: 3207 -> 5624 (effect=0.123, type=same_team_propagation)
+  CONFIRMED: 5130 -> 5624 (effect=0.123, type=same_team_propagation)
+  CONFIRMED: 4688 -> 5630 (effect=-0.072, type=same_team_propagation)
+  CONFIRMED: 3785 -> 5630 (effect=-0.072, type=cross_team_adaptation)
+  CONFIRMED: 3477 -> 5630 (effect=-0.072, type=same_team_propagation)
+  CONFIRMED: 5599 -> 5630 (effect=-0.072, type=same_team_propagation)
+  CONFIRMED: 4142 -> 5630 (effect=-0.072, type=cross_team_adaptation)
+  CONFIRMED: 3250 -> 5630 (effect=-0.071, type=cross_team_adaptation)
+  CONFIRMED: 4828 -> 5630 (effect=-0.070, type=cross_team_adaptation)
+  CONFIRMED: 2829 -> 5630 (effect=-0.070, type=cross_team_adaptation)
+  CONFIRMED: 2836 -> 5636 (effect=0.187, type=same_team_propagation)
+  CONFIRMED: 3227 -> 5636 (effect=0.187, type=same_team_propagation)
+  CONFIRMED: 3833 -> 5636 (effect=0.185, type=cross_team_adaptation)
+  CONFIRMED: 3033 -> 5636 (effect=0.181, type=same_team_propagation)
+  CONFIRMED: 3481 -> 5636 (effect=0.179, type=same_team_propagation)
+  CONFIRMED: 3704 -> 5636 (effect=0.178, type=cross_team_adaptation)
+  CONFIRMED: 5461 -> 5636 (effect=0.178, type=cross_team_adaptation)
+  CONFIRMED: 4473 -> 5636 (effect=0.178, type=cross_team_adaptation)
+  CONFIRMED: 3673 -> 5636 (effect=0.178, type=same_team_propagation)
+
+Episode avalon_20260805_100035 funnel: {'gate1_candidates_found': 126, 'rejected_no_exposure': 41, 'skipped_no_credit_data': 0, 'gate2_evaluated': 126, 'gate2_passed': 88, 'confirmed': 88}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 126
+  rejected_no_exposure: 41
+  skipped_no_credit_data: 0
+  gate2_evaluated: 126
+  gate2_passed: 88
+  confirmed: 88
+  done: Causal graph: avalon_20260805_100035
+
+[7/16] Causal graph for avalon_20260805_100819
+
+============================================================
+  Causal graph: avalon_20260805_100819
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_100819
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_100819...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4014.66it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 4629 -> 5637 (effect=-0.135, type=cross_team_adaptation)
+  CONFIRMED: 2630 -> 5638 (effect=-0.049, type=cross_team_adaptation)
+  CONFIRMED: 3099 -> 5638 (effect=-0.048, type=same_team_propagation)
+  CONFIRMED: 4542 -> 5638 (effect=-0.048, type=same_team_propagation)
+  CONFIRMED: 5637 -> 5640 (effect=-0.059, type=intra_episode)
+  CONFIRMED: 4302 -> 5640 (effect=-0.056, type=same_team_propagation)
+  CONFIRMED: 2630 -> 5640 (effect=-0.055, type=same_team_propagation)
+  CONFIRMED: 4488 -> 5640 (effect=-0.055, type=cross_team_adaptation)
+  CONFIRMED: 3615 -> 5640 (effect=-0.055, type=cross_team_adaptation)
+  CONFIRMED: 4766 -> 5640 (effect=-0.055, type=same_team_propagation)
+  CONFIRMED: 4330 -> 5640 (effect=-0.055, type=same_team_propagation)
+  CONFIRMED: 5302 -> 5646 (effect=0.027, type=cross_team_adaptation)
+  CONFIRMED: 3920 -> 5646 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 3357 -> 5646 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 3998 -> 5646 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 4449 -> 5646 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 3333 -> 5646 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 3176 -> 5646 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 4435 -> 5646 (effect=0.026, type=cross_team_adaptation)
+  CONFIRMED: 2684 -> 5650 (effect=0.045, type=cross_team_adaptation)
+  CONFIRMED: 3436 -> 5650 (effect=0.044, type=same_team_propagation)
+  CONFIRMED: 5150 -> 5650 (effect=0.044, type=cross_team_adaptation)
+  CONFIRMED: 3054 -> 5650 (effect=0.044, type=cross_team_adaptation)
+  CONFIRMED: 3385 -> 5650 (effect=0.043, type=same_team_propagation)
+  CONFIRMED: 3655 -> 5650 (effect=0.043, type=same_team_propagation)
+  CONFIRMED: 4936 -> 5650 (effect=0.043, type=same_team_propagation)
+  CONFIRMED: 2563 -> 5650 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 5057 -> 5650 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 3105 -> 5651 (effect=0.092, type=same_team_propagation)
+  CONFIRMED: 3050 -> 5651 (effect=0.091, type=cross_team_adaptation)
+  CONFIRMED: 4516 -> 5651 (effect=0.091, type=same_team_propagation)
+  CONFIRMED: 3420 -> 5651 (effect=0.091, type=same_team_propagation)
+  CONFIRMED: 3640 -> 5651 (effect=0.090, type=cross_team_adaptation)
+  CONFIRMED: 4962 -> 5651 (effect=0.090, type=same_team_propagation)
+  CONFIRMED: 4328 -> 5651 (effect=0.090, type=cross_team_adaptation)
+  CONFIRMED: 5046 -> 5652 (effect=0.099, type=cross_team_adaptation)
+  CONFIRMED: 4726 -> 5652 (effect=0.098, type=same_team_propagation)
+  CONFIRMED: 3189 -> 5652 (effect=0.098, type=same_team_propagation)
+  CONFIRMED: 3589 -> 5652 (effect=0.098, type=cross_team_adaptation)
+  CONFIRMED: 5047 -> 5652 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 2662 -> 5652 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 3967 -> 5652 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 5319 -> 5652 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 4523 -> 5652 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 3588 -> 5652 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 2773 -> 5648 (effect=0.063, type=same_team_propagation)
+  CONFIRMED: 3589 -> 5648 (effect=0.062, type=cross_team_adaptation)
+  CONFIRMED: 4765 -> 5648 (effect=0.061, type=same_team_propagation)
+  CONFIRMED: 3748 -> 5648 (effect=0.061, type=cross_team_adaptation)
+  CONFIRMED: 3351 -> 5648 (effect=0.060, type=cross_team_adaptation)
+  CONFIRMED: 3324 -> 5648 (effect=0.060, type=cross_team_adaptation)
+  CONFIRMED: 5284 -> 5648 (effect=0.059, type=cross_team_adaptation)
+  CONFIRMED: 2877 -> 5648 (effect=0.059, type=cross_team_adaptation)
+  CONFIRMED: 2617 -> 5648 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 5428 -> 5654 (effect=0.081, type=cross_team_adaptation)
+  CONFIRMED: 5410 -> 5654 (effect=0.079, type=cross_team_adaptation)
+  CONFIRMED: 4891 -> 5654 (effect=0.079, type=same_team_propagation)
+  CONFIRMED: 2760 -> 5654 (effect=0.078, type=cross_team_adaptation)
+  CONFIRMED: 5536 -> 5654 (effect=0.078, type=cross_team_adaptation)
+  CONFIRMED: 4333 -> 5654 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 3288 -> 5654 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 5423 -> 5654 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 3258 -> 5654 (effect=0.077, type=same_team_propagation)
+  CONFIRMED: 3673 -> 5654 (effect=0.075, type=cross_team_adaptation)
+
+Episode avalon_20260805_100819 funnel: {'gate1_candidates_found': 121, 'rejected_no_exposure': 45, 'skipped_no_credit_data': 0, 'gate2_evaluated': 121, 'gate2_passed': 64, 'confirmed': 64}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 121
+  rejected_no_exposure: 45
+  skipped_no_credit_data: 0
+  gate2_evaluated: 121
+  gate2_passed: 64
+  confirmed: 64
+  done: Causal graph: avalon_20260805_100819
+
+[8/16] Causal graph for avalon_20260805_101600
+
+============================================================
+  Causal graph: avalon_20260805_101600
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_101600
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_101600...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4213.24it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 5417 -> 5657 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 5634 -> 5657 (effect=0.076, type=same_team_propagation)
+  CONFIRMED: 4542 -> 5657 (effect=0.076, type=same_team_propagation)
+  CONFIRMED: 2662 -> 5657 (effect=0.076, type=same_team_propagation)
+  CONFIRMED: 5046 -> 5657 (effect=0.076, type=same_team_propagation)
+  CONFIRMED: 2789 -> 5657 (effect=0.076, type=cross_team_adaptation)
+  CONFIRMED: 4144 -> 5657 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 4856 -> 5657 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 3176 -> 5658 (effect=-0.044, type=same_team_propagation)
+  CONFIRMED: 4831 -> 5658 (effect=-0.043, type=cross_team_adaptation)
+  CONFIRMED: 5431 -> 5658 (effect=-0.043, type=cross_team_adaptation)
+  CONFIRMED: 3921 -> 5658 (effect=-0.042, type=cross_team_adaptation)
+  CONFIRMED: 5276 -> 5658 (effect=-0.042, type=same_team_propagation)
+  CONFIRMED: 4979 -> 5658 (effect=-0.042, type=cross_team_adaptation)
+  CONFIRMED: 3941 -> 5658 (effect=-0.042, type=cross_team_adaptation)
+  CONFIRMED: 5302 -> 5658 (effect=-0.042, type=cross_team_adaptation)
+  CONFIRMED: 3170 -> 5659 (effect=0.068, type=same_team_propagation)
+  CONFIRMED: 3312 -> 5659 (effect=0.068, type=cross_team_adaptation)
+  CONFIRMED: 5348 -> 5659 (effect=0.067, type=cross_team_adaptation)
+  CONFIRMED: 5139 -> 5659 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 4144 -> 5659 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 4523 -> 5659 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 4405 -> 5659 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 4048 -> 5659 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 2662 -> 5659 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 2668 -> 5659 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 4200 -> 5661 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 3065 -> 5661 (effect=0.062, type=same_team_propagation)
+  CONFIRMED: 3072 -> 5661 (effect=0.061, type=same_team_propagation)
+  CONFIRMED: 2586 -> 5661 (effect=0.060, type=cross_team_adaptation)
+  CONFIRMED: 4540 -> 5661 (effect=0.060, type=same_team_propagation)
+  CONFIRMED: 4230 -> 5661 (effect=0.059, type=cross_team_adaptation)
+  CONFIRMED: 2969 -> 5661 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 4139 -> 5661 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 5173 -> 5662 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 5021 -> 5662 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 2732 -> 5662 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 4996 -> 5662 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 5521 -> 5662 (effect=-0.043, type=cross_team_adaptation)
+  CONFIRMED: 5082 -> 5662 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 3911 -> 5662 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 5094 -> 5662 (effect=-0.043, type=same_team_propagation)
+  CONFIRMED: 3350 -> 5662 (effect=-0.043, type=cross_team_adaptation)
+  CONFIRMED: 3268 -> 5662 (effect=-0.042, type=same_team_propagation)
+  CONFIRMED: 5662 -> 5663 (effect=0.080, type=intra_episode)
+  CONFIRMED: 5617 -> 5665 (effect=-0.104, type=cross_team_adaptation)
+  CONFIRMED: 5167 -> 5665 (effect=-0.104, type=cross_team_adaptation)
+  CONFIRMED: 5457 -> 5665 (effect=-0.103, type=cross_team_adaptation)
+  CONFIRMED: 3176 -> 5665 (effect=-0.103, type=same_team_propagation)
+  CONFIRMED: 4619 -> 5665 (effect=-0.103, type=cross_team_adaptation)
+  CONFIRMED: 4997 -> 5665 (effect=-0.102, type=cross_team_adaptation)
+  CONFIRMED: 3482 -> 5665 (effect=-0.102, type=cross_team_adaptation)
+  CONFIRMED: 3484 -> 5665 (effect=-0.102, type=same_team_propagation)
+  CONFIRMED: 3709 -> 5665 (effect=-0.102, type=same_team_propagation)
+  CONFIRMED: 3481 -> 5667 (effect=-0.052, type=same_team_propagation)
+  CONFIRMED: 3833 -> 5667 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 2836 -> 5667 (effect=-0.051, type=same_team_propagation)
+  CONFIRMED: 5475 -> 5667 (effect=-0.051, type=same_team_propagation)
+  CONFIRMED: 3555 -> 5667 (effect=-0.051, type=same_team_propagation)
+  CONFIRMED: 2561 -> 5667 (effect=-0.051, type=same_team_propagation)
+  CONFIRMED: 3388 -> 5667 (effect=-0.051, type=cross_team_adaptation)
+  CONFIRMED: 3306 -> 5667 (effect=-0.050, type=same_team_propagation)
+  CONFIRMED: 3028 -> 5667 (effect=-0.050, type=cross_team_adaptation)
+  CONFIRMED: 4410 -> 5668 (effect=0.040, type=same_team_propagation)
+  CONFIRMED: 3273 -> 5668 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 3432 -> 5668 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 5439 -> 5668 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 3066 -> 5668 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 4243 -> 5668 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 3818 -> 5668 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 3842 -> 5668 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 3626 -> 5669 (effect=0.031, type=same_team_propagation)
+  CONFIRMED: 3369 -> 5669 (effect=0.030, type=cross_team_adaptation)
+  CONFIRMED: 5125 -> 5669 (effect=0.030, type=cross_team_adaptation)
+  CONFIRMED: 3628 -> 5669 (effect=0.030, type=cross_team_adaptation)
+  CONFIRMED: 3448 -> 5669 (effect=0.029, type=same_team_propagation)
+  CONFIRMED: 3481 -> 5669 (effect=0.029, type=same_team_propagation)
+  CONFIRMED: 3291 -> 5669 (effect=0.029, type=same_team_propagation)
+  CONFIRMED: 5126 -> 5669 (effect=0.029, type=same_team_propagation)
+  CONFIRMED: 5125 -> 5674 (effect=0.051, type=cross_team_adaptation)
+  CONFIRMED: 3448 -> 5674 (effect=0.050, type=same_team_propagation)
+  CONFIRMED: 3481 -> 5674 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 4892 -> 5674 (effect=0.049, type=cross_team_adaptation)
+  CONFIRMED: 3626 -> 5674 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 5669 -> 5674 (effect=0.049, type=intra_episode)
+  CONFIRMED: 4445 -> 5674 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 3889 -> 5674 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 5125 -> 5675 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 3634 -> 5675 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 5499 -> 5675 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 3187 -> 5675 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 4499 -> 5675 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 3450 -> 5675 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 3824 -> 5675 (effect=0.096, type=same_team_propagation)
+  CONFIRMED: 3405 -> 5675 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 3155 -> 5675 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 2793 -> 5675 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 2563 -> 5676 (effect=0.051, type=cross_team_adaptation)
+  CONFIRMED: 5527 -> 5676 (effect=0.050, type=same_team_propagation)
+  CONFIRMED: 4406 -> 5676 (effect=0.050, type=cross_team_adaptation)
+  CONFIRMED: 5232 -> 5676 (effect=0.050, type=same_team_propagation)
+  CONFIRMED: 4583 -> 5676 (effect=0.050, type=same_team_propagation)
+  CONFIRMED: 4882 -> 5676 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 2670 -> 5676 (effect=0.049, type=cross_team_adaptation)
+  CONFIRMED: 3449 -> 5676 (effect=0.049, type=cross_team_adaptation)
+  CONFIRMED: 3810 -> 5676 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 3489 -> 5676 (effect=0.049, type=cross_team_adaptation)
+  CONFIRMED: 3369 -> 5677 (effect=0.096, type=same_team_propagation)
+  CONFIRMED: 3705 -> 5677 (effect=0.095, type=cross_team_adaptation)
+  CONFIRMED: 5669 -> 5677 (effect=0.094, type=intra_episode)
+  CONFIRMED: 3626 -> 5677 (effect=0.094, type=cross_team_adaptation)
+  CONFIRMED: 4544 -> 5677 (effect=0.094, type=cross_team_adaptation)
+  CONFIRMED: 4240 -> 5677 (effect=0.094, type=same_team_propagation)
+  CONFIRMED: 3849 -> 5677 (effect=0.093, type=same_team_propagation)
+  CONFIRMED: 3361 -> 5677 (effect=0.093, type=cross_team_adaptation)
+  CONFIRMED: 3291 -> 5677 (effect=0.092, type=cross_team_adaptation)
+  CONFIRMED: 3404 -> 5677 (effect=0.092, type=cross_team_adaptation)
+  CONFIRMED: 3448 -> 5678 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 5145 -> 5678 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 3503 -> 5678 (effect=0.077, type=same_team_propagation)
+  CONFIRMED: 3449 -> 5678 (effect=0.076, type=same_team_propagation)
+  CONFIRMED: 5669 -> 5678 (effect=0.075, type=intra_episode)
+  CONFIRMED: 2925 -> 5678 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 4177 -> 5678 (effect=0.075, type=cross_team_adaptation)
+  CONFIRMED: 5594 -> 5678 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 4216 -> 5678 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 5677 -> 5678 (effect=0.075, type=intra_episode)
+  CONFIRMED: 2721 -> 5660 (effect=-0.059, type=same_team_propagation)
+  CONFIRMED: 3946 -> 5660 (effect=-0.056, type=same_team_propagation)
+  CONFIRMED: 4527 -> 5660 (effect=-0.055, type=same_team_propagation)
+  CONFIRMED: 3378 -> 5660 (effect=-0.055, type=same_team_propagation)
+  CONFIRMED: 3673 -> 5660 (effect=-0.054, type=same_team_propagation)
+  CONFIRMED: 4952 -> 5660 (effect=-0.054, type=cross_team_adaptation)
+  CONFIRMED: 3159 -> 5660 (effect=-0.054, type=same_team_propagation)
+  CONFIRMED: 1227 -> 5666 (effect=-0.032, type=cross_team_adaptation)
+  CONFIRMED: 2767 -> 5666 (effect=-0.032, type=same_team_propagation)
+  CONFIRMED: 1140 -> 5666 (effect=-0.031, type=cross_team_adaptation)
+  CONFIRMED: 3938 -> 5666 (effect=-0.031, type=cross_team_adaptation)
+  CONFIRMED: 1732 -> 5666 (effect=-0.031, type=cross_team_adaptation)
+  CONFIRMED: 1682 -> 5666 (effect=-0.030, type=cross_team_adaptation)
+  CONFIRMED: 3064 -> 5666 (effect=-0.030, type=cross_team_adaptation)
+  CONFIRMED: 4530 -> 5666 (effect=-0.030, type=cross_team_adaptation)
+  CONFIRMED: 4130 -> 5672 (effect=0.112, type=cross_team_adaptation)
+  CONFIRMED: 4446 -> 5672 (effect=0.109, type=same_team_propagation)
+  CONFIRMED: 5227 -> 5672 (effect=0.107, type=cross_team_adaptation)
+  CONFIRMED: 5353 -> 5672 (effect=0.107, type=same_team_propagation)
+  CONFIRMED: 5220 -> 5672 (effect=0.105, type=cross_team_adaptation)
+  CONFIRMED: 5285 -> 5672 (effect=0.105, type=cross_team_adaptation)
+  CONFIRMED: 4099 -> 5672 (effect=0.105, type=cross_team_adaptation)
+  CONFIRMED: 5636 -> 5673 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 2836 -> 5673 (effect=0.057, type=same_team_propagation)
+  CONFIRMED: 3227 -> 5673 (effect=0.057, type=same_team_propagation)
+  CONFIRMED: 2859 -> 5673 (effect=0.056, type=cross_team_adaptation)
+  CONFIRMED: 3833 -> 5673 (effect=0.055, type=cross_team_adaptation)
+  CONFIRMED: 3704 -> 5673 (effect=0.055, type=cross_team_adaptation)
+  CONFIRMED: 3673 -> 5673 (effect=0.055, type=same_team_propagation)
+  CONFIRMED: 3233 -> 5673 (effect=0.055, type=cross_team_adaptation)
+  CONFIRMED: 2760 -> 5673 (effect=0.054, type=same_team_propagation)
+  CONFIRMED: 3449 -> 5673 (effect=0.054, type=cross_team_adaptation)
+  CONFIRMED: 5416 -> 5679 (effect=0.062, type=same_team_propagation)
+  CONFIRMED: 3192 -> 5679 (effect=0.061, type=same_team_propagation)
+  CONFIRMED: 4853 -> 5679 (effect=0.060, type=cross_team_adaptation)
+  CONFIRMED: 3250 -> 5679 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 2922 -> 5679 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 2959 -> 5679 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 4828 -> 5679 (effect=0.058, type=same_team_propagation)
+  CONFIRMED: 2877 -> 5679 (effect=0.058, type=same_team_propagation)
+  CONFIRMED: 4738 -> 5679 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 5624 -> 5679 (effect=0.057, type=same_team_propagation)
+
+Episode avalon_20260805_101600 funnel: {'gate1_candidates_found': 176, 'rejected_no_exposure': 51, 'skipped_no_credit_data': 0, 'gate2_evaluated': 176, 'gate2_passed': 169, 'confirmed': 169}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 176
+  rejected_no_exposure: 51
+  skipped_no_credit_data: 0
+  gate2_evaluated: 176
+  gate2_passed: 169
+  confirmed: 169
+  done: Causal graph: avalon_20260805_101600
+
+[9/16] Causal graph for avalon_20260805_102737
+
+============================================================
+  Causal graph: avalon_20260805_102737
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_102737
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_102737...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3914.23it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 3232 -> 5681 (effect=0.076, type=cross_team_adaptation)
+  CONFIRMED: 3719 -> 5681 (effect=0.075, type=cross_team_adaptation)
+  CONFIRMED: 5527 -> 5681 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 5553 -> 5681 (effect=0.074, type=cross_team_adaptation)
+  CONFIRMED: 3601 -> 5681 (effect=0.074, type=same_team_propagation)
+  CONFIRMED: 3796 -> 5681 (effect=0.074, type=cross_team_adaptation)
+  CONFIRMED: 3381 -> 5681 (effect=0.074, type=cross_team_adaptation)
+  CONFIRMED: 5588 -> 5683 (effect=-0.113, type=same_team_propagation)
+  CONFIRMED: 3965 -> 5683 (effect=-0.112, type=same_team_propagation)
+  CONFIRMED: 4341 -> 5683 (effect=-0.111, type=same_team_propagation)
+  CONFIRMED: 4892 -> 5683 (effect=-0.111, type=same_team_propagation)
+  CONFIRMED: 3448 -> 5683 (effect=-0.110, type=cross_team_adaptation)
+  CONFIRMED: 3304 -> 5683 (effect=-0.110, type=same_team_propagation)
+  CONFIRMED: 3808 -> 5683 (effect=-0.110, type=same_team_propagation)
+  CONFIRMED: 3067 -> 5683 (effect=-0.110, type=same_team_propagation)
+  CONFIRMED: 2592 -> 5683 (effect=-0.109, type=same_team_propagation)
+  CONFIRMED: 3674 -> 5683 (effect=-0.109, type=cross_team_adaptation)
+  CONFIRMED: 4542 -> 5684 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 3099 -> 5684 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 5419 -> 5684 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 4856 -> 5684 (effect=0.032, type=cross_team_adaptation)
+  CONFIRMED: 4122 -> 5687 (effect=0.084, type=same_team_propagation)
+  CONFIRMED: 3843 -> 5687 (effect=0.083, type=cross_team_adaptation)
+  CONFIRMED: 5586 -> 5687 (effect=0.083, type=same_team_propagation)
+  CONFIRMED: 3696 -> 5687 (effect=0.083, type=cross_team_adaptation)
+  CONFIRMED: 4833 -> 5687 (effect=0.082, type=cross_team_adaptation)
+  CONFIRMED: 4008 -> 5687 (effect=0.082, type=cross_team_adaptation)
+  CONFIRMED: 3455 -> 5687 (effect=0.082, type=cross_team_adaptation)
+  CONFIRMED: 4932 -> 5687 (effect=0.082, type=cross_team_adaptation)
+  CONFIRMED: 4079 -> 5687 (effect=0.082, type=cross_team_adaptation)
+  CONFIRMED: 4171 -> 5688 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 5687 -> 5688 (effect=0.065, type=intra_episode)
+  CONFIRMED: 4846 -> 5688 (effect=0.065, type=cross_team_adaptation)
+  CONFIRMED: 3470 -> 5688 (effect=0.065, type=cross_team_adaptation)
+  CONFIRMED: 5415 -> 5689 (effect=0.072, type=cross_team_adaptation)
+  CONFIRMED: 5688 -> 5689 (effect=0.069, type=intra_episode)
+  CONFIRMED: 3087 -> 5693 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 2952 -> 5693 (effect=0.068, type=same_team_propagation)
+  CONFIRMED: 4245 -> 5693 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 3537 -> 5694 (effect=0.085, type=cross_team_adaptation)
+  CONFIRMED: 4090 -> 5697 (effect=-0.072, type=cross_team_adaptation)
+  CONFIRMED: 3908 -> 5697 (effect=-0.072, type=same_team_propagation)
+  CONFIRMED: 4995 -> 5697 (effect=-0.071, type=same_team_propagation)
+  CONFIRMED: 3843 -> 5697 (effect=-0.071, type=same_team_propagation)
+  CONFIRMED: 4079 -> 5697 (effect=-0.071, type=same_team_propagation)
+  CONFIRMED: 4781 -> 5697 (effect=-0.071, type=same_team_propagation)
+  CONFIRMED: 4314 -> 5697 (effect=-0.071, type=same_team_propagation)
+  CONFIRMED: 5647 -> 5697 (effect=-0.070, type=same_team_propagation)
+  CONFIRMED: 4127 -> 5697 (effect=-0.070, type=same_team_propagation)
+  CONFIRMED: 4305 -> 5685 (effect=0.148, type=cross_team_adaptation)
+  CONFIRMED: 4682 -> 5685 (effect=0.148, type=same_team_propagation)
+  CONFIRMED: 4306 -> 5685 (effect=0.147, type=same_team_propagation)
+  CONFIRMED: 4967 -> 5685 (effect=0.146, type=same_team_propagation)
+  CONFIRMED: 5002 -> 5685 (effect=0.144, type=cross_team_adaptation)
+  CONFIRMED: 4452 -> 5685 (effect=0.144, type=cross_team_adaptation)
+  CONFIRMED: 3387 -> 5685 (effect=0.143, type=cross_team_adaptation)
+  CONFIRMED: 3702 -> 5685 (effect=0.143, type=same_team_propagation)
+  CONFIRMED: 4841 -> 5692 (effect=-0.178, type=same_team_propagation)
+  CONFIRMED: 3215 -> 5692 (effect=-0.175, type=cross_team_adaptation)
+  CONFIRMED: 2653 -> 5692 (effect=-0.170, type=cross_team_adaptation)
+  CONFIRMED: 4348 -> 5698 (effect=-0.104, type=cross_team_adaptation)
+  CONFIRMED: 5660 -> 5698 (effect=-0.101, type=cross_team_adaptation)
+  CONFIRMED: 2760 -> 5698 (effect=-0.099, type=cross_team_adaptation)
+  CONFIRMED: 3673 -> 5698 (effect=-0.098, type=cross_team_adaptation)
+  CONFIRMED: 5523 -> 5698 (effect=-0.097, type=cross_team_adaptation)
+  CONFIRMED: 3857 -> 5698 (effect=-0.097, type=cross_team_adaptation)
+  CONFIRMED: 3366 -> 5698 (effect=-0.096, type=same_team_propagation)
+  CONFIRMED: 4952 -> 5698 (effect=-0.095, type=same_team_propagation)
+  CONFIRMED: 3050 -> 5698 (effect=-0.095, type=same_team_propagation)
+  CONFIRMED: 3894 -> 5698 (effect=-0.095, type=cross_team_adaptation)
+  CONFIRMED: 4647 -> 5699 (effect=0.228, type=cross_team_adaptation)
+  CONFIRMED: 4205 -> 5699 (effect=0.226, type=same_team_propagation)
+  CONFIRMED: 3077 -> 5699 (effect=0.224, type=same_team_propagation)
+  CONFIRMED: 4663 -> 5699 (effect=0.220, type=cross_team_adaptation)
+  CONFIRMED: 3348 -> 5699 (effect=0.217, type=same_team_propagation)
+  CONFIRMED: 3252 -> 5699 (effect=0.216, type=same_team_propagation)
+  CONFIRMED: 4266 -> 5699 (effect=0.213, type=same_team_propagation)
+  CONFIRMED: 3876 -> 5699 (effect=0.212, type=same_team_propagation)
+  CONFIRMED: 4117 -> 5699 (effect=0.211, type=cross_team_adaptation)
+
+Episode avalon_20260805_102737 funnel: {'gate1_candidates_found': 83, 'rejected_no_exposure': 94, 'skipped_no_credit_data': 0, 'gate2_evaluated': 83, 'gate2_passed': 79, 'confirmed': 79}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 83
+  rejected_no_exposure: 94
+  skipped_no_credit_data: 0
+  gate2_evaluated: 83
+  gate2_passed: 79
+  confirmed: 79
+  done: Causal graph: avalon_20260805_102737
+
+[10/16] Causal graph for avalon_20260805_113329
+
+============================================================
+  Causal graph: avalon_20260805_113329
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_113329
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_113329...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 5748.30it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 4839 -> 5701 (effect=-0.098, type=same_team_propagation)
+  CONFIRMED: 3455 -> 5701 (effect=-0.097, type=cross_team_adaptation)
+  CONFIRMED: 4969 -> 5701 (effect=-0.097, type=same_team_propagation)
+  CONFIRMED: 5033 -> 5701 (effect=-0.096, type=same_team_propagation)
+  CONFIRMED: 5557 -> 5701 (effect=-0.096, type=cross_team_adaptation)
+  CONFIRMED: 5694 -> 5701 (effect=-0.096, type=same_team_propagation)
+  CONFIRMED: 5694 -> 5704 (effect=0.054, type=cross_team_adaptation)
+  CONFIRMED: 5056 -> 5704 (effect=0.051, type=cross_team_adaptation)
+  CONFIRMED: 3537 -> 5704 (effect=0.051, type=same_team_propagation)
+  CONFIRMED: 4300 -> 5704 (effect=0.050, type=cross_team_adaptation)
+  CONFIRMED: 4310 -> 5704 (effect=0.049, type=cross_team_adaptation)
+  CONFIRMED: 5389 -> 5706 (effect=-0.085, type=same_team_propagation)
+  CONFIRMED: 4583 -> 5706 (effect=-0.084, type=same_team_propagation)
+  CONFIRMED: 5553 -> 5706 (effect=-0.083, type=cross_team_adaptation)
+  CONFIRMED: 5271 -> 5706 (effect=-0.083, type=same_team_propagation)
+  CONFIRMED: 4470 -> 5707 (effect=-0.034, type=same_team_propagation)
+  CONFIRMED: 5701 -> 5707 (effect=-0.034, type=intra_episode)
+  CONFIRMED: 5400 -> 5707 (effect=-0.034, type=cross_team_adaptation)
+  CONFIRMED: 5532 -> 5707 (effect=-0.034, type=same_team_propagation)
+  CONFIRMED: 4969 -> 5707 (effect=-0.034, type=same_team_propagation)
+  CONFIRMED: 4491 -> 5707 (effect=-0.033, type=cross_team_adaptation)
+  CONFIRMED: 2988 -> 5707 (effect=-0.033, type=cross_team_adaptation)
+  CONFIRMED: 4929 -> 5707 (effect=-0.033, type=same_team_propagation)
+  CONFIRMED: 5542 -> 5707 (effect=-0.033, type=cross_team_adaptation)
+  CONFIRMED: 3107 -> 5707 (effect=-0.033, type=cross_team_adaptation)
+  CONFIRMED: 4756 -> 5709 (effect=0.060, type=same_team_propagation)
+  CONFIRMED: 4212 -> 5709 (effect=0.060, type=same_team_propagation)
+  CONFIRMED: 3084 -> 5709 (effect=0.060, type=cross_team_adaptation)
+  CONFIRMED: 4839 -> 5709 (effect=0.059, type=same_team_propagation)
+  CONFIRMED: 4181 -> 5709 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 5557 -> 5709 (effect=0.058, type=cross_team_adaptation)
+  CONFIRMED: 4230 -> 5709 (effect=0.057, type=cross_team_adaptation)
+  CONFIRMED: 5525 -> 5709 (effect=0.057, type=cross_team_adaptation)
+  CONFIRMED: 4124 -> 5709 (effect=0.057, type=same_team_propagation)
+  CONFIRMED: 3065 -> 5709 (effect=0.057, type=same_team_propagation)
+  CONFIRMED: 3435 -> 5712 (effect=0.111, type=cross_team_adaptation)
+  CONFIRMED: 3028 -> 5712 (effect=0.109, type=cross_team_adaptation)
+  CONFIRMED: 5607 -> 5712 (effect=0.106, type=cross_team_adaptation)
+  CONFIRMED: 1917 -> 5712 (effect=0.105, type=same_team_propagation)
+  CONFIRMED: 3999 -> 5712 (effect=0.105, type=cross_team_adaptation)
+  CONFIRMED: 2030 -> 5712 (effect=0.105, type=same_team_propagation)
+  CONFIRMED: 4234 -> 5714 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 3800 -> 5714 (effect=0.063, type=cross_team_adaptation)
+  CONFIRMED: 4233 -> 5714 (effect=0.063, type=cross_team_adaptation)
+  CONFIRMED: 5527 -> 5714 (effect=0.063, type=cross_team_adaptation)
+  CONFIRMED: 3098 -> 5714 (effect=0.063, type=cross_team_adaptation)
+  CONFIRMED: 5439 -> 5714 (effect=0.062, type=cross_team_adaptation)
+  CONFIRMED: 2775 -> 5714 (effect=0.062, type=cross_team_adaptation)
+  CONFIRMED: 3905 -> 5714 (effect=0.062, type=cross_team_adaptation)
+  CONFIRMED: 5685 -> 5715 (effect=0.027, type=same_team_propagation)
+  CONFIRMED: 5701 -> 5715 (effect=0.026, type=intra_episode)
+  CONFIRMED: 4969 -> 5715 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 5033 -> 5715 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 4181 -> 5715 (effect=0.026, type=cross_team_adaptation)
+  CONFIRMED: 3387 -> 5715 (effect=0.026, type=cross_team_adaptation)
+  CONFIRMED: 5707 -> 5715 (effect=0.026, type=intra_episode)
+  CONFIRMED: 4323 -> 5715 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 3152 -> 5715 (effect=0.026, type=same_team_propagation)
+  CONFIRMED: 3583 -> 5715 (effect=0.025, type=same_team_propagation)
+  CONFIRMED: 5250 -> 5716 (effect=-0.053, type=cross_team_adaptation)
+  CONFIRMED: 4520 -> 5716 (effect=-0.053, type=same_team_propagation)
+  CONFIRMED: 4295 -> 5716 (effect=-0.053, type=same_team_propagation)
+  CONFIRMED: 4438 -> 5716 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 3232 -> 5716 (effect=-0.052, type=same_team_propagation)
+  CONFIRMED: 5138 -> 5716 (effect=-0.052, type=same_team_propagation)
+  CONFIRMED: 3455 -> 5716 (effect=-0.052, type=same_team_propagation)
+  CONFIRMED: 2683 -> 5716 (effect=-0.052, type=same_team_propagation)
+  CONFIRMED: 3107 -> 5716 (effect=-0.052, type=same_team_propagation)
+  CONFIRMED: 4090 -> 5716 (effect=-0.051, type=cross_team_adaptation)
+  CONFIRMED: 2716 -> 5718 (effect=-0.055, type=cross_team_adaptation)
+  CONFIRMED: 4007 -> 5718 (effect=-0.053, type=same_team_propagation)
+  CONFIRMED: 3068 -> 5718 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 4938 -> 5718 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 3940 -> 5718 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 2570 -> 5718 (effect=-0.052, type=same_team_propagation)
+  CONFIRMED: 3650 -> 5718 (effect=-0.052, type=cross_team_adaptation)
+  CONFIRMED: 3902 -> 5719 (effect=-0.040, type=cross_team_adaptation)
+  CONFIRMED: 4537 -> 5719 (effect=-0.040, type=cross_team_adaptation)
+  CONFIRMED: 3878 -> 5719 (effect=-0.039, type=cross_team_adaptation)
+  CONFIRMED: 3286 -> 5719 (effect=-0.039, type=same_team_propagation)
+  CONFIRMED: 5085 -> 5719 (effect=-0.039, type=same_team_propagation)
+  CONFIRMED: 4079 -> 5719 (effect=-0.039, type=cross_team_adaptation)
+  CONFIRMED: 5662 -> 5719 (effect=-0.039, type=same_team_propagation)
+  CONFIRMED: 3911 -> 5719 (effect=-0.039, type=same_team_propagation)
+  CONFIRMED: 3225 -> 5719 (effect=-0.039, type=same_team_propagation)
+  CONFIRMED: 4134 -> 5721 (effect=0.085, type=cross_team_adaptation)
+  CONFIRMED: 3962 -> 5721 (effect=0.085, type=same_team_propagation)
+  CONFIRMED: 3956 -> 5721 (effect=0.084, type=same_team_propagation)
+  CONFIRMED: 2607 -> 5722 (effect=0.035, type=same_team_propagation)
+  CONFIRMED: 4079 -> 5722 (effect=0.035, type=same_team_propagation)
+  CONFIRMED: 3286 -> 5722 (effect=0.035, type=cross_team_adaptation)
+  CONFIRMED: 5718 -> 5722 (effect=0.034, type=intra_episode)
+  CONFIRMED: 3902 -> 5722 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 4995 -> 5722 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 4770 -> 5722 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 4996 -> 5722 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 3911 -> 5722 (effect=0.034, type=cross_team_adaptation)
+  CONFIRMED: 3252 -> 5705 (effect=0.074, type=cross_team_adaptation)
+  CONFIRMED: 5699 -> 5705 (effect=0.072, type=cross_team_adaptation)
+  CONFIRMED: 4647 -> 5705 (effect=0.072, type=same_team_propagation)
+  CONFIRMED: 4440 -> 5705 (effect=0.071, type=cross_team_adaptation)
+  CONFIRMED: 5409 -> 5705 (effect=0.071, type=cross_team_adaptation)
+  CONFIRMED: 4247 -> 5705 (effect=0.071, type=same_team_propagation)
+  CONFIRMED: 4663 -> 5705 (effect=0.070, type=same_team_propagation)
+  CONFIRMED: 3077 -> 5705 (effect=0.070, type=cross_team_adaptation)
+  CONFIRMED: 5630 -> 5711 (effect=0.141, type=cross_team_adaptation)
+  CONFIRMED: 5239 -> 5711 (effect=0.137, type=cross_team_adaptation)
+  CONFIRMED: 5642 -> 5711 (effect=0.137, type=same_team_propagation)
+  CONFIRMED: 2773 -> 5711 (effect=0.135, type=cross_team_adaptation)
+  CONFIRMED: 4877 -> 5711 (effect=0.135, type=same_team_propagation)
+  CONFIRMED: 3441 -> 5711 (effect=0.134, type=same_team_propagation)
+  CONFIRMED: 4149 -> 5711 (effect=0.133, type=same_team_propagation)
+  CONFIRMED: 4728 -> 5711 (effect=0.133, type=same_team_propagation)
+  CONFIRMED: 4446 -> 5711 (effect=0.132, type=cross_team_adaptation)
+  CONFIRMED: 4661 -> 5717 (effect=0.055, type=cross_team_adaptation)
+  CONFIRMED: 4803 -> 5717 (effect=0.054, type=same_team_propagation)
+  CONFIRMED: 4533 -> 5717 (effect=0.054, type=same_team_propagation)
+  CONFIRMED: 2754 -> 5717 (effect=0.053, type=same_team_propagation)
+  CONFIRMED: 2736 -> 5717 (effect=0.053, type=same_team_propagation)
+  CONFIRMED: 3330 -> 5723 (effect=0.178, type=same_team_propagation)
+  CONFIRMED: 4654 -> 5723 (effect=0.176, type=same_team_propagation)
+  CONFIRMED: 5233 -> 5723 (effect=0.173, type=same_team_propagation)
+  CONFIRMED: 2653 -> 5723 (effect=0.172, type=same_team_propagation)
+  CONFIRMED: 5612 -> 5723 (effect=0.171, type=cross_team_adaptation)
+  CONFIRMED: 4484 -> 5723 (effect=0.169, type=cross_team_adaptation)
+  CONFIRMED: 2928 -> 5724 (effect=0.063, type=same_team_propagation)
+
+Episode avalon_20260805_113329 funnel: {'gate1_candidates_found': 172, 'rejected_no_exposure': 44, 'skipped_no_credit_data': 0, 'gate2_evaluated': 172, 'gate2_passed': 126, 'confirmed': 126}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 172
+  rejected_no_exposure: 44
+  skipped_no_credit_data: 0
+  gate2_evaluated: 172
+  gate2_passed: 126
+  confirmed: 126
+  done: Causal graph: avalon_20260805_113329
+
+[11/16] Causal graph for avalon_20260805_115905
+
+============================================================
+  Causal graph: avalon_20260805_115905
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_115905
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_115905...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 4972.53it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 5486 -> 5725 (effect=-0.118, type=same_team_propagation)
+  CONFIRMED: 2909 -> 5725 (effect=-0.116, type=same_team_propagation)
+  CONFIRMED: 4920 -> 5725 (effect=-0.116, type=same_team_propagation)
+  CONFIRMED: 2567 -> 5725 (effect=-0.116, type=same_team_propagation)
+  CONFIRMED: 2858 -> 5725 (effect=-0.115, type=cross_team_adaptation)
+  CONFIRMED: 5594 -> 5725 (effect=-0.115, type=same_team_propagation)
+  CONFIRMED: 2592 -> 5725 (effect=-0.115, type=same_team_propagation)
+  CONFIRMED: 4341 -> 5725 (effect=-0.114, type=same_team_propagation)
+  CONFIRMED: 5628 -> 5725 (effect=-0.114, type=cross_team_adaptation)
+  CONFIRMED: 4550 -> 5726 (effect=-0.123, type=same_team_propagation)
+  CONFIRMED: 3272 -> 5726 (effect=-0.121, type=cross_team_adaptation)
+  CONFIRMED: 3275 -> 5726 (effect=-0.120, type=cross_team_adaptation)
+  CONFIRMED: 3811 -> 5726 (effect=-0.120, type=cross_team_adaptation)
+  CONFIRMED: 4526 -> 5727 (effect=0.073, type=same_team_propagation)
+  CONFIRMED: 3275 -> 5727 (effect=0.073, type=same_team_propagation)
+  CONFIRMED: 3814 -> 5727 (effect=0.073, type=same_team_propagation)
+  CONFIRMED: 3066 -> 5729 (effect=0.073, type=same_team_propagation)
+  CONFIRMED: 5034 -> 5729 (effect=0.071, type=same_team_propagation)
+  CONFIRMED: 3948 -> 5729 (effect=0.070, type=same_team_propagation)
+  CONFIRMED: 3805 -> 5729 (effect=0.070, type=cross_team_adaptation)
+  CONFIRMED: 3856 -> 5729 (effect=0.070, type=cross_team_adaptation)
+  CONFIRMED: 5572 -> 5729 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 4764 -> 5729 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 4411 -> 5729 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 3273 -> 5729 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 4345 -> 5729 (effect=0.069, type=same_team_propagation)
+  CONFIRMED: 2670 -> 5740 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 5650 -> 5740 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 3833 -> 5740 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 3481 -> 5740 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 4473 -> 5740 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 3406 -> 5740 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 3436 -> 5740 (effect=0.032, type=cross_team_adaptation)
+  CONFIRMED: 2683 -> 5740 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 3828 -> 5740 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 3628 -> 5740 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 3903 -> 5742 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 3474 -> 5742 (effect=0.093, type=cross_team_adaptation)
+  CONFIRMED: 5641 -> 5742 (effect=0.093, type=same_team_propagation)
+  CONFIRMED: 4006 -> 5742 (effect=0.093, type=cross_team_adaptation)
+  CONFIRMED: 4125 -> 5742 (effect=0.092, type=same_team_propagation)
+  CONFIRMED: 5465 -> 5742 (effect=0.091, type=cross_team_adaptation)
+  CONFIRMED: 5466 -> 5742 (effect=0.091, type=same_team_propagation)
+  CONFIRMED: 3385 -> 5742 (effect=0.091, type=cross_team_adaptation)
+  CONFIRMED: 2891 -> 5744 (effect=0.069, type=cross_team_adaptation)
+  CONFIRMED: 5563 -> 5744 (effect=0.067, type=cross_team_adaptation)
+  CONFIRMED: 4779 -> 5730 (effect=-0.042, type=same_team_propagation)
+  CONFIRMED: 4557 -> 5730 (effect=-0.041, type=same_team_propagation)
+  CONFIRMED: 3585 -> 5730 (effect=-0.040, type=same_team_propagation)
+  CONFIRMED: 2633 -> 5730 (effect=-0.040, type=same_team_propagation)
+  CONFIRMED: 3655 -> 5730 (effect=-0.040, type=same_team_propagation)
+  CONFIRMED: 4983 -> 5730 (effect=-0.040, type=same_team_propagation)
+  CONFIRMED: 3952 -> 5730 (effect=-0.039, type=cross_team_adaptation)
+  CONFIRMED: 5272 -> 5730 (effect=-0.039, type=cross_team_adaptation)
+  CONFIRMED: 5724 -> 5730 (effect=-0.039, type=same_team_propagation)
+  CONFIRMED: 3930 -> 5731 (effect=-0.084, type=same_team_propagation)
+  CONFIRMED: 1201 -> 5731 (effect=-0.081, type=cross_team_adaptation)
+  CONFIRMED: 1227 -> 5731 (effect=-0.080, type=cross_team_adaptation)
+  CONFIRMED: 2997 -> 5731 (effect=-0.080, type=cross_team_adaptation)
+  CONFIRMED: 3510 -> 5731 (effect=-0.080, type=cross_team_adaptation)
+  CONFIRMED: 2139 -> 5731 (effect=-0.080, type=cross_team_adaptation)
+  CONFIRMED: 1626 -> 5731 (effect=-0.079, type=cross_team_adaptation)
+  CONFIRMED: 3294 -> 5731 (effect=-0.079, type=cross_team_adaptation)
+  CONFIRMED: 5730 -> 5732 (effect=-0.166, type=intra_episode)
+  CONFIRMED: 3585 -> 5732 (effect=-0.165, type=same_team_propagation)
+  CONFIRMED: 3206 -> 5732 (effect=-0.164, type=same_team_propagation)
+  CONFIRMED: 3952 -> 5732 (effect=-0.164, type=cross_team_adaptation)
+  CONFIRMED: 4557 -> 5732 (effect=-0.159, type=same_team_propagation)
+  CONFIRMED: 5587 -> 5732 (effect=-0.159, type=cross_team_adaptation)
+  CONFIRMED: 4779 -> 5732 (effect=-0.158, type=same_team_propagation)
+  CONFIRMED: 2696 -> 5732 (effect=-0.156, type=same_team_propagation)
+  CONFIRMED: 4038 -> 5732 (effect=-0.156, type=same_team_propagation)
+  CONFIRMED: 4044 -> 5732 (effect=-0.156, type=same_team_propagation)
+  CONFIRMED: 3655 -> 5738 (effect=0.075, type=cross_team_adaptation)
+  CONFIRMED: 4427 -> 5738 (effect=0.073, type=cross_team_adaptation)
+  CONFIRMED: 4557 -> 5738 (effect=0.072, type=cross_team_adaptation)
+  CONFIRMED: 5110 -> 5738 (effect=0.072, type=same_team_propagation)
+  CONFIRMED: 4779 -> 5738 (effect=0.072, type=cross_team_adaptation)
+  CONFIRMED: 4688 -> 5738 (effect=0.072, type=same_team_propagation)
+  CONFIRMED: 5473 -> 5738 (effect=0.071, type=cross_team_adaptation)
+  CONFIRMED: 5298 -> 5738 (effect=0.071, type=cross_team_adaptation)
+  CONFIRMED: 4853 -> 5738 (effect=0.071, type=same_team_propagation)
+  CONFIRMED: 3869 -> 5738 (effect=0.071, type=same_team_propagation)
+  CONFIRMED: 3234 -> 5745 (effect=-0.047, type=same_team_propagation)
+  CONFIRMED: 3592 -> 5745 (effect=-0.047, type=cross_team_adaptation)
+  CONFIRMED: 5739 -> 5745 (effect=-0.047, type=intra_episode)
+
+Episode avalon_20260805_115905 funnel: {'gate1_candidates_found': 100, 'rejected_no_exposure': 93, 'skipped_no_credit_data': 0, 'gate2_evaluated': 100, 'gate2_passed': 86, 'confirmed': 86}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 100
+  rejected_no_exposure: 93
+  skipped_no_credit_data: 0
+  gate2_evaluated: 100
+  gate2_passed: 86
+  confirmed: 86
+  done: Causal graph: avalon_20260805_115905
+
+[12/16] Causal graph for avalon_20260805_120509
+
+============================================================
+  Causal graph: avalon_20260805_120509
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_120509
+============================================================
+'[Errno 11001] getaddrinfo failed' thrown while requesting HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+Retrying in 1s [Retry 1/5].
+Processing episode avalon_20260805_120509...
+Loading model and memories (once)...
+Traceback (most recent call last):
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\causal_graph.py", line 91, in <module>
+    funnel = process_episode(args.episode, verbose=True)
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\orchestrator.py", line 65, in process_episode
+    model, memories = _get_model_and_memories()
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\orchestrator.py", line 33, in _get_model_and_memories
+    _model = SentenceTransformer("all-MiniLM-L6-v2")
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\sentence_transformers\sentence_transformer\model.py", line 188, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        model_name_or_path=model_name_or_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+        default_prompt_name=default_prompt_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\sentence_transformers\base\model.py", line 216, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ~~~~~~~~~~~~~~~~~~^
+        model_name_or_path,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        config_kwargs=config_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\sentence_transformers\base\model.py", line 1002, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\sentence_transformers\base\model.py", line 1208, in _load_config_modules
+    module = module_class.load(
+        model_name_or_path,
+    ...<11 lines>...
+        backend=self.backend,
+    )
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 2030, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 639, in __init__
+    config, is_peft_model = self._load_config(model_name_or_path, backend, config_kwargs)
+                            ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 1647, in _load_config
+    adapter_config_file = find_adapter_config_file(
+        model_name_or_path,
+    ...<4 lines>...
+        local_files_only=config_kwargs.get("local_files_only", False),
+    )
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\transformers\utils\peft_utils.py", line 84, in find_adapter_config_file
+    adapter_cached_filename = cached_file(
+        model_id,
+    ...<11 lines>...
+        _raise_exceptions_for_connection_errors=False,
+    )
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\transformers\utils\hub.py", line 293, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\transformers\utils\hub.py", line 527, in cached_files
+    raise e
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\transformers\utils\hub.py", line 437, in cached_files
+    hf_hub_download(
+    ~~~~~~~~~~~~~~~^
+        path_or_repo_id,
+        ^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        tqdm_class=tqdm_class,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\huggingface_hub\file_download.py", line 1013, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+        # Destination
+    ...<15 lines>...
+        dry_run=dry_run,
+    )
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\huggingface_hub\file_download.py", line 1147, in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        repo_id=repo_id,
+        ^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        retry_on_errors=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\huggingface_hub\file_download.py", line 1707, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+        url=url,
+    ...<4 lines>...
+        retry_on_errors=retry_on_errors,
+    )
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\huggingface_hub\file_download.py", line 1615, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+        method="HEAD", url=url, headers=hf_headers, timeout=timeout, retry_on_errors=retry_on_errors
+    )
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\huggingface_hub\utils\_http.py", line 719, in _httpx_follow_relative_redirects_with_backoff
+    response = http_backoff(
+        method=method,
+    ...<3 lines>...
+        **no_retry_kwargs,
+    )
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\huggingface_hub\utils\_http.py", line 596, in http_backoff
+    return next(
+        _http_backoff_base(
+    ...<9 lines>...
+        )
+    )
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\huggingface_hub\utils\_http.py", line 504, in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Lib\site-packages\httpx\_client.py", line 901, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+  FAILED (exit 1): Causal graph: avalon_20260805_120509
+
+[13/16] Causal graph for avalon_20260805_121422
+
+============================================================
+  Causal graph: avalon_20260805_121422
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_121422
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_121422...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3698.11it/s]
+
+Episode avalon_20260805_121422 funnel: {'gate1_candidates_found': 0, 'rejected_no_exposure': 0, 'skipped_no_credit_data': 0, 'gate2_evaluated': 0, 'gate2_passed': 0, 'confirmed': 0}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 0
+  rejected_no_exposure: 0
+  skipped_no_credit_data: 0
+  gate2_evaluated: 0
+  gate2_passed: 0
+  confirmed: 0
+  done: Causal graph: avalon_20260805_121422
+
+[14/16] Causal graph for avalon_20260805_122803
+
+============================================================
+  Causal graph: avalon_20260805_122803
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_122803
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_122803...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3425.14it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 4436 -> 5802 (effect=0.050, type=cross_team_adaptation)
+  CONFIRMED: 2861 -> 5802 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 3169 -> 5802 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 4976 -> 5802 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 3280 -> 5802 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 4746 -> 5802 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 4270 -> 5802 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 3615 -> 5802 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 5580 -> 5802 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 4726 -> 5802 (effect=0.047, type=cross_team_adaptation)
+  CONFIRMED: 5389 -> 5803 (effect=0.094, type=same_team_propagation)
+  CONFIRMED: 5438 -> 5803 (effect=0.089, type=cross_team_adaptation)
+  CONFIRMED: 5237 -> 5803 (effect=0.089, type=same_team_propagation)
+  CONFIRMED: 2608 -> 5803 (effect=0.088, type=same_team_propagation)
+  CONFIRMED: 3838 -> 5803 (effect=0.088, type=same_team_propagation)
+  CONFIRMED: 3401 -> 5803 (effect=0.088, type=same_team_propagation)
+  CONFIRMED: 4489 -> 5803 (effect=0.087, type=same_team_propagation)
+  CONFIRMED: 5476 -> 5803 (effect=0.087, type=cross_team_adaptation)
+  CONFIRMED: 4951 -> 5804 (effect=-0.066, type=cross_team_adaptation)
+  CONFIRMED: 4784 -> 5804 (effect=-0.065, type=same_team_propagation)
+  CONFIRMED: 4566 -> 5804 (effect=-0.065, type=same_team_propagation)
+  CONFIRMED: 3483 -> 5804 (effect=-0.065, type=same_team_propagation)
+  CONFIRMED: 3940 -> 5804 (effect=-0.065, type=same_team_propagation)
+  CONFIRMED: 5370 -> 5804 (effect=-0.065, type=cross_team_adaptation)
+  CONFIRMED: 4265 -> 5804 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 3901 -> 5804 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 4627 -> 5804 (effect=-0.064, type=same_team_propagation)
+  CONFIRMED: 4758 -> 5804 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 5707 -> 5805 (effect=0.113, type=same_team_propagation)
+  CONFIRMED: 4401 -> 5805 (effect=0.111, type=same_team_propagation)
+  CONFIRMED: 3220 -> 5805 (effect=0.110, type=cross_team_adaptation)
+  CONFIRMED: 3702 -> 5805 (effect=0.110, type=same_team_propagation)
+  CONFIRMED: 5033 -> 5805 (effect=0.109, type=same_team_propagation)
+  CONFIRMED: 2797 -> 5805 (effect=0.109, type=same_team_propagation)
+  CONFIRMED: 5710 -> 5805 (effect=0.109, type=cross_team_adaptation)
+  CONFIRMED: 3217 -> 5805 (effect=0.108, type=same_team_propagation)
+  CONFIRMED: 4250 -> 5805 (effect=0.108, type=same_team_propagation)
+  CONFIRMED: 2700 -> 5810 (effect=0.114, type=cross_team_adaptation)
+  CONFIRMED: 4739 -> 5810 (effect=0.112, type=same_team_propagation)
+  CONFIRMED: 4076 -> 5810 (effect=0.111, type=same_team_propagation)
+  CONFIRMED: 2856 -> 5810 (effect=0.110, type=cross_team_adaptation)
+  CONFIRMED: 5420 -> 5810 (effect=0.110, type=same_team_propagation)
+  CONFIRMED: 3590 -> 5810 (effect=0.109, type=same_team_propagation)
+  CONFIRMED: 4224 -> 5810 (effect=0.109, type=cross_team_adaptation)
+  CONFIRMED: 4741 -> 5810 (effect=0.109, type=same_team_propagation)
+  CONFIRMED: 3944 -> 5810 (effect=0.109, type=cross_team_adaptation)
+  CONFIRMED: 4578 -> 5811 (effect=0.079, type=cross_team_adaptation)
+  CONFIRMED: 4164 -> 5811 (effect=0.079, type=cross_team_adaptation)
+  CONFIRMED: 4650 -> 5811 (effect=0.079, type=cross_team_adaptation)
+  CONFIRMED: 4576 -> 5811 (effect=0.079, type=same_team_propagation)
+  CONFIRMED: 4431 -> 5811 (effect=0.078, type=cross_team_adaptation)
+  CONFIRMED: 4577 -> 5811 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 3212 -> 5811 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 3100 -> 5811 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 3941 -> 5811 (effect=0.077, type=same_team_propagation)
+  CONFIRMED: 5719 -> 5813 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 5085 -> 5813 (effect=0.097, type=same_team_propagation)
+  CONFIRMED: 3284 -> 5813 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 3902 -> 5813 (effect=0.097, type=cross_team_adaptation)
+  CONFIRMED: 4537 -> 5813 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 2652 -> 5813 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 4079 -> 5813 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 3286 -> 5813 (effect=0.096, type=same_team_propagation)
+  CONFIRMED: 5173 -> 5813 (effect=0.096, type=same_team_propagation)
+  CONFIRMED: 5812 -> 5817 (effect=0.078, type=intra_episode)
+  CONFIRMED: 4153 -> 5817 (effect=0.078, type=cross_team_adaptation)
+  CONFIRMED: 4149 -> 5817 (effect=0.078, type=same_team_propagation)
+  CONFIRMED: 4898 -> 5817 (effect=0.077, type=cross_team_adaptation)
+  CONFIRMED: 3124 -> 5819 (effect=0.075, type=cross_team_adaptation)
+  CONFIRMED: 4657 -> 5819 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 3653 -> 5819 (effect=0.075, type=cross_team_adaptation)
+  CONFIRMED: 4783 -> 5819 (effect=0.075, type=same_team_propagation)
+  CONFIRMED: 3934 -> 5819 (effect=0.074, type=same_team_propagation)
+  CONFIRMED: 3902 -> 5819 (effect=0.073, type=cross_team_adaptation)
+  CONFIRMED: 4171 -> 5819 (effect=0.073, type=cross_team_adaptation)
+  CONFIRMED: 4022 -> 5819 (effect=0.073, type=same_team_propagation)
+  CONFIRMED: 3286 -> 5822 (effect=0.044, type=same_team_propagation)
+  CONFIRMED: 5173 -> 5822 (effect=0.043, type=same_team_propagation)
+  CONFIRMED: 4626 -> 5822 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 3902 -> 5822 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 4079 -> 5822 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 4400 -> 5822 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 2683 -> 5822 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 4537 -> 5822 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 2652 -> 5822 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 3812 -> 5823 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 3838 -> 5823 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 5553 -> 5823 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 4393 -> 5823 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 4043 -> 5823 (effect=0.048, type=same_team_propagation)
+  CONFIRMED: 4267 -> 5825 (effect=0.042, type=same_team_propagation)
+  CONFIRMED: 5277 -> 5825 (effect=0.042, type=same_team_propagation)
+  CONFIRMED: 3715 -> 5825 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 4994 -> 5825 (effect=0.042, type=same_team_propagation)
+  CONFIRMED: 5551 -> 5825 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 3650 -> 5825 (effect=0.041, type=cross_team_adaptation)
+  CONFIRMED: 5297 -> 5825 (effect=0.041, type=same_team_propagation)
+  CONFIRMED: 3145 -> 5825 (effect=0.041, type=same_team_propagation)
+  CONFIRMED: 4218 -> 5825 (effect=0.041, type=same_team_propagation)
+  CONFIRMED: 5538 -> 5825 (effect=0.041, type=cross_team_adaptation)
+  CONFIRMED: 2586 -> 5827 (effect=-0.056, type=same_team_propagation)
+  CONFIRMED: 3619 -> 5827 (effect=-0.056, type=same_team_propagation)
+  CONFIRMED: 2824 -> 5827 (effect=-0.056, type=same_team_propagation)
+  CONFIRMED: 3109 -> 5827 (effect=-0.054, type=same_team_propagation)
+  CONFIRMED: 4938 -> 5827 (effect=-0.054, type=same_team_propagation)
+  CONFIRMED: 4534 -> 5827 (effect=-0.054, type=cross_team_adaptation)
+  CONFIRMED: 3874 -> 5827 (effect=-0.053, type=same_team_propagation)
+  CONFIRMED: 2716 -> 5827 (effect=-0.053, type=same_team_propagation)
+  CONFIRMED: 5498 -> 5828 (effect=0.055, type=cross_team_adaptation)
+  CONFIRMED: 4176 -> 5828 (effect=0.055, type=same_team_propagation)
+  CONFIRMED: 5318 -> 5828 (effect=0.055, type=cross_team_adaptation)
+  CONFIRMED: 4268 -> 5828 (effect=0.054, type=same_team_propagation)
+  CONFIRMED: 4133 -> 5828 (effect=0.054, type=same_team_propagation)
+  CONFIRMED: 5456 -> 5828 (effect=0.054, type=same_team_propagation)
+  CONFIRMED: 4642 -> 5828 (effect=0.054, type=cross_team_adaptation)
+  CONFIRMED: 4813 -> 5828 (effect=0.054, type=cross_team_adaptation)
+  CONFIRMED: 4058 -> 5828 (effect=0.054, type=same_team_propagation)
+  CONFIRMED: 5554 -> 5828 (effect=0.054, type=same_team_propagation)
+  CONFIRMED: 4857 -> 5829 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 5690 -> 5829 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 4912 -> 5829 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 4713 -> 5829 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 2918 -> 5829 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 2681 -> 5829 (effect=0.039, type=same_team_propagation)
+  CONFIRMED: 3554 -> 5829 (effect=0.039, type=cross_team_adaptation)
+  CONFIRMED: 2668 -> 5829 (effect=0.038, type=same_team_propagation)
+  CONFIRMED: 3098 -> 5829 (effect=0.038, type=same_team_propagation)
+  CONFIRMED: 5320 -> 5829 (effect=0.038, type=same_team_propagation)
+  CONFIRMED: 5819 -> 5830 (effect=-0.043, type=intra_episode)
+  CONFIRMED: 4657 -> 5830 (effect=-0.042, type=cross_team_adaptation)
+  CONFIRMED: 4171 -> 5830 (effect=-0.042, type=same_team_propagation)
+  CONFIRMED: 4121 -> 5831 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 5163 -> 5831 (effect=0.041, type=cross_team_adaptation)
+  CONFIRMED: 4590 -> 5831 (effect=0.041, type=same_team_propagation)
+  CONFIRMED: 5021 -> 5831 (effect=0.041, type=same_team_propagation)
+  CONFIRMED: 5357 -> 5831 (effect=0.041, type=cross_team_adaptation)
+  CONFIRMED: 5664 -> 5831 (effect=0.041, type=cross_team_adaptation)
+  CONFIRMED: 5662 -> 5831 (effect=0.041, type=same_team_propagation)
+  CONFIRMED: 5819 -> 5831 (effect=0.040, type=intra_episode)
+  CONFIRMED: 4446 -> 5806 (effect=0.150, type=cross_team_adaptation)
+  CONFIRMED: 5509 -> 5806 (effect=0.148, type=cross_team_adaptation)
+  CONFIRMED: 4711 -> 5806 (effect=0.147, type=same_team_propagation)
+  CONFIRMED: 4695 -> 5806 (effect=0.145, type=cross_team_adaptation)
+  CONFIRMED: 5420 -> 5806 (effect=0.141, type=same_team_propagation)
+  CONFIRMED: 3001 -> 5806 (effect=0.141, type=same_team_propagation)
+  CONFIRMED: 4741 -> 5806 (effect=0.141, type=same_team_propagation)
+  CONFIRMED: 5806 -> 5807 (effect=-0.138, type=intra_episode)
+  CONFIRMED: 3070 -> 5807 (effect=-0.129, type=same_team_propagation)
+  CONFIRMED: 2989 -> 5807 (effect=-0.116, type=cross_team_adaptation)
+  CONFIRMED: 4270 -> 5807 (effect=-0.114, type=same_team_propagation)
+  CONFIRMED: 3140 -> 5808 (effect=0.187, type=cross_team_adaptation)
+  CONFIRMED: 3391 -> 5808 (effect=0.184, type=same_team_propagation)
+  CONFIRMED: 3083 -> 5808 (effect=0.181, type=same_team_propagation)
+  CONFIRMED: 3288 -> 5808 (effect=0.181, type=same_team_propagation)
+  CONFIRMED: 1009 -> 5808 (effect=0.179, type=same_team_propagation)
+  CONFIRMED: 2621 -> 5808 (effect=0.178, type=cross_team_adaptation)
+  CONFIRMED: 4853 -> 5808 (effect=0.178, type=cross_team_adaptation)
+  CONFIRMED: 4080 -> 5814 (effect=0.051, type=cross_team_adaptation)
+  CONFIRMED: 5208 -> 5814 (effect=0.050, type=cross_team_adaptation)
+  CONFIRMED: 3180 -> 5814 (effect=0.049, type=same_team_propagation)
+  CONFIRMED: 5220 -> 5814 (effect=0.049, type=cross_team_adaptation)
+  CONFIRMED: 2653 -> 5814 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 5723 -> 5814 (effect=0.048, type=cross_team_adaptation)
+  CONFIRMED: 4560 -> 5814 (effect=0.047, type=cross_team_adaptation)
+  CONFIRMED: 4791 -> 5820 (effect=0.201, type=same_team_propagation)
+  CONFIRMED: 3821 -> 5820 (effect=0.200, type=same_team_propagation)
+  CONFIRMED: 2579 -> 5820 (effect=0.198, type=cross_team_adaptation)
+  CONFIRMED: 3403 -> 5820 (effect=0.198, type=same_team_propagation)
+  CONFIRMED: 5384 -> 5820 (effect=0.196, type=same_team_propagation)
+  CONFIRMED: 2977 -> 5820 (effect=0.196, type=cross_team_adaptation)
+  CONFIRMED: 3039 -> 5820 (effect=0.196, type=same_team_propagation)
+  CONFIRMED: 4759 -> 5820 (effect=0.196, type=same_team_propagation)
+  CONFIRMED: 4694 -> 5820 (effect=0.194, type=same_team_propagation)
+  CONFIRMED: 3385 -> 5820 (effect=0.194, type=same_team_propagation)
+  CONFIRMED: 3385 -> 5826 (effect=0.197, type=same_team_propagation)
+  CONFIRMED: 5384 -> 5826 (effect=0.188, type=same_team_propagation)
+  CONFIRMED: 3347 -> 5826 (effect=0.187, type=cross_team_adaptation)
+  CONFIRMED: 2734 -> 5826 (effect=0.187, type=same_team_propagation)
+  CONFIRMED: 3912 -> 5826 (effect=0.186, type=same_team_propagation)
+  CONFIRMED: 3176 -> 5826 (effect=0.185, type=cross_team_adaptation)
+  CONFIRMED: 3436 -> 5826 (effect=0.185, type=same_team_propagation)
+  CONFIRMED: 3584 -> 5826 (effect=0.184, type=cross_team_adaptation)
+  CONFIRMED: 4129 -> 5826 (effect=0.184, type=same_team_propagation)
+  CONFIRMED: 5057 -> 5826 (effect=0.183, type=cross_team_adaptation)
+  CONFIRMED: 2915 -> 5832 (effect=-0.156, type=cross_team_adaptation)
+  CONFIRMED: 3779 -> 5832 (effect=-0.156, type=cross_team_adaptation)
+  CONFIRMED: 4185 -> 5832 (effect=-0.154, type=cross_team_adaptation)
+  CONFIRMED: 3912 -> 5832 (effect=-0.153, type=cross_team_adaptation)
+  CONFIRMED: 4458 -> 5832 (effect=-0.153, type=cross_team_adaptation)
+  CONFIRMED: 5109 -> 5832 (effect=-0.153, type=cross_team_adaptation)
+  CONFIRMED: 3122 -> 5832 (effect=-0.152, type=same_team_propagation)
+  CONFIRMED: 2597 -> 5832 (effect=-0.149, type=cross_team_adaptation)
+  CONFIRMED: 3933 -> 5832 (effect=-0.149, type=cross_team_adaptation)
+  CONFIRMED: 2591 -> 5832 (effect=-0.149, type=same_team_propagation)
+
+Episode avalon_20260805_122803 funnel: {'gate1_candidates_found': 244, 'rejected_no_exposure': 51, 'skipped_no_credit_data': 0, 'gate2_evaluated': 244, 'gate2_passed': 194, 'confirmed': 194}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 244
+  rejected_no_exposure: 51
+  skipped_no_credit_data: 0
+  gate2_evaluated: 244
+  gate2_passed: 194
+  confirmed: 194
+  done: Causal graph: avalon_20260805_122803
+
+[15/16] Causal graph for avalon_20260805_140652
+
+============================================================
+  Causal graph: avalon_20260805_140652
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_140652
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_140652...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8913.56it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 3616 -> 5834 (effect=-0.064, type=cross_team_adaptation)
+  CONFIRMED: 5521 -> 5834 (effect=-0.063, type=cross_team_adaptation)
+  CONFIRMED: 3755 -> 5835 (effect=-0.041, type=cross_team_adaptation)
+  CONFIRMED: 4132 -> 5835 (effect=-0.040, type=cross_team_adaptation)
+  CONFIRMED: 4579 -> 5837 (effect=0.091, type=cross_team_adaptation)
+  CONFIRMED: 2587 -> 5842 (effect=0.096, type=same_team_propagation)
+  CONFIRMED: 3302 -> 5842 (effect=0.096, type=cross_team_adaptation)
+  CONFIRMED: 4549 -> 5842 (effect=0.095, type=cross_team_adaptation)
+  CONFIRMED: 5714 -> 5842 (effect=0.094, type=cross_team_adaptation)
+  CONFIRMED: 2775 -> 5842 (effect=0.093, type=same_team_propagation)
+  CONFIRMED: 4234 -> 5842 (effect=0.093, type=cross_team_adaptation)
+  CONFIRMED: 2569 -> 5842 (effect=0.093, type=cross_team_adaptation)
+  CONFIRMED: 4089 -> 5842 (effect=0.093, type=cross_team_adaptation)
+  CONFIRMED: 4675 -> 5842 (effect=0.092, type=same_team_propagation)
+  CONFIRMED: 4673 -> 5842 (effect=0.092, type=same_team_propagation)
+  CONFIRMED: 4265 -> 5843 (effect=-0.032, type=cross_team_adaptation)
+  CONFIRMED: 3281 -> 5843 (effect=-0.031, type=same_team_propagation)
+  CONFIRMED: 2876 -> 5843 (effect=-0.031, type=same_team_propagation)
+  CONFIRMED: 5408 -> 5843 (effect=-0.031, type=same_team_propagation)
+  CONFIRMED: 5024 -> 5843 (effect=-0.030, type=same_team_propagation)
+  CONFIRMED: 5842 -> 5844 (effect=-0.053, type=intra_episode)
+  CONFIRMED: 2736 -> 5847 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 5558 -> 5847 (effect=0.042, type=same_team_propagation)
+  CONFIRMED: 4152 -> 5847 (effect=0.042, type=same_team_propagation)
+  CONFIRMED: 3005 -> 5847 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 3176 -> 5847 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 5500 -> 5847 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 5431 -> 5847 (effect=0.042, type=same_team_propagation)
+  CONFIRMED: 5658 -> 5847 (effect=0.042, type=cross_team_adaptation)
+  CONFIRMED: 2879 -> 5847 (effect=0.042, type=same_team_propagation)
+  CONFIRMED: 3170 -> 5848 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 2662 -> 5848 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 4637 -> 5848 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 3927 -> 5848 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 2788 -> 5848 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 4410 -> 5848 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 3805 -> 5848 (effect=0.033, type=cross_team_adaptation)
+  CONFIRMED: 5319 -> 5848 (effect=0.032, type=cross_team_adaptation)
+  CONFIRMED: 4613 -> 5848 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 3417 -> 5848 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 4829 -> 5849 (effect=0.144, type=same_team_propagation)
+  CONFIRMED: 4449 -> 5849 (effect=0.144, type=same_team_propagation)
+  CONFIRMED: 3944 -> 5849 (effect=0.144, type=same_team_propagation)
+  CONFIRMED: 4075 -> 5849 (effect=0.142, type=same_team_propagation)
+  CONFIRMED: 2653 -> 5849 (effect=0.142, type=cross_team_adaptation)
+  CONFIRMED: 3941 -> 5849 (effect=0.142, type=cross_team_adaptation)
+  CONFIRMED: 3209 -> 5849 (effect=0.141, type=same_team_propagation)
+  CONFIRMED: 3968 -> 5849 (effect=0.141, type=cross_team_adaptation)
+  CONFIRMED: 4480 -> 5849 (effect=0.141, type=same_team_propagation)
+  CONFIRMED: 4566 -> 5849 (effect=0.140, type=same_team_propagation)
+  CONFIRMED: 4187 -> 5850 (effect=0.085, type=cross_team_adaptation)
+  CONFIRMED: 5752 -> 5850 (effect=0.085, type=same_team_propagation)
+  CONFIRMED: 4144 -> 5850 (effect=0.085, type=same_team_propagation)
+  CONFIRMED: 2891 -> 5850 (effect=0.084, type=cross_team_adaptation)
+  CONFIRMED: 4503 -> 5850 (effect=0.084, type=cross_team_adaptation)
+  CONFIRMED: 5558 -> 5855 (effect=0.088, type=cross_team_adaptation)
+  CONFIRMED: 2801 -> 5855 (effect=0.087, type=same_team_propagation)
+  CONFIRMED: 5500 -> 5855 (effect=0.087, type=same_team_propagation)
+  CONFIRMED: 3338 -> 5855 (effect=0.086, type=same_team_propagation)
+  CONFIRMED: 4831 -> 5855 (effect=0.086, type=cross_team_adaptation)
+  CONFIRMED: 3005 -> 5855 (effect=0.086, type=same_team_propagation)
+  CONFIRMED: 4636 -> 5855 (effect=0.086, type=same_team_propagation)
+  CONFIRMED: 4706 -> 5855 (effect=0.086, type=same_team_propagation)
+  CONFIRMED: 3298 -> 5856 (effect=0.087, type=cross_team_adaptation)
+  CONFIRMED: 3862 -> 5856 (effect=0.087, type=cross_team_adaptation)
+  CONFIRMED: 2907 -> 5856 (effect=0.086, type=same_team_propagation)
+  CONFIRMED: 3052 -> 5856 (effect=0.086, type=same_team_propagation)
+  CONFIRMED: 3139 -> 5856 (effect=0.085, type=cross_team_adaptation)
+  CONFIRMED: 4615 -> 5856 (effect=0.085, type=cross_team_adaptation)
+  CONFIRMED: 5821 -> 5858 (effect=0.121, type=same_team_propagation)
+  CONFIRMED: 3199 -> 5858 (effect=0.120, type=same_team_propagation)
+  CONFIRMED: 5569 -> 5858 (effect=0.120, type=same_team_propagation)
+  CONFIRMED: 5068 -> 5858 (effect=0.119, type=cross_team_adaptation)
+  CONFIRMED: 2997 -> 5858 (effect=0.118, type=cross_team_adaptation)
+  CONFIRMED: 3028 -> 5858 (effect=0.118, type=same_team_propagation)
+  CONFIRMED: 3216 -> 5858 (effect=0.118, type=same_team_propagation)
+  CONFIRMED: 2853 -> 5858 (effect=0.118, type=cross_team_adaptation)
+  CONFIRMED: 3947 -> 5858 (effect=0.118, type=same_team_propagation)
+  CONFIRMED: 2925 -> 5860 (effect=0.134, type=cross_team_adaptation)
+  CONFIRMED: 3597 -> 5860 (effect=0.131, type=cross_team_adaptation)
+  CONFIRMED: 3832 -> 5860 (effect=0.130, type=cross_team_adaptation)
+  CONFIRMED: 2858 -> 5860 (effect=0.129, type=same_team_propagation)
+  CONFIRMED: 2592 -> 5860 (effect=0.128, type=cross_team_adaptation)
+  CONFIRMED: 3868 -> 5860 (effect=0.127, type=cross_team_adaptation)
+  CONFIRMED: 5588 -> 5860 (effect=0.127, type=cross_team_adaptation)
+  CONFIRMED: 5406 -> 5860 (effect=0.127, type=same_team_propagation)
+  CONFIRMED: 4590 -> 5861 (effect=0.090, type=cross_team_adaptation)
+  CONFIRMED: 4591 -> 5861 (effect=0.083, type=same_team_propagation)
+  CONFIRMED: 5859 -> 5861 (effect=0.083, type=intra_episode)
+  CONFIRMED: 5029 -> 5861 (effect=0.083, type=cross_team_adaptation)
+  CONFIRMED: 3873 -> 5861 (effect=0.083, type=cross_team_adaptation)
+  CONFIRMED: 3616 -> 5861 (effect=0.083, type=same_team_propagation)
+  CONFIRMED: 5617 -> 5861 (effect=0.082, type=cross_team_adaptation)
+  CONFIRMED: 3399 -> 5861 (effect=0.082, type=same_team_propagation)
+  CONFIRMED: 3117 -> 5862 (effect=0.106, type=same_team_propagation)
+  CONFIRMED: 3897 -> 5862 (effect=0.106, type=same_team_propagation)
+  CONFIRMED: 5299 -> 5862 (effect=0.105, type=same_team_propagation)
+  CONFIRMED: 4850 -> 5862 (effect=0.105, type=same_team_propagation)
+  CONFIRMED: 5111 -> 5862 (effect=0.104, type=cross_team_adaptation)
+  CONFIRMED: 3742 -> 5862 (effect=0.103, type=same_team_propagation)
+  CONFIRMED: 3565 -> 5862 (effect=0.103, type=same_team_propagation)
+  CONFIRMED: 5286 -> 5862 (effect=0.103, type=same_team_propagation)
+  CONFIRMED: 4941 -> 5862 (effect=0.103, type=same_team_propagation)
+  CONFIRMED: 4123 -> 5838 (effect=0.198, type=cross_team_adaptation)
+  CONFIRMED: 4664 -> 5838 (effect=0.198, type=cross_team_adaptation)
+  CONFIRMED: 5162 -> 5838 (effect=0.196, type=cross_team_adaptation)
+  CONFIRMED: 5751 -> 5838 (effect=0.195, type=same_team_propagation)
+  CONFIRMED: 4696 -> 5838 (effect=0.194, type=cross_team_adaptation)
+  CONFIRMED: 4841 -> 5838 (effect=0.194, type=same_team_propagation)
+  CONFIRMED: 5612 -> 5838 (effect=0.192, type=same_team_propagation)
+  CONFIRMED: 2928 -> 5839 (effect=-0.083, type=same_team_propagation)
+  CONFIRMED: 4545 -> 5839 (effect=-0.082, type=cross_team_adaptation)
+  CONFIRMED: 3471 -> 5839 (effect=-0.081, type=cross_team_adaptation)
+  CONFIRMED: 5359 -> 5839 (effect=-0.081, type=same_team_propagation)
+  CONFIRMED: 4592 -> 5839 (effect=-0.081, type=same_team_propagation)
+  CONFIRMED: 4580 -> 5839 (effect=-0.081, type=same_team_propagation)
+  CONFIRMED: 3930 -> 5839 (effect=-0.080, type=cross_team_adaptation)
+  CONFIRMED: 5473 -> 5839 (effect=-0.080, type=same_team_propagation)
+  CONFIRMED: 2915 -> 5839 (effect=-0.079, type=same_team_propagation)
+  CONFIRMED: 5831 -> 5839 (effect=-0.079, type=same_team_propagation)
+  CONFIRMED: 5838 -> 5845 (effect=0.068, type=intra_episode)
+  CONFIRMED: 5814 -> 5845 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 5098 -> 5845 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 2935 -> 5845 (effect=0.067, type=cross_team_adaptation)
+  CONFIRMED: 3924 -> 5845 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 5723 -> 5851 (effect=-0.051, type=same_team_propagation)
+  CONFIRMED: 4654 -> 5851 (effect=-0.049, type=same_team_propagation)
+  CONFIRMED: 5612 -> 5851 (effect=-0.049, type=cross_team_adaptation)
+  CONFIRMED: 2653 -> 5851 (effect=-0.049, type=same_team_propagation)
+  CONFIRMED: 3330 -> 5851 (effect=-0.049, type=same_team_propagation)
+  CONFIRMED: 2621 -> 5851 (effect=-0.048, type=cross_team_adaptation)
+  CONFIRMED: 5233 -> 5851 (effect=-0.048, type=same_team_propagation)
+  CONFIRMED: 4080 -> 5851 (effect=-0.048, type=same_team_propagation)
+  CONFIRMED: 3958 -> 5851 (effect=-0.048, type=same_team_propagation)
+  CONFIRMED: 4509 -> 5857 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 4640 -> 5857 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 5061 -> 5857 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 5371 -> 5857 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 5485 -> 5857 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 5441 -> 5857 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 4378 -> 5857 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 5233 -> 5863 (effect=0.219, type=cross_team_adaptation)
+  CONFIRMED: 5851 -> 5863 (effect=0.218, type=intra_episode)
+  CONFIRMED: 4688 -> 5863 (effect=0.218, type=same_team_propagation)
+  CONFIRMED: 2702 -> 5863 (effect=0.217, type=cross_team_adaptation)
+  CONFIRMED: 2877 -> 5863 (effect=0.217, type=cross_team_adaptation)
+  CONFIRMED: 5334 -> 5863 (effect=0.217, type=same_team_propagation)
+  CONFIRMED: 4871 -> 5863 (effect=0.216, type=cross_team_adaptation)
+  CONFIRMED: 4050 -> 5863 (effect=0.215, type=cross_team_adaptation)
+  CONFIRMED: 5049 -> 5863 (effect=0.215, type=cross_team_adaptation)
+  CONFIRMED: 3303 -> 5863 (effect=0.213, type=same_team_propagation)
+
+Episode avalon_20260805_140652 funnel: {'gate1_candidates_found': 187, 'rejected_no_exposure': 100, 'skipped_no_credit_data': 0, 'gate2_evaluated': 187, 'gate2_passed': 151, 'confirmed': 151}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 187
+  rejected_no_exposure: 100
+  skipped_no_credit_data: 0
+  gate2_evaluated: 187
+  gate2_passed: 151
+  confirmed: 151
+  done: Causal graph: avalon_20260805_140652
+
+[16/16] Causal graph for avalon_20260805_142150
+
+============================================================
+  Causal graph: avalon_20260805_142150
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe causal_graph.py --episode avalon_20260805_142150
+============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Processing episode avalon_20260805_142150...
+Loading model and memories (once)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3249.52it/s]
+Building reflection embedding index: 1250 texts (one-time batch encode)...
+Built full real dataset: 3935 scored messages (mission-level outcomes).
+  CONFIRMED: 5591 -> 5864 (effect=-0.124, type=same_team_propagation)
+  CONFIRMED: 5154 -> 5864 (effect=-0.124, type=same_team_propagation)
+  CONFIRMED: 3565 -> 5864 (effect=-0.122, type=same_team_propagation)
+  CONFIRMED: 4236 -> 5865 (effect=0.025, type=cross_team_adaptation)
+  CONFIRMED: 5029 -> 5866 (effect=-0.109, type=cross_team_adaptation)
+  CONFIRMED: 4943 -> 5866 (effect=-0.107, type=same_team_propagation)
+  CONFIRMED: 3098 -> 5866 (effect=-0.107, type=cross_team_adaptation)
+  CONFIRMED: 3375 -> 5866 (effect=-0.106, type=same_team_propagation)
+  CONFIRMED: 2717 -> 5866 (effect=-0.106, type=cross_team_adaptation)
+  CONFIRMED: 3744 -> 5866 (effect=-0.106, type=same_team_propagation)
+  CONFIRMED: 5627 -> 5866 (effect=-0.106, type=same_team_propagation)
+  CONFIRMED: 4600 -> 5866 (effect=-0.105, type=same_team_propagation)
+  CONFIRMED: 3921 -> 5866 (effect=-0.105, type=cross_team_adaptation)
+  CONFIRMED: 3730 -> 5866 (effect=-0.105, type=cross_team_adaptation)
+  CONFIRMED: 5176 -> 5868 (effect=0.041, type=cross_team_adaptation)
+  CONFIRMED: 5178 -> 5868 (effect=0.041, type=same_team_propagation)
+  CONFIRMED: 3873 -> 5868 (effect=0.040, type=cross_team_adaptation)
+  CONFIRMED: 3616 -> 5868 (effect=0.040, type=same_team_propagation)
+  CONFIRMED: 3998 -> 5868 (effect=0.040, type=same_team_propagation)
+  CONFIRMED: 2781 -> 5868 (effect=0.040, type=cross_team_adaptation)
+  CONFIRMED: 5302 -> 5868 (effect=0.040, type=cross_team_adaptation)
+  CONFIRMED: 5222 -> 5868 (effect=0.040, type=same_team_propagation)
+  CONFIRMED: 5607 -> 5870 (effect=-0.065, type=cross_team_adaptation)
+  CONFIRMED: 3317 -> 5870 (effect=-0.061, type=same_team_propagation)
+  CONFIRMED: 3022 -> 5870 (effect=-0.060, type=cross_team_adaptation)
+  CONFIRMED: 3331 -> 5870 (effect=-0.060, type=same_team_propagation)
+  CONFIRMED: 2811 -> 5870 (effect=-0.059, type=cross_team_adaptation)
+  CONFIRMED: 3466 -> 5870 (effect=-0.058, type=same_team_propagation)
+  CONFIRMED: 4628 -> 5870 (effect=-0.058, type=same_team_propagation)
+  CONFIRMED: 4069 -> 5870 (effect=-0.058, type=cross_team_adaptation)
+  CONFIRMED: 5815 -> 5870 (effect=-0.058, type=cross_team_adaptation)
+  CONFIRMED: 3605 -> 5870 (effect=-0.058, type=cross_team_adaptation)
+  CONFIRMED: 3399 -> 5873 (effect=0.052, type=cross_team_adaptation)
+  CONFIRMED: 4579 -> 5873 (effect=0.051, type=cross_team_adaptation)
+  CONFIRMED: 3616 -> 5873 (effect=0.051, type=cross_team_adaptation)
+  CONFIRMED: 4590 -> 5873 (effect=0.051, type=same_team_propagation)
+  CONFIRMED: 5029 -> 5873 (effect=0.051, type=same_team_propagation)
+  CONFIRMED: 5021 -> 5873 (effect=0.051, type=same_team_propagation)
+  CONFIRMED: 4845 -> 5873 (effect=0.051, type=cross_team_adaptation)
+  CONFIRMED: 5029 -> 5874 (effect=0.065, type=cross_team_adaptation)
+  CONFIRMED: 3399 -> 5874 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 3319 -> 5874 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 3616 -> 5874 (effect=0.064, type=same_team_propagation)
+  CONFIRMED: 3176 -> 5874 (effect=0.063, type=same_team_propagation)
+  CONFIRMED: 4590 -> 5874 (effect=0.063, type=cross_team_adaptation)
+  CONFIRMED: 3375 -> 5874 (effect=0.063, type=same_team_propagation)
+  CONFIRMED: 5021 -> 5874 (effect=0.063, type=cross_team_adaptation)
+  CONFIRMED: 5872 -> 5874 (effect=0.063, type=intra_episode)
+  CONFIRMED: 5369 -> 5876 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 4944 -> 5876 (effect=0.043, type=cross_team_adaptation)
+  CONFIRMED: 4650 -> 5879 (effect=0.054, type=cross_team_adaptation)
+  CONFIRMED: 3005 -> 5879 (effect=0.053, type=cross_team_adaptation)
+  CONFIRMED: 4576 -> 5879 (effect=0.053, type=same_team_propagation)
+  CONFIRMED: 5811 -> 5879 (effect=0.052, type=same_team_propagation)
+  CONFIRMED: 5302 -> 5879 (effect=0.052, type=same_team_propagation)
+  CONFIRMED: 3319 -> 5879 (effect=0.052, type=cross_team_adaptation)
+  CONFIRMED: 5247 -> 5879 (effect=0.052, type=cross_team_adaptation)
+  CONFIRMED: 4707 -> 5879 (effect=0.052, type=same_team_propagation)
+  CONFIRMED: 3100 -> 5879 (effect=0.052, type=same_team_propagation)
+  CONFIRMED: 3998 -> 5879 (effect=0.052, type=cross_team_adaptation)
+  CONFIRMED: 4643 -> 5880 (effect=0.067, type=same_team_propagation)
+  CONFIRMED: 2711 -> 5880 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 4541 -> 5880 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 3823 -> 5880 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 3371 -> 5880 (effect=0.066, type=same_team_propagation)
+  CONFIRMED: 4049 -> 5880 (effect=0.066, type=cross_team_adaptation)
+  CONFIRMED: 3515 -> 5880 (effect=0.065, type=same_team_propagation)
+  CONFIRMED: 3050 -> 5880 (effect=0.065, type=same_team_propagation)
+  CONFIRMED: 5057 -> 5880 (effect=0.065, type=same_team_propagation)
+  CONFIRMED: 4750 -> 5869 (effect=0.088, type=cross_team_adaptation)
+  CONFIRMED: 4803 -> 5869 (effect=0.088, type=same_team_propagation)
+  CONFIRMED: 5136 -> 5869 (effect=0.086, type=same_team_propagation)
+  CONFIRMED: 2871 -> 5869 (effect=0.086, type=cross_team_adaptation)
+  CONFIRMED: 4533 -> 5869 (effect=0.085, type=same_team_propagation)
+  CONFIRMED: 5537 -> 5869 (effect=0.084, type=same_team_propagation)
+  CONFIRMED: 4661 -> 5869 (effect=0.084, type=cross_team_adaptation)
+  CONFIRMED: 5583 -> 5869 (effect=0.083, type=cross_team_adaptation)
+  CONFIRMED: 2621 -> 5875 (effect=-0.139, type=cross_team_adaptation)
+  CONFIRMED: 3510 -> 5875 (effect=-0.135, type=same_team_propagation)
+  CONFIRMED: 4551 -> 5875 (effect=-0.132, type=same_team_propagation)
+  CONFIRMED: 3330 -> 5875 (effect=-0.131, type=same_team_propagation)
+  CONFIRMED: 5751 -> 5875 (effect=-0.131, type=cross_team_adaptation)
+  CONFIRMED: 4983 -> 5875 (effect=-0.130, type=same_team_propagation)
+  CONFIRMED: 3471 -> 5875 (effect=-0.129, type=cross_team_adaptation)
+  CONFIRMED: 3527 -> 5881 (effect=0.055, type=cross_team_adaptation)
+  CONFIRMED: 5562 -> 5881 (effect=0.055, type=same_team_propagation)
+  CONFIRMED: 2908 -> 5881 (effect=0.055, type=cross_team_adaptation)
+  CONFIRMED: 5292 -> 5881 (effect=0.054, type=same_team_propagation)
+  CONFIRMED: 2566 -> 5881 (effect=0.054, type=cross_team_adaptation)
+  CONFIRMED: 1929 -> 5881 (effect=0.054, type=cross_team_adaptation)
+  CONFIRMED: 2678 -> 5881 (effect=0.054, type=cross_team_adaptation)
+  CONFIRMED: 2603 -> 5882 (effect=0.034, type=same_team_propagation)
+  CONFIRMED: 2810 -> 5882 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 4859 -> 5882 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 5372 -> 5882 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 4834 -> 5882 (effect=0.033, type=same_team_propagation)
+  CONFIRMED: 3378 -> 5882 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 3027 -> 5882 (effect=0.032, type=same_team_propagation)
+  CONFIRMED: 4927 -> 5882 (effect=0.032, type=cross_team_adaptation)
+  CONFIRMED: 4999 -> 5882 (effect=0.032, type=same_team_propagation)
+
+Episode avalon_20260805_142150 funnel: {'gate1_candidates_found': 134, 'rejected_no_exposure': 50, 'skipped_no_credit_data': 0, 'gate2_evaluated': 134, 'gate2_passed': 100, 'confirmed': 100}
+
+=== EPISODE FUNNEL ===
+  gate1_candidates_found: 134
+  rejected_no_exposure: 50
+  skipped_no_credit_data: 0
+  gate2_evaluated: 134
+  gate2_passed: 100
+  confirmed: 100
+  done: Causal graph: avalon_20260805_142150
+
+============================================================
+  Compute causal_score + final_credit
+  $ C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\venv\Scripts\python.exe compute_causal_score.py
+============================================================
+causal_score recomputed for 5020 messages
+final_credit recomputed for 5020 messages
+  done: Compute causal_score + final_credit
+
+
+============================================================
+CONTROL BATCH SCORING COMPLETE
+============================================================

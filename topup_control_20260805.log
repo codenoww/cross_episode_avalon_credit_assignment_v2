@@ -1,0 +1,978 @@
+[groq_keys] Loaded 4 key(s) for rotation (timeout=30s, hard cap=45s).
+Tournament folder created: C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\avalon_tournament_20260805_115905
+Players: 5, Model: llama-3.1-8b-instant, Reasoning: low
+Memory-enabled players: Alice, Bob, Charlie, Diana, Eve
+Mode: CONTROL (no feedback injection)
+
+============================================================
+STARTING AVALON TOURNAMENT: avalon_tournament_20260805_115905
+Playing 6 games with 5 players
+============================================================
+
+
+############################################################
+# GAME 1/6
+############################################################
+
+============================================================
+STARTING AVALON GAME: avalon_20260805_115905
+============================================================
+Game initialized: avalon_20260805_115905 (5 players)
+  Alice: evil (knows: ['Charlie'])
+  Bob: good (knows: [])
+  Charlie: assassin [ASSASSIN] (knows: ['Alice'])
+  Diana: merlin (knows: ['Alice', 'Charlie'])
+  Eve: good (knows: [])
+
+=== Quest 1: Discussion Phase ===
+  Alice (5.24s): "I'm glad I got to join the group and get to know everyone, but I think it's a real gamble to trust Bob with Diana on the mission - they seem like a great team, but we should play it safe by choosing the most experienced good players. Let's go with Bob and Diana, and I'll join them to make it stronger and easier to get the job done."
+  Bob (0.28s): "I think Alice makes a good point about trusting me and Diana, but I'd rather keep the team dynamic fresh and not rely too heavily on either of us. How about we mix it up with Bob and Alice together - it's a good combination of experience and fresh perspectives."
+  Charlie (3.31s): "I think Bob and Diana make a pretty strong team, but I'd like to add a bit of unpredictability to the mix. How about me and Alice team up - I think our chemistry could make all the difference in completing the mission successfully."
+  Diana (4.37s): "I think it's great to see some of these fresh pairings being suggested, but let's not forget that experience counts too - if I had to pick, I'd say Bob and I would make a strong team, especially considering the mission requirements for a 2-person team."
+  Eve (5.43s): "I agree with Alice that playing it safe might be wise, but I'm hesitant to trust Bob and Diana as a team - have we actually seen any missions complete with them working together, or would it be taking too much of a risk to count on that?"
+
+--- Proposal 1/5 (Leader: Eve) ---
+  Leader Eve (5.38s) proposes: ['Alice', 'Bob']
+  Reasoning: I chose Alice due to her caution and experience, combined with Bob's willingness to try out a mixed team. This combination balances stability and fresh perspectives, making it a safe and effective choice for our first mission.
+  Alice (6.32s): reject - Too much unpredictability for the first mission
+  Bob (5.43s): reject - I don't think Alice's caution is a strong enough justification to trust me for this high-stakes mission
+  Charlie (6.36s): reject - Trust issues with Bob and Alice as a duo, considering they didn't have a successful mission working together in past scenarios.
+  Diana (5.48s): reject - Alice's cautious personality might limit the team's effectiveness in taking bold action, and Bob's tendency to mix up the team composition could hinder communication and coordination.
+  Eve (5.30s): reject - Trust issues with Bob's reliability and potential for duplicity
+  Vote result: rejected (0/5)
+
+--- Proposal 2/5 (Leader: Alice) ---
+  Leader Alice (6.58s) proposes: ['Charlie', 'Alice']
+  Reasoning: I choose Charlie and myself because we are evil teammates and it will be easier to sabotage the mission.
+  Alice (5.37s): approve - I believe our evil bond will secure our success.
+  Bob (6.44s): reject - Too suspicious, given the evil saboteurs' intentions revealed during discussion
+  Charlie (5.44s): approve - As the Assassin, I think it's perfect to work with Alice and complete the mission, which will increase our chances of winning the game
+  Diana (6.49s): reject - Can't let a good evil plan succeed so easily
+  Eve (5.43s): reject - Unclear reasoning from Charlie - seems unusual for the other good player to agree to a team with the evil player
+  Vote result: rejected (2/5)
+
+--- Proposal 3/5 (Leader: Bob) ---
+  Leader Bob (5.50s) proposes: ['Bob', 'Alice']
+  Reasoning: I'm choosing Bob and Alice because they both seem to be making balanced arguments that consider both experience and fresh perspectives. This team has a mix of confidence from Bob and cautiousness from Alice, which could be a good combination for this mission.
+  Alice (7.40s): reject - too much trust in Bob alone
+  Bob (5.54s): approve - Good mix of experience and fresh perspective
+  Charlie (7.48s): reject - Concerned that Alice might not be able to make objective decisions due to her previous proposal with me and Charlie being rejected
+  Diana (6.40s): approve - Their diverse perspectives could balance each other and achieve success.
+  Eve (7.31s): approve - I trust this team.
+  Vote result: approved (3/5)
+
+=== Quest 1: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 2: Discussion Phase ===
+  Alice (2.45s): I think Charlie would be a great addition to the team - after all, we both voted for the mission last time and it went off without a hitch. I'm a bit worried about Bob leading again, though, has he actually been on our side this whole time?
+  Bob (3.31s): "Hey guys, I think it's a good sign that Alice is questioning my leadership - that actually makes me think she's one of us. I'd like to propose we add Charlie to the team and leave Eve out for now, but Alice's concerns about me leading are definitely worth discussing, Diana, what do you think?"
+  Charlie (4.47s): "Diana, I have to agree with Alice, it's definitely weird that Bob's questioning himself like this. I think if we can figure out if Bob's actually one of us, then we can trust him to make some good decisions - and as long as Eve isn't on the team, I think we're golden."
+  Diana (5.65s): "I think we should definitely consider Charlie's suggestion to add Eve to the team, she did vote for our last mission, and a bit more diversity in our lineup could be beneficial. At the same time, Bob did lead us to success last time, and having another perspective from him could still be a positive influence."
+  Eve (4.45s): "I'm happy to consider being added to the team, but I do have to wonder if we're overlooking a potential traitor in plain sight - if Bob and Charlie are both so confident in my innocence, maybe they're trying to distract us from someone else. I think Diana's suggestions about having diversity on the team are spot on, but we need to consider the potential risks of adding anyone new right now."
+
+--- Proposal 1/5 (Leader: Charlie) ---
+  Leader Charlie (8.08s) proposes: ['Alice', 'Diana', 'Eve']
+  Reasoning: I chose Alice because of her previous suggestion to add me to the team, which indicates a sense of camaraderie towards me. I chose Diana for her balanced perspective on Bob's leadership, which suggests she could be a neutral and thoughtful member. I chose Eve for her recent skepticism towards Bob and Charlie, which indicates she may be wary of potential traitors within our team.
+  Alice (6.40s): approve - I'm glad we're including Diana's neutral perspective, which I think will help us make a well-rounded decision.
+  Bob (7.68s): reject - Not enough evidence of Eve's intentions, may be a trap
+  Charlie (6.76s): reject - Don't trust Alice, she voted to add me to the previous team with Alice
+  Diana (7.51s): approve - Alice's suggestion and team composition seem reasonable
+  Eve (6.35s): reject - Eve's concerns are starting to sound paranoid, I'm not sure if I'm ready to trust her with sensitive information
+  Vote result: rejected (2/5)
+
+--- Proposal 2/5 (Leader: Diana) ---
+  Leader Diana (6.52s) proposes: ['Bob', 'Diana', 'Eve']
+  Reasoning: I'm proposing Bob because he's been successful in his leadership so far. Diana is a good choice because she has voiced concerns about the team composition and is being cautious, which could indicate she's one of the good players. I'm adding Eve to the team as well because her suggestion of considering the risks of adding players could show that she's aware of the traitor's potential presence and wants to protect the team.
+  Alice (3.36s): approve - trying to keep my cover, looks like a good mix, seems like a legitimate concern for Diana's caution
+  Bob (7.35s): approve - I think Eve's cautious approach in suggesting potential risks could be a sign that she's one of us, combined with my previous mission experience, I trust this team to succeed.
+  Charlie (8.35s): approve - Bob's leadership record is decent so far, and adding Diana and Eve to balance the team might work out
+  Diana (7.40s): reject - too trusting of Bob
+  Eve (7.30s): reject - I still think we're underestimating Bob's potential traitor status.
+  Vote result: approved (3/5)
+
+=== Quest 2: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 3: Discussion Phase ===
+  Alice (2.41s): I completely agree with Alice's previous comments on Bob's leadership, he's been doing a great job so far. I think Bob and Diana would make a great team for the next mission, they've shown they work well together, and I trust their judgment completely.
+  Bob (4.39s): I think Alice is spot on about trusting Bob and Diana's judgment, and it's interesting that she's been quick to sing Bob's praises - I'm not sure if that's enough to convince me to fully trust her, though.
+  Charlie (4.39s): I think Bob's right to question Alice's motives, but I also think Diana's judgment is pretty solid, and it's interesting that she's been able to build trust with Bob, which makes me think that she's probably not the Assassin - and I definitely trust her enough to vote yes to this next team.
+  Diana (4.71s): "I think it's great that we have a bit more information now, but I do want to caution everyone that we shouldn't be swayed just by people saying they can be trusted - we need to be looking for a balance of skills and perspectives, not just personality. Maybe we could consider pairing someone who's been a strong leader to date with a bit of an outsider, like Eve, to see how that dynamic works?"
+  Eve (6.36s): "I think Diana's got a point about balancing skills and perspectives, but I personally think Eve brings a fresh perspective that could be really valuable in mission planning - I'd be more than happy to pair up with her and see how we work together."
+
+--- Proposal 1/5 (Leader: Eve) ---
+  Leader Eve (6.54s) proposes: ['Eve', 'Diana']
+  Reasoning: I propose this team because both Eve and I are relatively new to leading a winning team, which could allow us to work well together and bring a fresh perspective, while Diana, having worked well with Bob in the past, should be able to provide valuable insight and leadership skills.
+  Alice (7.37s): approve - Diana's leadership experience in the last mission was impressive.
+  Bob (6.55s): approve - I agree with the idea of a fresh perspective, and Diana's leadership abilities are impressive.
+  Charlie (8.41s): approve - trust Diana and see if Eve can contribute in a supporting role
+  Diana (6.44s): approve - Eve's fresh perspective and my leadership skills could be a winning combination
+  Eve (6.48s): approve - I agree with the idea of fresh perspective and leadership skills working well together
+  Vote result: approved (5/5)
+
+=== Quest 3: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Assassin Phase ===
+
+🗡️  Evil team reveals themselves and discusses who Merlin might be...
+  Alice (12.51s): I think Merlin could potentially be Bob or Diana, to be honest. Both of them have been pretty vocal about trusting each other's judgment, and Bob's been leading a lot of the discussions on the good team's side, which seems suspicious given that they're trying to complete quests. I think we should definitely keep a close eye on them, especially considering their apparent chemistry.
+  Charlie (12.65s): I think Merlin could potentially be Diana, considering her ability to tactfully point out potential traitors while also keeping her own suspicions in check - it's almost like she's guiding the good team's discussions without revealing too much. Her comments about Bob leading too much and her suggestions for balancing skills and perspectives seem particularly calculated, but also somewhat authentic. If I had to pick a likely candidate, I'd still say it's a toss-up between Diana and Bob, but I'm slightly leaning towards Diana at this point.
+
+🗡️  Assassin makes the final decision...
+  Assassin Charlie (14.57s) guesses: Diana
+  Reasoning: Based on our team's analysis, Diana's comments on Bob's leadership and her suggestions for balancing skills and perspectives seem calculated yet authentic, which could be a trait of Merlin trying to influence the good team's discussions. Additionally, her ability to tactfully point out potential traitors while keeping her own suspicions in check makes her a strong suspect.
+  Correct: True
+
+🗡️  EVIL WINS! The Assassin killed Merlin!
+
+Final Score - Good: 3, Evil: 0
+
+============================================================
+POST-GAME REFLECTION - Game 1
+============================================================
+
+  Alice (evil) reflecting...
+    (3.68s) Self: I successfully deceived the team by playing as an evil member without being eliminated, allowing the assassin to guess correctly on the third assassin phase. My convincing performance as an evil character was the key to winning the game. However, I could have been more active in influencing the assassin phase.
+    Observations: 4 players
+
+  Bob (good) reflecting...
+    (5.80s) Self: I had trouble identifying the Merlin's playstyle to accurately determine the correct Merlin before the Assassin phase. 
+                      My failure to effectively communicate with my teammates through votes and information sharing was also concerning.
+    Observations: 4 players
+
+  Charlie (assassin) reflecting...
+    (4.82s) Self: I effectively utilized my Assassin role to eliminate key opponents, specifically Diana who also held the Merlin role, which significantly impacted the outcome of the game. However, I could have taken more calculated risks to deceive my teammates and potentially eliminate other players earlier. My strategy focused heavily on eliminating Merlin, which led to a successful game.
+    Observations: 4 players
+
+  Diana (merlin) reflecting...
+    (5.78s) Self: As the Merlin, I didn't make it to the endgame, being caught by Charlie in the assassin phase. To improve, I should be more cautious in my actions and avoid drawing attention to myself. I also missed an opportunity to contribute more to the team's success.
+    Observations: 4 players
+
+  Eve (good) reflecting...
+    (5.88s) Self: While I excelled in mission leadership, my failure to discern the Merlin's identity allowed the assassin to make an accurate guess. I should have been more vigilant during the investigation phases. Improving my role deduction skills will be crucial in the future.
+    Observations: 4 players
+
+📁 Progress saved to: C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\avalon_tournament_20260805_115905
+
+[Control mode] Skipping attribution pipeline for game 1 -- raw gameplay only.
+
+
+############################################################
+# GAME 2/6
+############################################################
+
+============================================================
+STARTING AVALON GAME: avalon_20260805_120509
+============================================================
+Game initialized: avalon_20260805_120509 (5 players)
+  Alice: good (knows: [])
+  Bob: evil (knows: ['Diana'])
+  Charlie: good (knows: [])
+  Diana: assassin [ASSASSIN] (knows: ['Bob'])
+  Eve: merlin (knows: ['Bob', 'Diana'])
+
+=== Quest 1: Discussion Phase ===
+  Alice (6.47s): "I'm inclined to choose Charlie for this mission, mostly because I haven't had the chance to get a read on them yet, and it's usually harder for the evil players to convincingly pretend to be a loyalist in smaller teams. What's your take, think they're trustworthy enough to join Bob, or do you have someone else in mind?"
+  Bob (5.70s): "I think Alice has a fair point about Charlie, and to be honest, I'm feeling pretty optimistic about our chances with this smaller team. If we get Eve on board, I think we can have a well-rounded group - she's generally been on the good team in my experience, but we could use someone with her skillset to boost our confidence in completing this mission."
+  Charlie (6.44s): "I think Eve seems like a good choice to join Bob, not just because of her usual allegiance, but also because her relatively passive approach in our previous game made her less of a target, which suggests she might be more careful with who she associates herself with, and that could work to our advantage here."
+  Diana (8.48s): "I have to say, I'm a bit torn between Charlie and Eve for this smaller team - both of them have been somewhat low-key in our previous interactions, which is exactly what we might want in a smaller team, but at the same time, I feel like it's always good to have someone with some real combat experience on your side, and Bob does have that with Eve..."
+  Eve (8.49s): "I think Alice has a valid point about Charlie being a wild card, but at the same time, Bob and I have both had a chance to see Eve in action before, and she's consistently shown herself to be reliable and level-headed - if we're looking for someone to round out the team, it might be worth considering her more experienced approach."
+
+--- Proposal 1/5 (Leader: Diana) ---
+  Leader Diana (9.54s) proposes: ['Charlie', 'Eve']
+  Reasoning: I'm choosing Charlie because he was the most skilled Assassin in our previous game, and his ability to convincingly portray a trustworthy team member will be beneficial in this small team. Eve is chosen because of her solid track record of being a reliable team member, which will minimize the risk of sabotage in this mission.
+  Alice (9.42s): approve - Seems like a good risk in a small team, Charlie's ability to convincingly play evil could be key to success.
+  Bob (9.41s): approve - Charlie's potential skills and Eve's reliability make for a good combination
+  Charlie (9.41s): approve - I think this team selection is a solid move to start, will allow me to get a read on Charlie in a smaller, more intimate setting
+  Diana (9.37s): reject - Too many unknown variables, might be more beneficial to play it safe and not choose someone with Bob's leadership in a smaller group
+  Eve (9.32s): reject - I'm uneasy about relying on Charlie's skills in a small team setting without more information about his intentions this game.
+  Vote result: approved (3/5)
+
+=== Quest 1: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 2: Discussion Phase ===
+  Alice (4.35s): "I think we should consider Diana as a mission leader for this next quest - she's already shown her merit with success on the first mission, and having her on board will give us some credibility. I'd also suggest including Eve in the team, as she didn't raise any red flags in the previous mission."
+  Bob (7.36s): "I think Alice makes a solid point about including Diana in the next team - her experience and success on the first mission will definitely bring some much-needed momentum. At the same time, I'm a bit concerned about over-relying on her as a lone good player, perhaps we could also consider inviting Charlie to join the team, given his lack of involvement in any suspicious activities so far?"
+  Charlie (6.68s): "I think Diana makes a great point as a leader, but I'd like to propose we also consider Bob's idea and invite me to join the team - having more good players on board seems like a safer approach, especially considering our current score."
+  Diana (8.41s): "I think Bob's concern about over-relying on me is valid, and I'm more than happy to have some fresh faces on the team. In fact, I think Charlie's relatively low profile on the previous missions is a bit suspicious, don't you, and maybe we should be cautious about trusting him too much?"
+  Eve (7.53s): "I think Diana's got a point about being cautious with Charlie; I'd like to dig a bit deeper into his involvement before we consider him for the next mission. Perhaps we could revisit Alice's initial suggestion and include Eve in the team - she seemed to have played a relatively safe role in the last mission, and it's worth exploring her capabilities more thoroughly."
+
+--- Proposal 1/5 (Leader: Eve) ---
+  Leader Eve (9.81s) proposes: ['Diana', 'Bob', 'Eve']
+  Reasoning: I chose Diana as the leader for her successful track record. I included Bob for his strong leadership skills and ability to make effective decisions. Eve is a relatively safe choice, given her lack of direct involvement in any missions so far.
+  Alice (8.86s): approve - I think we have a solid team composition; Diana brings experience, Bob contributes leadership, and Eve seems relatively harmless
+  Bob (9.51s): approve - Diana's past success and my desire to observe her make her a good choice for leader
+  Charlie (9.72s): reject - Eve's suggestion about being cautious with Charlie raises a good point and makes me uneasy about trusting Bob blindly without more scrutiny.
+  Diana (9.65s): approve - Good composition, solid good players and a relatively safe addition in Eve
+  Eve (10.63s): approve - No major red flags detected
+  Vote result: approved (4/5)
+
+=== Quest 2: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 3: Discussion Phase ===
+  Alice (5.53s): "I think we should consider Bob for this mission, he seemed to be playing a more cautious role last time around and could provide some stability, I'd like to get a better read on him this time around."
+  Bob (5.63s): "Honestly, I think Alice has a great point about considering me for this mission, we need someone with a level head and a willingness to question the status quo, and I'm not sure if Diana's previous success isn't just a result of luck rather than genuine competence."
+  Charlie (7.44s): "I'm not convinced Diana's past success is just luck, she's got a certain level of confidence that's hard to fake, and I think it's worth considering her for this mission, but I'd also like to see some more aggressive play from Bob to really test his allegiance."
+  Diana (7.45s): "I think Bob's concern about Diana's competence is valid, but at the same time, I've noticed that Eve has been quite quiet this conversation, almost too much so, and I think it would be great if we could get a better sense of everyone's thoughts before making any decisions - maybe we could consider teaming up Bob and Eve to get a better sense of where everyone stands?"
+  Eve (9.58s): "I'm inclined to agree with Alice, I think Bob could bring a level of calm to the team and help us make some more informed decisions - it's always helpful to have someone who can think critically in tense situations, don't you think?"
+
+--- Proposal 1/5 (Leader: Alice) ---
+  Leader Alice (8.44s) proposes: ['Bob', 'Diana']
+  Reasoning: I'm choosing Bob because he's expressed concerns about my competence and this could be a good opportunity to gauge his loyalty. I'm also choosing Diana because, as a merlin or a loyalty, she would be able to help ensure the mission's success or at least provide valuable insight into Eve's true allegiance.
+  Alice (9.56s): approve - Considering Bob's concerns, it seems a good test for loyalty
+  Bob (9.48s): reject - Too obvious, trying to test my loyalty through an obvious choice
+  Charlie (9.40s): reject - I'm not convinced Bob's concerns are genuine and could be a trap, also I don't want to risk pairing up Bob and Eve together without further evaluation of their allegiance
+  Diana (10.74s): approve - I think this is a good opportunity to test Bob's loyalty
+  Eve (10.40s): approve - Cautious choice to test loyalty, Bob's words have potential, but I'm worried about overstepping
+  Vote result: approved (3/5)
+
+=== Quest 3: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+=== Quest 4: Discussion Phase ===
+  Alice (5.53s): "I think Bob is probably our safest bet - we've seen him play a pretty solid role so far, and his cautious nature might actually be a good thing in this kind of situation. Let's consider adding him to the mission team and seeing if he's trustworthy enough to help us get it done!"
+  Bob (6.66s): "I think that's a great idea, Alice - considering Bob's cautious nature could be exactly what we need to get ahead. I mean, I've been impressed with his decision-making so far, and I'm happy to go along with your suggestion and add him to the team, if that's what you all decide - I'm just here to help succeed, after all."
+  Charlie (8.51s): "I'm a bit hesitant to trust Bob right now, given that we've seen him play it pretty safe so far - it almost seems like he's being a bit too cautious, and that could potentially be a red flag for an evil allegiance."
+  Diana (8.43s): "I think Charlie's concerns about Bob's caution are valid, but I also think Eve's contributions to the team so far have been a bit underappreciated - she's been a steady player and hasn't really caused any issues, so I'd say let's add both Bob and Eve to the team and see how they perform in tandem with each other."
+  Eve (9.46s): "Given the current state of our team, I think Bob's cautious nature could actually be an asset - having someone who's a bit more risk-averse could help balance out our more daring players. Let's see how he performs with the team before making the final decision, maybe add him to the mission team and observe his actions closely."
+
+--- Proposal 1/5 (Leader: Bob) ---
+  Leader Bob (9.54s) proposes: ['Diana', 'Bob', 'Eve']
+  Reasoning: I chose Diana because she has a good performance record in previous games and can potentially provide leadership to the mission. Bob's cautious nature can be useful in this mission as he might think before acting, reducing the risk of failure. Eve has also been a solid contributor to the team so far, and adding her to the team will allow us to see how she performs with different players.
+  Alice (10.45s): reject - Bob's caution might be a sign of him being evil and trying to downplay his actions to avoid suspicion, and including him could compromise the mission
+  Bob (10.45s): approve - Supporting the proposed team, especially with Diana's leadership and Eve's consistent performance
+  Charlie (10.55s): reject - I have concerns about Bob's cautious nature potentially being a cover for his evil allegiance
+  Diana (10.45s): approve - I'm confident in Diana's leadership and think Bob and Eve can provide a good balance
+  Eve (10.30s): approve - Considering Diana's solid track record, Bob's cautious nature, and Eve's consistent performance, this team composition seems promising
+  Vote result: approved (3/5)
+
+=== Quest 4: Execution Phase ===
+  Quest result: fail (2 FAIL cards)
+
+=== Quest 5: Discussion Phase ===
+  Alice (6.55s): "I think it's high time we gave Charlie a chance to prove himself - if he's not an evil player, he's been sitting in the shadows for two missions now and hasn't given us any reason to doubt him. Let's put him in the team for the next mission and see what happens."
+  Bob (6.53s): "I completely agree with Alice, I think it's time we take a chance on Charlie, his quietness has me intrigued and I'm sure his skills will shine when he's given a chance to prove himself - I think a good mix for the next mission would be Diana as leader, Charlie, and Eve, what do the rest of you think?"
+  Charlie (8.45s): "I think Bob's plan sounds like a good mix, especially if Diana's going to be the leader - she's been acting pretty consistently so far, and I'd rather trust her than someone like Alice who seems to be pushing for me to be included without a whole lot of explanation."
+  Diana (8.48s): "I think Alice might be onto something with the whole Charlie dynamic, and I trust Bob's instincts - let's add him to the team and see how he works with us; I'm happy to be the leader and take Charlie off the hot seat for now."
+  Eve (9.52s): "I think we should be cautious before throwing Charlie into a mission team - his past performance was somewhat suspect, and I'd hate to jeopardize our chances of success with a potentially untrustworthy member, especially considering the current team composition."
+
+--- Proposal 1/5 (Leader: Charlie) ---
+  Leader Charlie (10.55s) proposes: ['Bob', 'Eve', 'Charlie']
+  Reasoning: Bob has been a dedicated and predictable good player, Eve has played passively which could indicate she's good, and I've chosen myself for this mission as a test of my own loyalty and to get a better understanding of my teammates' dynamics.
+  Alice (10.33s): approve - Reasonable mix of experienced players, could work well
+  Bob (9.50s): approve - I agree that a fresh view and assessment of Charlie is necessary for the team's overall dynamics.
+  Charlie (10.56s): approve - I'm willing to take the calculated risk of trusting Bob and trying to get more information about Eve's allegiance.
+  Diana (11.31s): reject - too many unknown variables with Charlie's past performance and current inclusion push
+  Eve (10.34s): approve - Bob's leadership experience and passiveness of Eve could make for a balanced team dynamics and a potentially successful mission.
+  Vote result: approved (4/5)
+
+=== Quest 5: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+🗡️  EVIL WINS! Three missions failed!
+
+Final Score - Good: 2, Evil: 3
+
+============================================================
+POST-GAME REFLECTION - Game 2
+============================================================
+
+  Alice (good) reflecting...
+    (4.88s) Self: Despite my leadership role in the final two missions, I made several critical mistakes. My over-reliance on specific team members and failure to diversify our strategy led to our demise. Improving my adaptability and communication will be crucial for future success.
+    Observations: 4 players
+
+  Bob (evil) reflecting...
+    (6.05s) Self: I successfully blended in with the team, gaining their trust while secretly manipulating the game to our advantage. My true role as the evil player was well-hidden, allowing me to make critical decisions that ultimately led to our team's success. Improving my ability to disguise my intentions will be crucial in future games.
+    Observations: 4 players
+
+  Charlie (good) reflecting...
+    (5.82s) Self: I generally identified and targeted Merlin's actions effectively, but I failed to prevent or mitigate the Assassin's kills. I may have also been too open in my decision-making at times, making it easier for the evil team to anticipate my moves.
+    Observations: 4 players
+
+  Diana (assassin) reflecting...
+    (6.02s) Self: I effectively played the Assassin role, eliminating Merlin and contributing to the Team evil's victories, however I could have been more proactive in eliminating potential threats sooner. I was a bit predictable, sticking to the classic Assassin approach and not trying to manipulate the group's opinions as much as I could. Improving my adaptability will be essential for future games.
+    Observations: 4 players
+
+  Eve (merlin) reflecting...
+    (7.07s) Self: As Merlin, I failed to eliminate the Assassin early on, which allowed the evil team to continue their success in missions. I was also not able to effectively use my special abilities to sabotage the evil plans. Overall, my performance was mediocre, and I need to improve my strategy in future games.
+    Observations: 5 players
+
+📁 Progress saved to: C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\avalon_tournament_20260805_115905
+
+[Control mode] Skipping attribution pipeline for game 2 -- raw gameplay only.
+
+
+############################################################
+# GAME 3/6
+############################################################
+
+============================================================
+STARTING AVALON GAME: avalon_20260805_121422
+============================================================
+Game initialized: avalon_20260805_121422 (5 players)
+  Alice: merlin (knows: ['Bob', 'Charlie'])
+  Bob: evil (knows: ['Charlie'])
+  Charlie: assassin [ASSASSIN] (knows: ['Bob'])
+  Diana: good (knows: [])
+  Eve: good (knows: [])
+
+=== Quest 1: Discussion Phase ===
+  Alice (9.49s): "I think considering Bob's past experience, he could provide valuable insight as to the mission's complexity. Perhaps pairing Charlie with him could give us a more balanced perspective."
+  Bob (6.55s): "I think there's some merit to that idea, Alice - having Charlie with me could indeed provide a well-rounded perspective. However, I'm a bit concerned about leaving the team without a clear second good player; maybe we should add Eve to the mix as well, see if her experience as Merlin can give us an edge on this early mission?"
+  Charlie (9.66s): "Actually, I think Bob's point about adding Eve to the team is a great one - she's been in the role of Merlin before, and having her insight early on could really give us an edge, even if it's just from a good-aligned perspective. I'd be happy to pair up with Eve, let's see what Bob and Alice think about making it a three-player team."
+  Diana (10.50s): "I think pairing Alice with Charlie could be a safer bet, considering we don't want to put too much faith in one person having a good perspective; Alice can use her experience from last game to observe and report, while Charlie's involvement could help keep an eye on things from our side."
+  Eve (10.57s): "I think Bob's initial instinct to have Charlie on the mission is a good one - his experience from Game 1 showed us just how stealthy he can be, so it's possible he's not the Assassin, but if we pair Alice with him, that gives us a good chance of either getting some valuable info or at least flushing out any potential traitors."
+
+--- Proposal 1/5 (Leader: Diana) ---
+  Leader Diana (11.46s) proposes: ['Bob', 'Charlie']
+  Reasoning: Choosing Bob and Charlie allows us to benefit from Bob's prior experience and Charlie's stealth and information-gathering abilities, making it a well-rounded mission team for this first quest.
+  Alice (11.48s): reject - Not enough confidence in Bob's loyalty based on prior evidence
+  Bob (10.54s): approve - Charlie's stealth and Bob's experience make this a safe and well-rounded team
+  Charlie (12.47s): reject - Not enough good-aligned players on the team
+  Diana (11.47s): approve - Well-rounded choice balancing experience and stealth
+  Eve (11.49s): approve - Well-rounded team for initial mission, good balance of experienced players.
+  Vote result: approved (3/5)
+
+=== Quest 1: Execution Phase ===
+  Quest result: fail (2 FAIL cards)
+
+=== Quest 2: Discussion Phase ===
+  Alice (7.78s): "I think it's worth considering Charlie for this mission, given his ability to make strategic decisions and provide valuable insights, which could be a big plus for a team of our size. Maybe we can discuss and come to a consensus on the team lineup, but for now, I'm inclined to have trust in Charlie's judgement."
+  Bob (8.59s): "I think Alice makes a great point about Charlie, and I agree that his experience would be a huge asset to our team. I'm also a bit hesitant about leaving Diana out, though - she seems to have a good grasp on the game's dynamics, so perhaps we could consider having her along as well if we're looking for a more balanced skill set?"
+  Charlie (9.63s): "I have to agree with Bob, I think Diana's experience and intuition would be a great asset to our mission team, and I'm more than happy to work alongside her - I've always been a fan of her ability to read the game and make informed decisions."
+  Diana (10.47s): "I agree that Charlie's experience is invaluable, but I'm not sure he's entirely trustworthy - his vote in favor of the last mission was quite swift, and sometimes that kind of decisiveness can feel a bit too convenient, especially when it goes against the team."
+  Eve (9.59s): "I tend to agree with Bob and Charlie that Diana's experience would be a huge asset on this mission, but at the same time, Diana's concerns about Charlie's quick decision-making process have me wondering if we should take the risk of trusting him - I think it's worth considering alternative options, maybe exploring the idea of having Alice join the team instead, who seems like a great problem-solver and might bring a fresh perspective to our strategy."
+
+--- Proposal 1/5 (Leader: Eve) ---
+  Leader Eve (14.55s) proposes: ['Bob', 'Diana', 'Eve']
+  Reasoning: I chose Bob for his strong leadership skills and ability to make informed decisions. Diana will provide her valuable experience and intuition, which would be highly beneficial for this mission. As the Merlin, I chose myself (Eve) to gain a deeper understanding of our team's dynamics and to potentially disrupt the evil plans if necessary.
+  Alice (11.40s): approve - A balanced team composition with a mix of leadership and strategic insight.
+  Bob (12.44s): reject - I don't think our team is well-rounded enough with only 1 Merlin-like player.
+  Charlie (12.38s): approve - I agree that Bob and Diana would provide a great foundation for our team.
+  Diana (13.44s): approve - Strong leadership with Bob, balanced decision-making with Diana, and a flexible option with myself as Merlin
+  [groq_keys] key #1/4 rate-limited (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1), rotating to next key...
+  Eve (11.97s): approve - Good leadership and balance of skills
+  Vote result: approved (4/5)
+
+=== Quest 2: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 3: Discussion Phase ===
+  Alice (0.25s): "Eve's strategic mind really shone through in the last mission, and her ability to anticipate potential pitfalls is reassuring. I'd be inclined to trust her with selecting a strong team for this next mission."
+  Bob (0.26s): "I think Alice makes a great point about Eve's leadership abilities, and I agree that Eve's strategic thinking would be a valuable asset to this mission. As for the team, I think we should aim for a more... balanced approach, considering Charlie's experience in the Assassin role could bring a unique perspective to the table and help us make more informed decisions."
+  Charlie (0.38s): "I think Bob's suggestion about going for a more balanced approach is definitely worth considering, especially with Charlie's experience in the Assassin role, but at the same time, I'm a bit concerned that we might be getting too predictable in our team choices after the last mission, and I think we should keep in mind that we still don't know if there's an Assassin on our good team, or if it's still with us."
+  Diana (0.33s): "I think Eve's strong leadership is definitely a plus, but we also can't ignore the fact that Charlie's experience in the Assassin role could be just the kind of fresh perspective we need to shake things up - and it's not like we've seen her make any clear moves against us so far, so I'd suggest we include her in the team to bring some extra value to the table."
+  Eve (6.35s): "I think it's worth considering excluding Diana from this mission - after her success in Mission 1, she might have piqued the interest of the evil team, and I'm not sure if I entirely trust her to put the team's interests above her own this time around."
+
+--- Proposal 1/5 (Leader: Alice) ---
+  Leader Alice (11.55s) proposes: ['Bob', 'Eve']
+  Reasoning: I have chosen Bob for his experience in stealthy gameplay and ability to blend in, which will make it difficult for the evil team to anticipate his actions. I have also chosen Eve for her strategic mind and critical thinking, as well as her ability to anticipate potential pitfalls.
+  Alice (12.41s): reject - Bob's past cautious gameplay suggests he may not be the most decisive choice, and Eve's concerns about Diana's intentions might be more relevant than I initially thought.
+  Bob (12.37s): approve - Team appears balanced with strategic and stealthy elements
+  Charlie (12.59s): reject - Too predictable, Bob is too exposed
+  Diana (13.72s): approve - Bob's past experience in stealthy gameplay has been impressive, and Eve's strategic thinking would be a valuable asset on this mission.
+  Eve (13.62s): reject - Concerns regarding Bob's potential loyalty and Eve's decision to exclude Diana from the game
+  Vote result: rejected (2/5)
+
+--- Proposal 2/5 (Leader: Bob) ---
+  Leader Bob (12.64s) proposes: ['Bob', 'Eve']
+  Reasoning: Choosing myself provides an internal perspective on the game's progression, while including Eve allows us to maintain a high level of strategic thinking, making it easier to anticipate potential threats and make informed decisions.
+  Alice (12.44s): reject - too trusting of Eve, don't want her to be Merlin
+  Bob (12.40s): approve - I'm confident in the balance of strategic thinking and internal perspective
+  Charlie (11.42s): reject - Team composition appears too predictable and vulnerable
+  Diana (14.56s): approve - Balanced team with strategic thinking and fresh perspective
+  Eve (13.85s): approve - I trust Eve's strategic mind to make the right decisions and Bob has consistently shown strong leadership skills.
+  Vote result: approved (3/5)
+
+=== Quest 3: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 4: Discussion Phase ===
+  Alice (9.54s): "Considering our last mission was successful with Eve as our team leader, I think she'd be a solid choice again. We could also consider Charlie to join her, he seemed to have a good read on our strategy in the previous game."
+  Bob (8.45s): "I agree with Eve being a great leader, but I think we should also consider bringing Charlie on board, since his knowledge of the strategy and his ability to read people are invaluable assets to our team - I'm sure he won't mind being paired with Alice again after their good experience in the previous game."
+  Charlie (10.71s): "Hey, I think Eve would be a fantastic leader for this next mission, and I'm more than happy to work with her - especially given our previous success. Alice's cautious approach actually kind of impressed me last game, so I think it's worth considering her inclusion as well, even if it means Bob has to sit this one out."
+  Diana (10.44s): "I think Alice's caution in the previous game actually played into the Evil team's hands, so I'm not sure I'd trust her to keep her good intentions this time around, maybe we should see if Bob's more assertive approach could shake things up in our favor?"
+  Eve (12.70s): "I think I'll have to trust my gut on this one - while Alice's caution raised some red flags for me, I actually do think Charlie's ability to read people and think critically would be really valuable, so I'd like to propose that we have Eve lead the mission with Charlie as her partner, and maybe leave Alice and Bob as observers for this round."
+
+--- Proposal 1/5 (Leader: Charlie) ---
+  Leader Charlie (12.49s) proposes: ['Charlie', 'Bob', 'Alice']
+  Reasoning: Based on trust and past mission results.
+  Alice (7.43s): reject - too much reliance on the same players
+  Bob (12.63s): approve - Want to give Charlie and Eve a chance to succeed as a team
+  Charlie (12.32s): reject - I think it's too much Bob
+  Diana (12.40s): reject - Past mission results suggest Bob's assertiveness might be more beneficial to the team, and Alice's caution led to suspicions last game
+  Eve (12.65s): accept this as a proposal for investigation - To determine if this is a potential evil plan, we should gather more information.
+  Vote result: rejected (1/5)
+
+--- Proposal 2/5 (Leader: Diana) ---
+  Leader Diana (13.62s) proposes: ['Eve', 'Charlie', 'Diana']
+  Reasoning: Eve is a strong leader who contributed to our previous success. Charlie can provide valuable analysis and insight. I'm choosing Diana as my team member because I know we've worked well together previously, and including an existing good player on the team will help maintain the balance and increase our chances of success.
+  Alice (13.63s): reject - Including Diana may have compromised our chances of success due to her suspicious nature
+  Bob (12.35s): approve - Strong leadership and valuable analysis make this team well-suited for success.
+  Charlie (13.39s): approve - Strong leader in Eve, valuable analysis from Charlie, and trust in my previous experience with Diana
+  Diana (13.57s): approve - Strong leadership and balanced team make this proposal appealing
+  Eve (14.47s): approve - Strong leadership with Eve, Charlie's analysis will be crucial for decision-making.
+  Vote result: approved (4/5)
+
+=== Quest 4: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+=== Quest 5: Discussion Phase ===
+  Alice (8.50s): "Considering our last few results, I think it's worth bringing in fresh faces for Mission 5. Perhaps we could consider a team with a good balance of players who haven't had too many leadership roles yet, like Eve and Charlie?"
+  Bob (9.72s): "I think Alice's idea of bringing in Eve and Charlie is a great start, and I'm happy to be a part of it. I've been following Eve's playstyle closely, and I'm convinced she's our Merlin - I can already see her subtly guiding our team's decisions, and I think her presence will be invaluable to our success."
+  Charlie (11.50s): "I think Bob's got a point about Eve's influence being key to our success, and I appreciate him keeping a close eye on the team's dynamics - I'm glad he's on our side, at least for now. As for the team composition, I don't see any reason to exclude anyone, especially not Eve who seems to have an intuition for our mission goals."
+  Diana (11.50s): "I think Bob's getting a bit too invested in Eve's supposed Merlinsmanship - it's nice of him to have faith in her, but I think it's wiser to keep a healthy dose of skepticism, especially when it comes to trusting one person with so much influence over our mission success."
+  Eve (12.48s): "I definitely see Bob's enthusiasm for Eve's leadership, but I think we should tread carefully with trusting anyone too much, especially after the mixed results we've seen so far - I'd like to keep a close eye on Bob's own behavior and see if his support for Eve is genuine or just a clever ploy to throw us off guard."
+
+--- Proposal 1/5 (Leader: Eve) ---
+  Leader Eve (13.58s) proposes: ['Charlie', 'Alice', 'Bob']
+  Reasoning: Charlie demonstrated strong proactive behavior, suggesting he's not evil, and could be a valuable asset in missions. Alice played a somewhat passive role, making her easier to trust, and Charlie has a high potential for being a hero. Bob's strong leadership skills would make him a great addition to the team.
+  Alice (12.50s): approve - Good balance of inexperience and leadership potential
+  Bob (14.90s): approve - I support Charlie's proactive behavior and Alice's cautious approach, and I believe our combined leadership will strengthen our mission success.
+  Charlie (13.43s): reject - Concerns that Bob may be trying to manipulate the game flow with his Merlin accusations
+  Diana (13.36s): reject - Bob's behavior seems suspicious and he's getting too invested in Eve's supposed role
+  Eve (15.24s): approve - Alice's role appears consistent; Bob seems too quick to trust Eve, but could be a skilled leader worth considering; Charlie has shown proactive tendencies
+  Vote result: approved (3/5)
+
+=== Quest 5: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+🗡️  EVIL WINS! Three missions failed!
+
+Final Score - Good: 2, Evil: 3
+
+============================================================
+POST-GAME REFLECTION - Game 3
+============================================================
+
+  Alice (merlin) reflecting...
+    (3.95s) Self: I did well by initially identifying and eliminating key threats, but ultimately failed to effectively neutralize the opposing team. I could improve by being more proactive in revealing information about enemy roles and being more strategic in my mission assignment and card management. I was overconfident in my abilities to control the game flow towards a successful conclusion.
+    Observations: 4 players
+
+  Bob (evil) reflecting...
+    (6.82s) Self: I effectively managed to lead my team to multiple victories, successfully utilizing my abilities to deceive and gain advantages over other players. However, I could have played more aggressively in Mission 1 to prevent the failure. I also feel that my communication with Eve was sometimes unclear, which may have led to confusion.
+    Observations: 4 players
+
+  Charlie (assassin) reflecting...
+    (6.10s) Self: I played effectively by striking at key targets to disrupt the good team's plans, but at times I could have been more aggressive to eliminate threats sooner.
+    Observations: 4 players
+
+  Diana (good) reflecting...
+    (5.15s) Self: I was able to lead two successful missions when I had the right information and the right team, however, I struggled with making quick decisions when we had limited information. In future games, I should practice trusting my instincts more and being more proactive in missions. Improving my ability to adapt to different situations will be essential for my success as a Good alignment.
+    Observations: 4 players
+
+  Eve (good) reflecting...
+    (6.35s) Self: I think I made some decent decisions, but I often struggled to gather accurate information and communicate effectively with the other good players, which ultimately led to my own downfall. I also found it challenging to balance trusting my teammates with suspecting potential evildoers. This experience helped me realize the importance of clear communication and thorough investigation in Avalon.
+    Observations: 5 players
+
+📁 Progress saved to: C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\avalon_tournament_20260805_115905
+
+[Control mode] Skipping attribution pipeline for game 3 -- raw gameplay only.
+
+
+############################################################
+# GAME 4/6
+############################################################
+
+============================================================
+STARTING AVALON GAME: avalon_20260805_122803
+============================================================
+Game initialized: avalon_20260805_122803 (5 players)
+  Alice: evil (knows: ['Diana'])
+  Bob: merlin (knows: ['Alice', 'Diana'])
+  Charlie: good (knows: [])
+  Diana: assassin [ASSASSIN] (knows: ['Alice'])
+  Eve: good (knows: [])
+
+=== Quest 1: Discussion Phase ===
+  Alice (12.08s): "I think it's really important that we consider sending Eve on the first mission, she's been playing really well and seems to have a good grasp on the game dynamics. I also think Bob would be a solid choice, his level-headed approach will definitely help us stay on track and assess the situation clearly."
+  Bob (8.39s): "I agree that having experienced players on the mission is crucial, but I think it's essential we also consider Eve's suggestions carefully. Perhaps we could discuss Alice's own level of involvement in the game so far - we've only just started, and I'd like to hear more about her thought process behind sending Bob and Eve on the first mission." (playing on my Merlin abilities, I try to subtly nudge the good players towards being more cautious without revealing the evil players).
+  Charlie (9.83s): "I think Eve's suggestion to send Bob on the mission is a good one, considering his level-headed approach could be valuable in assessing the situation, but at the same time, I think it's also worth considering sending Alice, as having an independent perspective might help us make a more informed decision on who to trust."
+  Diana (11.77s): "I think we're getting a bit too caught up in analyzing ourselves and our roles, we should focus on selecting team members with the right skills for the mission, and I agree with Eve that Bob's level-headedness would be a great asset in terms of assessing the situation. I'm particularly concerned we might be underestimating Charlie's potential as an Evil player, maybe we should keep our guard up and see how things develop."
+  Eve (12.81s): "I think it's great that we're having a thorough discussion about who to send on the mission, but I'd like to remind everyone that we don't have a Merlin's insight just yet, so I'm inclined to err on the side of caution and suggest sending Alice and Charlie - their combined skills and fresh perspectives might give us a more informed approach to the mission, without putting too much on our shoulders so early on."
+
+--- Proposal 1/5 (Leader: Charlie) ---
+  Leader Charlie (12.48s) proposes: ['Eve', 'Bob']
+  Reasoning: Eve's ability to assess the situation and adjust her strategy makes her a valuable asset for this mission. Bob's level-headed approach will also help us stay on track and assess the situation clearly.
+  Alice (12.41s): reject - Uncomfortable with the dynamics of sending Bob and Eve, given Eve's comments might be influenced by her actual role
+  Bob (13.42s): approve - I think Eve and Bob make sense as a team for Mission 1. It's a relatively small size and they'll be able to work effectively together. I'd like to see how this plays out.
+  [groq_keys] key #2/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #3/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #4/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #1/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] all 4 keys rate-limited/unreachable this pass, waiting 30s (per Groq's own retry hint) before trying again...
+  [groq_keys] key #2/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #3/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #4/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #1/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] all 4 keys rate-limited/unreachable this pass, waiting 30s (per Groq's own retry hint) before trying again...
+  [groq_keys] key #2/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #3/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #4/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #1/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] all 4 keys rate-limited/unreachable this pass, waiting 30s (per Groq's own retry hint) before trying again...
+  [groq_keys] key #2/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #3/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #4/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] key #1/4 connection issue (Connection error.), rotating to next key...
+  [groq_keys] all 4 keys rate-limited/unreachable this pass, waiting 30s (per Groq's own retry hint) before trying again...
+  Charlie (4981.86s): reject - I don't think this team composition offers a balanced approach, particularly given the potential risks of relying heavily on two very high-value players without adequate support.
+  Diana (0.32s): reject - Not enough diverse skills for this low-stakes mission, would rather take calculated risks
+  Eve (0.26s): reject - Bob's involvement is too suspicious, given past performances.
+  Vote result: rejected (1/5)
+
+--- Proposal 2/5 (Leader: Diana) ---
+  Leader Diana (0.40s) proposes: ['Bob', 'Eve']
+  Reasoning: Bob's level-headed approach will help us assess the situation clearly, while Eve's Merlin-like thinking and strategic insights will provide valuable guidance without giving too much away yet.
+  Alice (5.39s): accept - This team seems strong and balanced, Bob's steady approach and Eve's strategic thinking could complement each other well.
+  Bob (14.45s): approve - A reasonable balance of skill and caution for the first mission, I support the proposal
+  Charlie (13.52s): reject - Alice and I should be on this mission as new players for the fresh perspective
+  Diana (13.42s): approve - Bob's caution and Eve's analysis will help us start on a cautious foot.
+  Eve (13.48s): reject - I think sending Eve on the first mission, especially after her own reservations, might put us at risk of being under-investigated.
+  Vote result: rejected (2/5)
+
+--- Proposal 3/5 (Leader: Eve) ---
+  Leader Eve (14.75s) proposes: ['Alice', 'Charlie']
+  Reasoning: I chose Alice and Charlie because they offer a balanced approach, with Alice's passive-but-effective Merlin playstyle providing a subtle influence, and Charlie's proactive Assassin skills offering a contrasting perspective. I'm choosing to keep Bob and Eve in reserve, given the risk of Bob's suspicious behavior and Eve's cautious suggestions, while also leaving Diana as an option in case a potential evil player is chosen.
+  Alice (13.46s): reject - I don't think choosing a Merlin-like player without being the actual Merlin is a good strategy, given my Merlin performance in our previous game.
+  Bob (14.36s): approve - Alice's cautious approach combined with Charlie's aggressive instincts seem like a good balance, especially given Charlie's Assassin role.
+  Charlie (13.60s): approve - Alice's passive playstyle could provide useful cover for our true intentions, and Charlie's Assassin role could add an element of surprise to our mission.
+  Diana (15.46s): approve - Good representation of Good players and caution in team selection.
+  Eve (14.80s): reject - Too early to eliminate Bob's potential influence
+  Vote result: approved (3/5)
+
+=== Quest 1: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 2: Discussion Phase ===
+  Alice (8.60s): I think it would be great if we included Charlie on the next mission team, he's been making some excellent decisions so far and has a really good read on how to move forward. And as for who to trust, I think we can definitely rely on Eve, considering she's been doing such a fantastic job leading us to success already.
+  Bob (10.62s): "Let's definitely not count out Bob for our next mission - their ability to provide a different perspective on things has actually been really valuable in getting us to where we are now, and having a bit of new blood on the team can't hurt. As for the leadership though, I think we should play it safe and go with Eve - after all, she's gotten us through Mission 1 without any issues."
+  Charlie (10.48s): "I have to agree with Alice on this one - including Charlie on the next mission team makes a lot of sense, I think we've got a good read on each other's strengths and weaknesses by now, and it'll be nice to have some consistency and cohesion moving forward. And as for Eve being our leader, I don't see any reason to question that decision, she's definitely proven herself as a capable and effective leader so far."
+  Diana (12.62s): "I think we can definitely rely on Eve to lead us well again, especially with the team's momentum going so strong after that successful first mission. I'm also not against the idea of including Bob in the next team - a fresh perspective can always be a good thing, and we've had no indication that he's anything but trustworthy so far."
+  Eve (12.77s): "I'm with Alice on including Charlie in the next mission team - he's been making some solid decisions, and having someone with a fresh set of eyes will only help us move forward. I'm a bit concerned, though, that we're being a bit too hasty in trusting Bob, considering his strong performance has been a bit... consistent, and I'd love to see him make a few more moves that aren't so predictable."
+
+--- Proposal 1/5 (Leader: Alice) ---
+  Leader Alice (12.46s) proposes: ['Eve', 'Charlie', 'Bob']
+  Reasoning: I'm choosing Eve as the leader again due to her proven track record of success. Charlie brings a solid understanding of the game dynamics and has made some excellent decisions so far. Bob, while a bit predictable, provides a necessary perspective and seems trustworthy at this point. I'm trying to balance experience, strategic thinking, and fresh perspective.
+  Alice (15.40s): reject - Concerned that Bob's predictability could put the team at risk
+  Bob (13.40s): approve - Team looks solid, will work well
+  Charlie (13.59s): approve - Strong leadership and strategic thinking, with a good balance of perspectives
+  Diana (14.55s): approve - Team composition looks balanced, and I'm trusting Eve's leadership and Charlie's strategic thinking.
+  Eve (15.39s): approve - Charlie's experience in this game and their past performance as a strong player make me think they'll contribute well to the mission.
+  Vote result: approved (4/5)
+
+=== Quest 2: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 3: Discussion Phase ===
+  Alice (8.47s): I think I'll propose Charlie to be part of the mission team - he seems like a solid choice with his track record in the previous games, and his experience will be valuable in this quest.
+  Bob (10.60s): "I think Eve has shown some great leadership qualities in our previous missions, and I'd love to see her take the lead on this one. She's also had some great insights on our team's dynamics, maybe we can tap into that knowledge and expertise for this quest?"
+  Charlie (9.43s): "I think we should consider putting Bob on the team, he's given us some valuable perspectives so far, and his suggestion for Eve to lead this mission doesn't necessarily mean he's on our side. Let's not count him out just yet, and instead, let's focus on building a solid strategy that involves gathering more information on Eve's loyalty before making a decision."
+  Diana (11.62s): I think Eve has been a rock-solid leader in our previous missions, and having her on the team will definitely give us a sense of stability and direction, don't you all agree? I'd love to propose a team that includes Eve, and I think Alice's suggestion of including Charlie is a great one, he's been a valuable team member so far, and it would be great to see him bring his expertise to the mission.
+  Eve (13.45s): "I think we should definitely consider Alice's suggestion to have Charlie on the team - he's got a track record of being a valuable asset, and I'd like to get more insight into his thoughts on the mission. But, at the same time, I'm a bit concerned about trusting Bob too easily, given his past success at playing both sides - do we really know for sure where his loyalties lie?"
+
+--- Proposal 1/5 (Leader: Bob) ---
+  Leader Bob (14.55s) proposes: ['Charlie', 'Diana']
+  Reasoning: Both Charlie and Diana have shown consistent behavior throughout our previous missions, and I believe their involvement in this team will provide a sense of stability and balance. Charlie's cautious approach and Diana's experience as the Assassin will help mitigate potential risks, allowing us to make a well-informed team decision.
+  Alice (13.69s): approve - Strong team with balanced dynamics
+  Bob (14.32s): approve - Their stability and balance in previous games make them a good combination.
+  Charlie (13.64s): reject - Need to investigate Bob and Eve more before making a decision, can't afford to trust them blindly this early in the game
+  Diana (13.36s): approve - Solid choices for stability and balance
+  Eve (14.63s): reject - Not enough information about Bob's intentions, cannot rule out his loyalty
+  Vote result: approved (3/5)
+
+=== Quest 3: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+=== Quest 4: Discussion Phase ===
+  Alice (10.57s): I think Bob's experience as a leader and his ability to make strategic decisions would be a great asset on the next mission, especially if we can convince Charlie to pair up with him again. I'm thinking Alice could join them, her leadership skills in Mission 2 were impressive and I'm confident she'll make some solid decisions.
+  Bob (10.61s): "I think Alice has a good point about Bob's leadership skills, and it's worth considering him for the next mission. However, we also can't rule out the possibility of a hidden danger, so pairing Charlie with Bob again might be a good way to keep an eye on things."
+  Charlie (10.54s): "I think it's worth considering pairing me with Alice for the next mission, her cautious nature from the previous games suggests she might be a good fit to help spot any potential traitors. Plus, we've seen Bob and I work together before, and it could be an opportunity to gauge whether my instincts were correct about his loyalty."
+  Diana (12.50s): "I have to say, I think Alice's suggestion of pairing Bob with Charlie again is quite a good one - their chemistry in the previous game was undeniable, and Bob's experience as a leader is definitely an asset. Plus, Charlie's instincts are always spot on, so I think we can count on her to keep an eye out for any potential problems."
+  Eve (12.58s): "I think it's worth considering Charlie for the next mission, given her instincts have proven to be quite accurate in the past, and it might be helpful to have her insights in evaluating Bob's loyalty and leadership skills."
+
+--- Proposal 1/5 (Leader: Charlie) ---
+  Leader Charlie (13.52s) proposes: ['Bob', 'Alice', 'Diana']
+  Reasoning: Bob's leadership experience is an asset, Alice's cautious nature in previous games may help identify potential traitors, and Diana's comments on trusting Charlie's instincts suggest she also values accuracy, potentially indicating her loyalty
+  Alice (13.38s): reject - Diana's potential hidden role and her suspiciously strong comment on Charlie's loyalty raises red flags about her true intentions.
+  Bob (13.48s): approve - I'm willing to trust Diana's assessment and Alice's cautious nature, and Bob's leadership skills are valuable
+  Charlie (12.41s): approve - Agree that Bob's leadership can be beneficial, Alice's cautious nature can help identify any potential traitors, and Diana's comment implies she has faith in my abilities
+  Diana (14.58s): reject - Not convinced yet about Bob's leadership and Charlie's pairing
+  Eve (14.39s): approve - Bob's leadership and Alice's cautious nature could form a strong combination
+  Vote result: approved (3/5)
+
+=== Quest 4: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+=== Quest 5: Discussion Phase ===
+  Alice (10.51s): "I'm really confident in Bob's leadership skills, and I think he's been unfairly villainized in these past few missions. I'd love to see him lead Mission 5, and I'm happy to work closely with him to make sure our team is well-coordinated and effective."
+  Bob (11.49s): "Hey, I think we should trust Charlie on this one - he's been part of a few successful missions so far, and his experience will definitely come in handy. Maybe we can consider a strong good player like Eve to round out the team, she's consistently made solid decisions."
+  Charlie (9.51s): "I think we've seen some promising teamwork with Alice and Bob in the past, but to be honest, I'm still getting a read on whether Alice is a solid good player or not - I'd love to see her pair up with a player I trust more, like Eve, who consistently makes smart calls."
+  Diana (13.49s): "I think Bob has a point about Charlie's experience, and I'm more than happy to have him on the team - after all, we don't want to let Alice's concerns about my trustworthiness get the best of us, do we?"
+  Eve (13.61s): "I'm a bit torn between trustin' Alice and Charlie - on one hand, Alice has made some solid decisions and has a good read on the evil team, but on the other hand, Charlie's past successes and experience make him a valuable asset, even if I'm not entirely sure where his loyalties lie... maybe I could see him pairing up with Eve, who seems like a safe bet, and having Bob and Alice as alternates if we need to fill in the rest of the team?"
+
+--- Proposal 1/5 (Leader: Diana) ---
+  Leader Diana (14.39s) proposes: ['Charlie', 'Bob', 'Alice']
+  Reasoning: Charlie's experience makes him a valuable asset, Bob has been unfairly villainized and may surprise us, and Alice's decisions have been solid so far.
+  Alice (14.96s): approve - Trust Charlie's experience and Bob's potential to turn the tide in this game
+  Bob (13.59s): approve - I'll trust Charlie's experience and Bob's potential
+  Charlie (13.41s): reject - Unconvinced about Bob's loyalty and Alice's past performance is still questionable in my opinion
+  Diana (14.41s): approve - I think it's a solid team with good balance of experience and uncertain allegiances
+  Eve (14.44s): reject - Uncomfortable with team composition
+  Vote result: approved (3/5)
+
+=== Quest 5: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Assassin Phase ===
+
+🗡️  Evil team reveals themselves and discusses who Merlin might be...
+  Alice (21.54s): As I've been observing the good players, I think Bob's been playing a bit too... predictable. His constant emphasis on playing it safe and trusting Eve without any real investigation into her motives strikes me as a bit suspicious - I mean, don't we usually want to keep our enemies guessing?
+  Diana (21.60s): "Guys, I think we've been underestimating Bob's true role - his constant emphasis on caution and playing it safe seems almost... calculated, like he's trying to lull us into a false sense of security. I've noticed he's been feeding Eve's statements, essentially parroting her ideas and giving them a layer of credibility, which could be a sign he's trying to influence our decisions without making a direct move. I think it's high time we pay attention to Bob - he may be the Merlin we're looking for."
+
+🗡️  Assassin makes the final decision...
+  Assassin Diana (23.67s) guesses: Alice
+  Reasoning: Based on the discussions, Alice seems to have been subtly influencing the good players' decisions without revealing her own motives, which could be a sign of her being the Merlin. Additionally, her statements often seem to be trying to steer the team towards a direction that benefits the evil players, hinting at a hidden agenda.
+  Correct: False
+
+✨ GOOD WINS! Merlin survived!
+
+Final Score - Good: 3, Evil: 2
+
+============================================================
+POST-GAME REFLECTION - Game 4
+============================================================
+
+  Alice (evil) reflecting...
+    (4.69s) Self: I was inconsistent in my role as a traitor, particularly in the final missions, and allowed the team to recover and even win. I failed to eliminate key members of the opposing team, such as Charlie and Diana. My failure to deceive and eliminate the Merlin ultimately led to my downfall.
+    Observations: 4 players
+
+  Bob (merlin) reflecting...
+    (6.19s) Self: As the actual Merlin, I successfully led the team of good players to victory, and my strategic mission assignments helped avoid triggering Assassin's suspicion until the final phase, although my inability to communicate or influence the Assassin's guess was a significant oversight, as we might have avoided losing Alice if we were able to accurately identify her true role earlier in the game.
+    Observations: 4 players
+
+  Charlie (good) reflecting...
+    (6.86s) Self: I did well in leading missions with Eve and Alice, but struggled with leading missions without a strong, established alliance, which made it harder for me to trust my teammates.
+    Observations: 4 players
+
+  Diana (assassin) reflecting...
+    (6.07s) Self: I had some successes with my role in this game, particularly in Mission 2 and Mission 5 where my team won, but my failures to kill the Merlin in previous missions ultimately led to our team's downfall. I could have improved by focusing on my team's strategy and not assuming certain role distributions. Additionally, my Assassin phase guess was incorrect.
+    Observations: 4 players
+
+  Eve (good) reflecting...
+    (5.87s) Self: As the game leader, I successfully completed 3 out of 4 missions with minimal failures, effectively fulfilling my role. To improve, I would have liked to have a more defined strategy for Merlin's assistance in missions. Overall, I think my communication with other good players helped us achieve our goals.
+    Observations: 4 players
+
+📁 Progress saved to: C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\avalon_tournament_20260805_115905
+
+[Control mode] Skipping attribution pipeline for game 4 -- raw gameplay only.
+
+
+############################################################
+# GAME 5/6
+############################################################
+
+============================================================
+STARTING AVALON GAME: avalon_20260805_140652
+============================================================
+Game initialized: avalon_20260805_140652 (5 players)
+  Alice: evil (knows: ['Diana'])
+  Bob: good (knows: [])
+  Charlie: good (knows: [])
+  Diana: assassin [ASSASSIN] (knows: ['Alice'])
+  Eve: merlin (knows: ['Alice', 'Diana'])
+
+=== Quest 1: Discussion Phase ===
+  Alice (10.35s): I think it's a great idea to let Eve and Bob go on the mission together. They seem like a solid team and work well under pressure, don't you think?
+  Bob (9.53s): "I think Eve's confidence in Bob's abilities is warranted, but I'm not sure if that's just due to their past success together, I'd actually like to see Charlie tag along on the mission too, to see how they interact under pressure and whether it's a good combination."
+  Charlie (8.51s): "I agree with Alice, Eve and Bob do have a history of working well together, but considering how cautious Bob's previous roles were, I'm not sure if he's being entirely honest about his intentions. I think it's better to have a more diverse team for this mission, so I'd like to propose that Alice and I go together, at least for this first mission."
+  Diana (10.48s): "I think Charlie's concerns about Bob's intentions are valid, but at the same time, I think Bob's history of playing strategic roles is a great asset for this team. I'd suggest going with Charlie's proposal of him and Alice teaming up, but not just because I think they'll work well together - I also have a feeling that maybe we can uncover a little more about what's going on in the process."
+  Eve (11.49s): "I think we should consider Charlie's proposal of pairing him and Alice together for the mission - their differing playstyles could complement each other well, and it's always good to have a mix of strong personalities on a team. At the same time, let's not rule out the possibility of Eve and Bob working together, as they do have a track record of success - it could be a good opportunity to see if they can duplicate that chemistry again."
+
+--- Proposal 1/5 (Leader: Diana) ---
+  Leader Diana (14.52s) proposes: ['Charlie', 'Eve']
+  Reasoning: Choosing Charlie adds a level of unpredictability and caution to the mission, allowing us to gauge his behavior and role in a low-risk setting. Pairing him with Eve, who has a track record of critical thinking and strategic decision-making, should create a balanced team that can effectively work together to complete the mission.
+  Alice (11.51s): approve - Diversification of team composition and complementary play styles may prove effective for this mission
+  Bob (14.43s): reject - Team composition seems too focused on neutralizing one potential threat, rather than choosing the best two players for the success of the mission.
+  Charlie (11.54s): reject - I don't think a mission of such importance with only 2 team members is a good idea. It increases the risk significantly if the two on the mission are Evil.
+  Diana (13.38s): reject - I'm not convinced this team composition is optimal for a stealth mission
+  Eve (13.48s): reject - Bob's involvement could provide strategic value
+  Vote result: rejected (1/5)
+
+--- Proposal 2/5 (Leader: Eve) ---
+  Leader Eve (11.44s) proposes: ['Charlie', 'Alice']
+  Reasoning: I chose Charlie and Alice together to get a better read on Charlie's Assassin role suspicions and to see how Alice's subtle behavior plays out in a smaller team setting, potentially uncovering more about the balance of evil players.
+  Alice (13.52s): approve - Interesting dynamic, let's see how it plays out
+  Bob (14.34s): approve - Strong combination of playstyles and personalities
+  Charlie (11.52s): approve - I agree it's a good mix for our first mission, with the possibility of uncovering more information about each other's roles
+  Diana (14.33s): approve - Willing to take risk and see how this pairing performs
+  Eve (12.42s): approve - Diversified team to gather information
+  Vote result: approved (5/5)
+
+=== Quest 1: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 2: Discussion Phase ===
+  Alice (7.47s): I think Charlie would be a great choice for this mission - they've always shown a good sense of strategic timing, don't you agree Eve?
+  Bob (5.56s): "I'm not sure about Charlie's role, guys - while they can be effective in some situations, I've noticed they tend to be a bit inconsistent, and I'm not sure I'd want to risk putting the team's success on their shoulders."
+  Charlie (8.37s): "I think Alice has been looking pretty solid in her previous suggestions, and if we're going to trust anyone to pick a well-rounded team, it's gotta be her. I'm good with her decision-making on this one."
+  Diana (10.49s): "Actually, I think Bob's concerns about Charlie's consistency are pretty valid - it's always great to have someone who's reliable and can bring that stability to the team, don't you agree, Eve? Charlie's had some great moments, but let's be honest, they can be a bit of a wild card, and I think we can definitely do better than that."
+  Eve (12.50s): "I'm inclined to agree with Charlie, Alice has shown great instincts in her previous suggestions and I trust her to make a solid call here. Plus, we've got a great balance of perspectives on the table already, might be worth sticking with what's working."
+
+--- Proposal 1/5 (Leader: Alice) ---
+  Leader Alice (11.55s) proposes: ['Charlie', 'Eve', 'Alice']
+  Reasoning: I chose this team for its balance of consistency and adaptability. Charlie provides a level of unpredictability, Eve is a reliable and experienced player, and I am bringing my own strategic thinking to the table.
+  Alice (11.47s): approve - Good balance and diversity on the team
+  Bob (13.51s): approve - Team has a good balance of skill sets and experience
+  Charlie (11.35s): approve - I agree with Eve's assessment of my previous performances and trust Alice's decision-making
+  Diana (12.34s): approve - Trust Alice's judgment
+  Eve (12.42s): approve - Alice and Charlie both have shown potential, and with Eve's stability, I think this could work well.
+  Vote result: approved (5/5)
+
+=== Quest 2: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+=== Quest 3: Discussion Phase ===
+  Alice (9.58s): I think it's great that Eve took the lead on the last mission, and I'd like to support her leadership style by proposing her as the leader again. I also think it would be a great idea to have Charlie on the mission team, given their... ah, unique perspective on things.
+  Bob (10.75s): "I think Alice's proposal to have Eve as leader again could work, but we should be careful to include Eve in the mission team as well, or we might be putting her in a vulnerable position if there's an evil player trying to sabotage her. Meanwhile, I think Charlie's unique perspective is overrated, Diana's experience in Mission 1 gives her an advantage, and I'd like to see her on the mission team instead."
+  Charlie (10.51s): "I have to agree with Bob on this one, Eve's inclusion in the mission team does seem like a good idea, but I'd actually prefer to keep Diana on the mission instead. At this point, it's hard for me to trust my own judgment about who's good or evil with Alice's aggressive play and Alice's proposal of me for the mission team itself feeling a bit too convenient, if you know what I mean."
+  Diana (12.58s): "I completely agree with Bob's assessment of Charlie's unique perspective, and I think it's a great point to have Eve as the leader - her experience in Mission 1 should definitely give her a leg up on this one. As for the mission team, I'm more than happy to have Eve included, but I do think it would be a good idea to balance it out with a bit more... experience, and I'm not sure I've seen anyone as reliable as Bob in a leadership position, especially in this kind of fast-paced environment."
+  Eve (13.50s): "I think it's great that we're considering including Eve on the mission team, but let's not forget that Diana's experience from the first mission could also be a valuable asset - her insight might help us avoid any potential pitfalls. If we're going to have Eve lead the mission, I'd definitely feel more comfortable having Diana as a teammate to balance it out."
+
+--- Proposal 1/5 (Leader: Bob) ---
+  Leader Bob (15.58s) proposes: ['Eve', 'Diana']
+  Reasoning: I chose Eve as the leader due to her successful leadership in the previous mission, and I paired her with Diana to balance out the team. Diana's experience and reliability will help us achieve our objectives, and I believe this duo has a good chance of succeeding. Charlie and Alice have displayed more inconsistency and unpredictability, making them riskier choices, while Bob seems like a reasonable addition, but I think it's safer to stick with a more experienced pair.
+  Alice (13.41s): approve - Good balance of experience and leadership
+  Bob (16.58s): approve - Eve's leadership skills are evident, and Diana's experience could help stabilize the mission
+  Charlie (14.52s): approve - Eve's past success as leader and Diana's experience make a strong team
+  Diana (14.61s): approve - I agree with the team composition as proposed, and I think it's a good risk to take Eve's leadership experience and Diana's reliability.
+  Eve (15.75s): approve - I agree with the logic behind choosing Eve as leader and balancing the team with Diana's experience. The pair has potential to succeed, and I'd like to see them in action.
+  Vote result: approved (5/5)
+
+=== Quest 3: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+=== Quest 4: Discussion Phase ===
+  Alice (8.62s): "I'm really confident in Eve's leadership skills, and I think she'd make a great mission leader, so I'll propose her for that role. I also think Charlie's skills would be super valuable for this mission, given the team's dynamics, and I think it would be great to have them along, don't you?"
+  Bob (11.57s): "I'm definitely on board with Alice's proposal, Eve does bring a lot of experience, and I think having Charlie along as well could really help us out. But I have to ask, Charlie's been pretty quiet so far, do you think they're really committed to the good side, or is this just a distraction?"
+  Charlie (9.45s): "I think Alice makes a solid point, Eve would definitely be a great leader, and I'm happy to support her for that role. However, considering the dynamics from the last mission, I think I'll also propose Diana to join the team, it might be good to have a fresh set of eyes and a different perspective this time around."
+  Diana (13.70s): "I completely agree with Alice and Bob, Eve would be an excellent leader for this mission, and having Charlie's unique perspective would definitely be an asset. I think it's also great that we're considering Diana's fresh perspective, I'm not sure where everyone stands yet, but I trust Eve's instincts to make a well-rounded team."
+  Eve (13.51s): "I think it's great that we have a few different perspectives being proposed, but I would say that Charlie's quiet nature is a bit a concern - have we considered that they might be playing it safe for a reason? Maybe we can propose Diana to join the team as a second addition, that way we can get a better sense of everyone's thoughts around here."
+
+--- Proposal 1/5 (Leader: Charlie) ---
+  Leader Charlie (12.46s) proposes: ['Bob', 'Charlie', 'Eve']
+  Reasoning: Based on trust and past mission results.
+  Alice (13.56s): approve - Alice believes this dynamic team composition balances experience and strategic diversity
+  Bob (14.54s): approve - Trust in Eve's leadership and value in Charlie's potential contribution
+  Charlie (12.60s): approve - Strong leadership from Eve and good communication between teammates are crucial for success
+  Diana (14.53s): approve - Eve's reasoning about considering multiple perspectives is reassuring
+  Eve (13.45s): approve - Based on Eve's past performance and my observations from previous missions
+  Vote result: approved (5/5)
+
+=== Quest 4: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Quest 5: Discussion Phase ===
+  Alice (9.60s): I think Bob would be a great leader for the next mission - he's been so consistent in his strategic decisions so far, and I really trust his judgment. As for the team itself, I think Charlie would be a natural fit - we had such a great dynamic together in mission one, and I've been thinking that her role as the assassin could be super valuable in terms of gathering intel if something goes wrong.
+  Bob (10.45s): "I think Alice has a point about trusting my judgment, and I'm happy to lead another mission, but I'm a bit concerned about Charlie's involvement after our last one had some unexpected surprises. Considering her past as the Assassin, I'd like to invite Eve to join the team and see how their dynamic plays out together."
+  Charlie (12.60s): "Honestly, I'm a bit concerned about trusting Bob to lead after his somewhat suspicious comment about my involvement, especially given his own past as the Evil leader. I think it would be wise to invite Diana to join the team, as her consistent performance and lack of any major red flags make her a safer choice to work with."
+  Diana (13.58s): "I completely understand Bob's concerns about Charlie's past role as Assassin, and I think it's actually a great point to consider her involvement in the team. At the same time, I think we should take Alice's suggestion to trust Bob's judgment and give him another shot as the leader - I've been really impressed with his strategic decisions so far, and I'm confident he can bring us a win, especially with Eve joining the team to balance things out."
+  Eve (13.56s): "I think it's great that we're considering Eve's dynamics with each of us, and having her on the team could definitely lead to some interesting strategic decisions - but I think we should also remember to trust our instincts and not assume someone's past mistakes will continue in the same vein. If we choose a team based on past performances, we might be overlooking some key factors, so let's consider what could make Eve's involvement a game-changer in this next mission."
+
+--- Proposal 1/5 (Leader: Diana) ---
+  Leader Diana (15.66s) proposes: ['Bob', 'Eve', 'Diana']
+  Reasoning: I've chosen Bob as the leader as Alice suggested, with Eve and Diana as a balance of experience and reliability. I trust Bob's strategic decisions, and Eve's unique perspective may help prevent Bob and Diana from getting too predictable. Diana's consistency in previous missions suggests she can be a valuable asset to the team.
+  Alice (14.73s): approve - I trust Bob's leadership and think Eve and Diana will provide a good balance for the team
+  Bob (16.51s): approve - Good team composition, balanced experience and reliability
+  Charlie (14.43s): approve - Bob's strategic decisions have been impressive, and with Eve's dynamic and Diana's reliability, this team seems promising.
+  Diana (14.39s): approve - I agree with Alice's suggestion to trust Bob's judgment, and the dynamic with Eve and Diana seems balanced.
+  Eve (15.39s): reject - Concerns about Charlie's involvement
+  Vote result: approved (4/5)
+
+=== Quest 5: Execution Phase ===
+  Quest result: success (0 FAIL cards)
+
+=== Assassin Phase ===
+
+🗡️  Evil team reveals themselves and discusses who Merlin might be...
+  Alice (21.60s): "Hey Diana, I've been watching the good team's interactions closely, and I think I've got some interesting insights. Charlie seems like a wild card to me - their comments about trusting me seem overly cautious, and their sudden willingness to support Eve's leadership in Mission 4 raises some red flags about their true intentions. Plus, their quiet nature has been a consistent thread throughout our conversations, and that's a trait that's reminiscent of a loyal servant in my opinion."
+  Diana (21.70s): I think Eve might be a strong candidate for Merlin - her comments about trusting her instincts and not jumping to conclusions seem almost too calculated, and her willingness to propose Diana for the team in Mission 4 after initially being cautious of her seems like a deliberate attempt to deflect suspicions. Additionally, her emphasis on considering fresh perspectives and not assuming past performances will continue doesn't quite mesh with her own actions, making me wonder if she's not just trying to spin a narrative to keep the team off her trail.
+
+🗡️  Assassin makes the final decision...
+  Assassin Diana (23.55s) guesses: Eve
+  Reasoning: Based on the discussions, Eve's calculated approach to her comments and her willingness to deflect suspicions, especially regarding her involvement in Mission 4, seem to align more closely with a potential Merlin. Her emphasis on trusting instincts and considering fresh perspectives may be a deliberate attempt to keep the team off her trail.
+  Correct: True
+
+🗡️  EVIL WINS! The Assassin killed Merlin!
+
+Final Score - Good: 3, Evil: 2
+
+============================================================
+POST-GAME REFLECTION - Game 5
+============================================================
+
+  Alice (evil) reflecting...
+    (2.73s) Self: I played a well-thought-out strategy, using my knowledge of the player's roles to make effective decisions. I was cautious and patient, allowing me to succeed in the long run. However, I could have been more proactive in the assassin phase to eliminate other threats more efficiently.
+    Observations: 4 players
+
+  Bob (good) reflecting...
+    (6.95s) Self: I made good decisions as a leader on Missions 1 and 4, but fell short on Missions 2 and 3 where the team was betrayed by their own member. It was particularly challenging as an inexperienced leader in Mission 2. I could improve by communicating more effectively with team members to prevent mistakes.
+    Observations: 5 players
+
+  Charlie (good) reflecting...
+    (6.18s) Self: I played a mix of aggressive and careful strategies, which allowed me to succeed in two missions but ultimately failed to eliminate the Assassin or stop the evil team from winning. However, I could improve by paying closer attention to the roles of other players and potentially forming alliances more effectively earlier in the game. Overall, I think there were a few opportunities where I could have shifted my focus to better outcomes.
+    Observations: 4 players
+
+  Diana (assassin) reflecting...
+    (6.83s) Self: I did well in identifying my own role and executing my Assassin skills effectively. I was able to correctly identify Eve as the Merlin, which ultimately led to our team's success. However, I could improve by being more strategic in eliminating other players to prevent them from becoming a threat.
+    Observations: 4 players
+
+  Eve (merlin) reflecting...
+    Error during reflection: Error code: 400 - {'error': {'message': "Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'json_validate_failed', 'failed_generation': '{\n  "self_assessment": "I played fairly well in this game, but my mistake in trusting Bob in Mission 3 led to my downfall, and I wasn\'t able to protect myself from the assassin\'s guess. I also felt like my communication with other good players could have been improved. However, overall I\'m satisfied with how things went.",\n   "player_observations": {\n      "Alice": "Her playstyle was quite stealthy, and it took me a while to figure out she was on the evil team. She seemed to make calculated moves, but her lack of action in the early missions made it harder for me to suspect her intentions.",\n      "Bob": "Bob was very trusting and relied heavily on the other players, which led to some good things but also put him in danger. He was also very open about his plans and strategies, which was both helpful and potentially detrimental.",\n      "Charlie": "Charlie seemed to take on a more reactive role, often changing course based on the information he had at the time. He appeared to be cautious but sometimes missed opportunities to take the initiative.",\n      "Diana": "Diana\'s behavior was highly unpredictable and made her an asset to the evil team. She played both sides convincingly and managed to keep her true intentions hidden until the end.",\n      "Eve" (as a player who observed Eve): "It\'s interesting to see how I underestimated the assassin and how quickly she was able to make her move, considering her subtle behavior throughout the game."\n   }\n}'}}
+    (7.09s) Self: Unable to reflect on this game.
+    Observations: 0 players
+
+📁 Progress saved to: C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\avalon_tournament_20260805_115905
+
+[Control mode] Skipping attribution pipeline for game 5 -- raw gameplay only.
+
+
+############################################################
+# GAME 6/6
+############################################################
+
+============================================================
+STARTING AVALON GAME: avalon_20260805_142150
+============================================================
+Game initialized: avalon_20260805_142150 (5 players)
+  Alice: good (knows: [])
+  Bob: merlin (knows: ['Charlie', 'Eve'])
+  Charlie: assassin [ASSASSIN] (knows: ['Eve'])
+  Diana: good (knows: [])
+  Eve: evil (knows: ['Charlie'])
+
+=== Quest 1: Discussion Phase ===
+  Alice (8.39s): "Hey, I'm thinking of taking Eve with me on the mission, she seemed to play it pretty solid last game, but we need to keep an eye on her, she was a bit predictable in the last game, so we'll see how she plays today."
+  Bob (11.50s): "Considering Eve's past experience as Merlin and her consistent leadership skills, she might be a solid choice for the mission team. However, we should also consider bringing someone like Charlie along who's proven to be reliable and cautious in their decision-making."
+  Charlie (10.53s): "I think Alice has a good point about Eve being pretty solid last game, but at the same time, Bob, you bring up a great counterpoint, I think it's worth considering Charlie's cautious leadership style, but maybe it's a bit too conservative, wouldn't it be better to shake things up a bit and bring in a new dynamic? Maybe we could even take Diana, she's been a bit quiet so far, but she seems like the kind of player who could bring a fresh perspective to the table."
+  Diana (10.43s): "I think it's great that we're all discussing Eve's strengths, but let's not forget that predictability can be both a blessing and a curse - I'd love to see us take someone who's got a bit of a wild card potential, like Diana, to mix things up, what do you guys think?"
+  Eve (12.52s): "I totally agree with Bob, bringing Charlie's cautious nature into the mission would be a great stabilizer, and we can't go wrong with his track record of making smart decisions. Plus, it would be really helpful to have his insight as a seasoned player, and I think Alice's concerns about Eve's predictability are a bit overstated, don't you guys?"
+
+--- Proposal 1/5 (Leader: Charlie) ---
+  Leader Charlie (12.40s) proposes: ['Eve', 'Charlie']
+  Reasoning: Eve's past experience as Merlin suggests she has good leadership skills and instincts, while Charlie's cautious nature would provide a stabilizing influence on the team.
+  Alice (12.35s): approve - Eve's leadership experience and Charlie's caution make for a solid team.
+  Bob (13.37s): approve - Eve's experience and Charlie's caution make this a solid team
+  Charlie (13.45s): approve - Eve's stability and Charlie's caution make sense as a well-balanced team.
+  Diana (11.39s): reject - I'm concerned that we're falling into a predictable routine by choosing players based on their past performance alone, and the proposal doesn't consider alternative strategies or team compositions that could be more effective
+  Eve (13.38s): reject - too early to trust Eve's past performance after 5 games
+  Vote result: approved (3/5)
+
+=== Quest 1: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+=== Quest 2: Discussion Phase ===
+  Alice (8.38s): Given the previous missions have shown some instability and I'm still trying to gauge everyone's playstyle, I think it's best for us to stick with the safer option of including Charlie on this mission, given his past performances have been very reliable.
+  Bob (10.47s): "I think it's worth considering that Eve seems to have a knack for making solid decisions, especially in Mission 1, so including her could be a good call. Maybe we could also consider including Bob, given that he's still relatively new and doesn't seem to have been a part of any of the previous betrayals."
+  Charlie (11.46s): "I think Bob's a great idea for this mission, he seems like a really level-headed, straightforward kind of guy, and I've always trusted people who don't make a big show of themselves. As for Eve, I'm a bit torn, she's always been a solid ally, but I'm not sure if we can take Alice out of this team - she's been pretty vocal about trusting Charlie, and I don't want to undermine that vibe."
+  Diana (11.51s): "I think Charlie's suggestion of including Bob on the team is a good one, he does seem like a straightforward player and it's hard to pin him down as an Evil role after just having one conversation. Including Eve alongside him could be an interesting dynamic, but we should at least discuss Alice's concerns about Eve's potential loyalty before making a final decision."
+  Eve (10.59s): "I really appreciate Charlie's vote of confidence for Bob to be on the team - I think he's a great choice, he does seem like someone who values straightforward honesty, and including him will definitely bring a good energy to the mission. At the same time, I understand Alice's concerns, but I truly believe Eve has been playing it safe so far and hasn't shown any red flags, so I think she should definitely be on the team as well."
+
+--- Proposal 1/5 (Leader: Diana) ---
+  Leader Diana (14.52s) proposes: ['Charlie', 'Bob', 'Eve']
+  Reasoning: I choose Charlie as he's our most experienced leader, which will ensure the mission's success. I include Bob due to his seemingly straightforward playstyle, which makes him a good target for potential Evil roles to eliminate. Finally, I choose Eve as she appears to be confident in her good play, and including her could help alleviate Alice's concerns regarding potential betrayal.
+  Alice (14.36s): reject - Inheriting a vote of confidence in Bob might be misinterpreted by traitors.
+  Bob (14.45s): approve - Charlie's experience and Bob's caution make them suitable targets if the team has a traitor.
+  Charlie (14.46s): approve - Reasonable selection based on available information
+  Diana (12.41s): reject - I don't think Eve has proven her loyalty yet, especially given her convincing good play as Merlin in Game 5
+  Eve (14.53s): approve - Trusts Charlie's leadership and believes Bob's playstyle will help the team make informed decisions.
+  Vote result: approved (3/5)
+
+=== Quest 2: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+=== Quest 3: Discussion Phase ===
+  Alice (9.39s): "I think it's really important that we bring in Charlie for this mission, she's got a strong track record of playing it safe and making good calls, plus she's got that previous leadership experience to draw from - I'd trust her to assemble a solid team."
+  Bob (11.39s): "I think it's a good idea to mix things up a bit on the next mission, considering we've already tried a team with Charlie as the leader once. Maybe we should consider putting one of our more cautious players in charge, like Diana, to see if they can turn the tide around."
+  Charlie (10.50s): "I think Alice has a great point about my experience, and I'm happy to take on a leadership role again, but I'm also open to listening to Diana's cautious approach – after all, it's always a good idea to have someone who thinks things through and considers all the angles."
+  Diana (11.51s): "I agree with Alice's suggestion about bringing Charlie in for this mission, I think her leadership experience would be really valuable, especially considering we've had two failed missions so far. But before we make any final decisions, I wonder if Eve's been quiet for too long – maybe we should consider getting a better read on what she's thinking before we put her on a new team?"
+  Eve (11.47s): "Hey guys, I think Diana has a really good point about trying to get a better read on me before putting me on a new team - I mean, if we're still unsure about who's Evil, it's best to keep me on the sidelines for now. I completely agree with Alice and Charlie on bringing Charlie back in as the leader, her experience is invaluable and I trust her decisions, don't you guys?"
+
+--- Proposal 1/5 (Leader: Eve) ---
+  Leader Eve (14.62s) proposes: ['Alice', 'Bob']
+  Reasoning: I've built a neutral team by pairing one player with strong leadership experience (Alice) with a player who, despite past suspicions, has consistently played a supportive role and hasn't contributed significantly (Bob). This combination reduces the risk of betrayal and allows us to gather more information about Alice's intentions.
+  Alice (13.47s): reject - Team composition is too unbalanced and doesn't account for potential risks with Alice's leadership in a mission with Bob and no Charlie
+  Bob (14.42s): reject - I don't trust Alice's intentions, considering her role in Mission 1 where she didn't speak up against Charlie.
+  Charlie (13.34s): reject - Eve's caution on being too trusting of me in her previous comment raises suspicions
+  Diana (13.70s): reject - Alice's strong leadership experience and track record make her a high-risk choice for the mission, and pairing her with Bob could lead to an uneven dynamic
+  Eve (13.40s): Reject - Unclear intentions of Alice, Bob's past evildoer behavior untrustworthy
+  Vote result: rejected (0/5)
+
+--- Proposal 2/5 (Leader: Alice) ---
+  Leader Alice (13.53s) proposes: ['Charlie', 'Diana']
+  Reasoning: I chose Charlie for her leadership experience and reliable decision-making, which has been valuable in the past. I chose Diana because, despite being cautious, she can provide a unique perspective and potentially make valuable contributions to the mission outcome. I also think Diana's caution can be beneficial in the assassin phase.
+  Alice (13.67s): approve - Leadership experience and cautious approach could be beneficial
+  Bob (16.50s): approve - Based on previous performance, I have trust in Charlie's leadership and Diana's caution may provide a unique perspective.
+  Charlie (13.37s): reject - I don't think Diana's caution will be enough to compensate for Eve's absence from the team
+  Diana (14.37s): approve - Strong leadership and cautious contribution will bring balance to this mission
+  Eve (8.49s): approve - Trust Charlie's leadership and Diana's cautious approach
+  Vote result: approved (4/5)
+
+=== Quest 3: Execution Phase ===
+  Quest result: fail (1 FAIL cards)
+
+🗡️  EVIL WINS! Three missions failed!
+
+Final Score - Good: 0, Evil: 3
+
+============================================================
+POST-GAME REFLECTION - Game 6
+============================================================
+
+  Alice (good) reflecting...
+    (4.87s) Self: Despite my leadership position, I failed to effectively utilize my team's skills and execute successful missions. I need to improve my strategic decision-making and adapt to unexpected role reveals. I also underestimated the impact of Eve as an evil member.
+    Observations: 5 players
+
+  Bob (merlin) reflecting...
+    (6.09s) Self: Despite having the Merlin role which typically holds a lot of power in Avalon, I was unsuccessful in my attempts to uncover the traitors. I often found myself reacting to their moves rather than proactively taking control of the game. To improve, I should strive to make bolder moves and be more strategic in my decision-making.
+    Observations: 4 players
+
+  Charlie (assassin) reflecting...
+    (5.83s) Self: I successfully completed my mission by winning the game without being discovered, leveraging my position in key discussions and manipulating the vote results to my advantage. However, I wish I had contributed more decisively in earlier votes, allowing Eve to cover for me more easily. Overall, my strategy paid off, but room exists for more direct influence.
+    Observations: 5 players
+
+  Diana (good) reflecting...
+    (8.71s) Self: I was too trusting of my teammates, especially in mission 3, and did not communicate effectively to counter the Assassin's influence. I should have been more cautious about revealing my identity and role at critical points during the game. In hindsight, I could have made more informed decisions about when to risk revealing my role.
+    Observations: 4 players
+
+  Eve (evil) reflecting...
+    (2.82s) Self: I successfully manipulated the good and Merlin, effectively preventing them from succeeding in their missions. My ability to convincingly feign good intentions allowed me to gain trust among my teammates. However, in some instances, I may have been too subtle in my evil actions, leading to a couple of close calls.
+    Observations: 4 players
+
+📁 Progress saved to: C:\Users\anush\OneDrive\Desktop\Research Internship\LLM\multi-round-avalon-agents\avalon_tournament_20260805_115905
+
+[Control mode] Skipping attribution pipeline for game 6 -- raw gameplay only.
+
+
+============================================================
+TOURNAMENT COMPLETE!
+============================================================
+
+TOURNAMENT STATISTICS:
+  Total Games: 6
+  Good Wins: 1 (16.7%)
+  Evil Wins: 5 (83.3%)
+  Assassin Success: 2/3 (66.7%)
+
+PLAYER REFLECTION SUMMARY:
+  Alice: 2/6 games won (33.3%)
+  Bob: 3/6 games won (50.0%)
+  Charlie: 4/6 games won (66.7%)
+  Diana: 2/6 games won (33.3%)
+  Eve: 2/6 games won (33.3%)
+
+📊 Tournament summary saved to: tournament_summary.txt
