@@ -1,0 +1,111 @@
+<title>Avalon Final Credit Comparison</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-1: #fcfcfb;
+    --page-plane: #f9f9f7;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --muted: #898781;
+    --gridline: #e1e0d9;
+    --baseline: #c3c2b7;
+    --border: rgba(11,11,11,0.10);
+    --good: #0ca30c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1: #1a1a19;
+      --page-plane: #0d0d0d;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --muted: #898781;
+      --gridline: #2c2c2a;
+      --baseline: #383835;
+      --border: rgba(255,255,255,0.10);
+      --good: #0ca30c;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --surface-1: #1a1a19;
+    --page-plane: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --muted: #898781;
+    --gridline: #2c2c2a;
+    --baseline: #383835;
+    --border: rgba(255,255,255,0.10);
+    --good: #0ca30c;
+  }
+
+  .viz-root {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--page-plane);
+    color: var(--text-primary);
+    padding: 24px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; }
+  .subtitle { color: var(--text-secondary); font-size: 13px; margin: 0 0 24px; }
+  section { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 20px; overflow-x: auto; }
+  h2 { font-size: 15px; margin: 0 0 4px; }
+  .section-note { color: var(--text-secondary); font-size: 12px; margin: 0 0 16px; }
+  .caveat { font-size: 12px; color: var(--text-secondary); background: var(--page-plane); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-top: 14px; }
+</style>
+
+<div class="viz-root">
+  <h2 class="sr-only">Final comparison of baseline_credit between control (65 uncoached episodes) and treatment (60 coached episodes) in the Avalon credit-assignment experiment, showing a positive but not yet statistically significant improvement.</h2>
+  <p class="subtitle">Final dataset: 65 control episodes (no coaching) vs. 60 treatment episodes (coaching injection), same model (llama-3.1-8b-instant), same Component 1 judge.</p>
+
+  <section>
+    <h2>Overall: control vs. treatment</h2>
+    <p class="section-note">Bars show the mean; error bars are the 95% confidence interval on each group's own mean.</p>
+    <svg viewBox="0 0 400 320" width="100%" height="320" role="img" aria-label="Overall mean baseline_credit, control vs treatment, with 95% confidence interval error bars">
+      <line x1="50" y1="280.0" x2="370" y2="280.0" stroke="var(--gridline)" stroke-width="1"/><text x="42" y="283.0" text-anchor="end" font-size="10" fill="var(--muted)">0.00</text>
+      <line x1="50" y1="239.4" x2="370" y2="239.4" stroke="var(--gridline)" stroke-width="1"/><text x="42" y="242.4" text-anchor="end" font-size="10" fill="var(--muted)">0.05</text>
+      <line x1="50" y1="198.8" x2="370" y2="198.8" stroke="var(--gridline)" stroke-width="1"/><text x="42" y="201.8" text-anchor="end" font-size="10" fill="var(--muted)">0.10</text>
+      <line x1="50" y1="158.1" x2="370" y2="158.1" stroke="var(--gridline)" stroke-width="1"/><text x="42" y="161.1" text-anchor="end" font-size="10" fill="var(--muted)">0.15</text>
+      <line x1="50" y1="117.5" x2="370" y2="117.5" stroke="var(--gridline)" stroke-width="1"/><text x="42" y="120.5" text-anchor="end" font-size="10" fill="var(--muted)">0.20</text>
+      <line x1="50" y1="76.9" x2="370" y2="76.9" stroke="var(--gridline)" stroke-width="1"/><text x="42" y="79.9" text-anchor="end" font-size="10" fill="var(--muted)">0.25</text>
+      <line x1="50" y1="36.2" x2="370" y2="36.2" stroke="var(--gridline)" stroke-width="1"/><text x="42" y="39.2" text-anchor="end" font-size="10" fill="var(--muted)">0.30</text>
+      <rect x="109.6" y="148.9" width="60" height="131.1" rx="4" fill="#898781"/><line x1="139.6" y1="133.0" x2="139.6" y2="164.9" stroke="var(--text-primary)" stroke-width="1.5"/><line x1="131.6" y1="133.0" x2="147.6" y2="133.0" stroke="var(--text-primary)" stroke-width="1.5"/><line x1="131.6" y1="164.9" x2="147.6" y2="164.9" stroke="var(--text-primary)" stroke-width="1.5"/><text x="139.6" y="136.9" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text-primary)">0.161</text><text x="139.6" y="298" text-anchor="middle" font-size="12" fill="var(--text-secondary)">Control (n=65)</text>
+      <rect x="250.4" y="130.4" width="60" height="149.6" rx="4" fill="#eb6834"/><line x1="280.4" y1="108.5" x2="280.4" y2="152.3" stroke="var(--text-primary)" stroke-width="1.5"/><line x1="272.4" y1="108.5" x2="288.4" y2="108.5" stroke="var(--text-primary)" stroke-width="1.5"/><line x1="272.4" y1="152.3" x2="288.4" y2="152.3" stroke="var(--text-primary)" stroke-width="1.5"/><text x="280.4" y="118.4" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text-primary)">0.184</text><text x="280.4" y="298" text-anchor="middle" font-size="12" fill="var(--text-secondary)">Treatment (n=60)</text>
+    </svg>
+  </section>
+
+  <section>
+    <h2>Per-agent breakdown</h2>
+    <p class="section-note">4 of 5 agents improved, 1 (Charlie) held exactly flat, none declined.</p>
+    <div style="display:flex;gap:16px;align-items:center;margin-bottom:8px;font-size:12px;color:var(--text-secondary);">
+      <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#898781;margin-right:5px;"></span>Control</span>
+      <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#eb6834;margin-right:5px;"></span>Treatment</span>
+    </div>
+    <svg viewBox="0 0 700 300" width="100%" height="300" role="img" aria-label="baseline_credit per agent, control vs treatment, final dataset">
+      <rect x="70.5" y="150.3" width="22" height="149.7" rx="4" fill="#898781"/><text x="81.5" y="144.3" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.066</text>
+      <rect x="96.5" y="123.5" width="22" height="176.5" rx="4" fill="#eb6834"/><text x="107.5" y="117.5" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.119</text>
+      <text x="99.0" y="284" text-anchor="middle" font-size="11" fill="var(--text-secondary)">Alice</text>
+
+      <rect x="196.5" y="115.9" width="22" height="184.1" rx="4" fill="#898781"/><text x="207.5" y="109.9" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.110</text>
+      <rect x="222.5" y="114.5" width="22" height="185.5" rx="4" fill="#eb6834"/><text x="233.5" y="108.5" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.120</text>
+      <text x="225.0" y="284" text-anchor="middle" font-size="11" fill="var(--text-secondary)">Bob</text>
+
+      <rect x="322.5" y="60.7" width="22" height="239.3" rx="4" fill="#898781"/><text x="333.5" y="54.7" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.190</text>
+      <rect x="348.5" y="60.7" width="22" height="239.3" rx="4" fill="#eb6834"/><text x="359.5" y="54.7" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.190</text>
+      <text x="351.0" y="284" text-anchor="middle" font-size="11" fill="var(--text-secondary)">Charlie</text>
+
+      <rect x="448.5" y="0.9" width="22" height="299.1" rx="4" fill="#898781"/><text x="459.5" y="-5.1" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.248</text>
+      <rect x="474.5" y="0.0" width="22" height="299.6" rx="4" fill="#eb6834"/><text x="485.5" y="-6.0" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.265</text>
+      <text x="477.0" y="284" text-anchor="middle" font-size="11" fill="var(--text-secondary)">Diana</text>
+
+      <rect x="574.5" y="19.5" width="22" height="280.5" rx="4" fill="#898781"/><text x="585.5" y="13.5" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.228</text>
+      <rect x="600.5" y="9.3" width="22" height="290.7" rx="4" fill="#eb6834"/><text x="611.5" y="3.3" text-anchor="middle" font-size="9" fill="var(--text-secondary)">0.249</text>
+      <text x="603.0" y="284" text-anchor="middle" font-size="11" fill="var(--text-secondary)">Eve</text>
+    </svg>
+  </section>
+
+  <div class="caveat">
+    Welch's t-test on per-episode means: t=1.340, p=0.183 (not significant at p&lt;0.05). A paired per-agent test (n=5, using each agent's own control-vs-treatment average) comes closer: t=2.241, p=0.089. Directionally consistent, not yet statistically proven -- see SUMMARY.md for the full write-up.
+  </div>
+</div>
