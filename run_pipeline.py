@@ -11,6 +11,9 @@ Usage:
         for a game ALREADY ingested/scored in the DB.
 """
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
 import subprocess
 import sys
 import argparse
@@ -24,7 +27,7 @@ def get_db_connection():
         port=5434,
         database="avalon_research",
         user="postgres",
-        password="***REMOVED***"
+        password=os.environ["DB_PASSWORD"]
     )
 
 

@@ -1,5 +1,8 @@
+import os
+from dotenv import load_dotenv
 import psycopg2
 import json
+load_dotenv()
 
 def get_db_connection():
     return psycopg2.connect(
@@ -7,7 +10,7 @@ def get_db_connection():
         port=5434,
         database="avalon_research",
         user="postgres",
-        password="***REMOVED***"
+        password=os.environ["DB_PASSWORD"]
     )
 
 def export_data():

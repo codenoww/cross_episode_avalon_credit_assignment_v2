@@ -1,10 +1,13 @@
+import os
+from dotenv import load_dotenv
 import psycopg2
+load_dotenv()
 
 conn = psycopg2.connect(
     host="localhost",
     database="avalon_research",
     user="postgres",
-    password="***REMOVED***"
+    password=os.environ["DB_PASSWORD"]
 )
 cur = conn.cursor()
 

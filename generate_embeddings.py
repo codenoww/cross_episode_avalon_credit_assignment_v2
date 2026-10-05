@@ -6,6 +6,9 @@ Usage:
     python generate_embeddings.py avalon_20251130_234947   # one episode
     python generate_embeddings.py --all                    # every episode missing embeddings
 """
+import os
+from dotenv import load_dotenv
+load_dotenv()
 import sys
 import psycopg2
 from sentence_transformers import SentenceTransformer
@@ -17,7 +20,7 @@ def get_connection():
         port=5434,
         database="avalon_research",
         user="postgres",
-        password="***REMOVED***"
+        password=os.environ["DB_PASSWORD"]
     )
 
 

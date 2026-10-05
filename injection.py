@@ -10,7 +10,7 @@ def get_db_connection():
         port=5434,
         database="avalon_research",
         user="postgres",
-        password="***REMOVED***"
+        password=os.environ["DB_PASSWORD"]
     )
 
 def get_latest_one_liner(agent_id, current_episode_id):

@@ -2,7 +2,10 @@
 Bridge script — copies baseline_credit from Component 1's schema
 into Component 2's messages table after Component 1 runs.
 """
+import os
+from dotenv import load_dotenv
 import psycopg2
+load_dotenv()
 
 def get_connection():
     return psycopg2.connect(
@@ -10,7 +13,7 @@ def get_connection():
         port=5434,
         database="avalon_research",
         user="postgres",
-        password="***REMOVED***"
+        password=os.environ["DB_PASSWORD"]
     )
 
 def bridge_baseline_credit(game_id):

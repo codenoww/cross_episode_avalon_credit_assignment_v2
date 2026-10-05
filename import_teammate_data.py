@@ -1,8 +1,11 @@
+import os
+from dotenv import load_dotenv
 import psycopg2
+load_dotenv()
 
 # Connect to Docker PostgreSQL on port 5434
 conn = psycopg2.connect(
-    "host=127.0.0.1 port=5434 dbname=avalon_research user=postgres password=***REMOVED***"
+    f"host=127.0.0.1 port=5434 dbname=avalon_research user=postgres password={os.environ['DB_PASSWORD']}"
 )
 cur = conn.cursor()
 
