@@ -19,6 +19,19 @@ MODEL = "llama-3.1-8b-instant"
 PASSES = ["forward", "reverse", "shuffled"]
 SLEEP = 2
 
+# Seed for the "shuffled" transcript pass. The shuffle is derived from this
+# seed AND the game id, so re-scoring the same game reproduces the same
+# transcript ordering (the judge itself is called at temperature 0).
+SHUFFLE_SEED = os.environ.get("JUDGE_SHUFFLE_SEED", "0")
+
+# By default the judge is told which team won (the original behaviour, used for
+# every score in the reported experiments). Set JUDGE_SEES_OUTCOME=0 to score
+# without the outcome: the "GAME OUTCOME" line is dropped from the prompt and the
+# two rubric phrases that refer to a team "that failed / later failed" are
+# neutralised, so the judge cannot read the result off the rubric either.
+# Written to test for outcome leakage; NOT used for any reported result.
+JUDGE_SEES_OUTCOME = os.environ.get("JUDGE_SEES_OUTCOME", "1") != "0"
+
 GOOD_RUBRIC = (
     "You are an expert Avalon analyst. You score ONLY the GOOD-team players' public "
     "messages. Good's goal: complete 3 missions, deduce and exclude the evil players, "
@@ -64,6 +77,15 @@ EVIL_RUBRIC = (
     'Return ONLY JSON: {"scores": [{"index": <int>, "score": <float>}, ...]} for '
     "exactly the indices requested."
 )
+
+
+def rubric_for(rubric):
+    """Return the rubric, with outcome-revealing phrases removed if the judge must not see the outcome."""
+    if JUDGE_SEES_OUTCOME:
+        return rubric
+    return (rubric
+            .replace("pushed a team that failed, or ", "pushed a clearly unsafe team, or ")
+            .replace(" or that later failed", ""))
 
 
 def call_judge(system_prompt, user_prompt, tries=8):
@@ -123,7 +145,9 @@ def score_game(game_id, conn):
     ]
 
     totals, counts = {}, {}
-    for team_is_good, rubric in [(True, GOOD_RUBRIC), (False, EVIL_RUBRIC)]:
+    rng = random.Random(f"{SHUFFLE_SEED}:{game_id}")   # reproducible shuffle per game
+    outcome_line = f"GAME OUTCOME: {winner} team won.\n\n" if JUDGE_SEES_OUTCOME else ""
+    for team_is_good, rubric in [(True, rubric_for(GOOD_RUBRIC)), (False, rubric_for(EVIL_RUBRIC))]:
         # only this team's messages that are NOT already scored
         targets = [m["index"] for m in transcript
                    if m["is_good"] == team_is_good and not m["scored"]]
@@ -134,7 +158,7 @@ def score_game(game_id, conn):
             if pass_name == "reverse":
                 order = list(reversed(order))
             elif pass_name == "shuffled":
-                order = random.sample(order, len(order))
+                order = rng.sample(order, len(order))
 
             lines = "\n".join(
                 f'[{m["index"]}] {m["sender"]} ({m["role"]}, '
@@ -143,7 +167,7 @@ def score_game(game_id, conn):
                 for m in order
             )
             user = (
-                f"GAME OUTCOME: {winner} team won.\n\n"
+                f"{outcome_line}"
                 f"FULL TRANSCRIPT for context (line = [index] Speaker (role, TEAM): message):\n{lines}\n\n"
                 f"Score ONLY these indices: {targets}. Return the JSON object."
             )

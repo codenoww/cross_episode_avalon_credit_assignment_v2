@@ -16,17 +16,16 @@ Does injecting coaching notes (Component 3) into an agent's next-game system pro
 
 ## The result
 
-| | Control (n=65) | Treatment (n=60) |
+| | Control (n=65 scored) | Treatment (n=60) |
 |---|---|---|
-| Mean `baseline_credit` | 0.161 | **0.184** |
+| Mean `baseline_credit` | 0.161 | 0.184 |
 
-- Welch's t-test (episode-level): **t=1.340, p=0.183** — not significant at the conventional p<0.05 threshold.
-- Paired per-agent test (each agent's own control-vs-treatment average, n=5): **t=2.241, p=0.089** — closer, still not significant.
-- Per-agent: **4 of 5 agents improved, 1 (Charlie) held exactly flat, none declined.**
+- Difference +0.023, 95% CI -0.011 to +0.057. Welch t=1.34, p=0.183 (episode level); paired per-agent t(4)=2.23, p=0.089 (n=5 agents). Neither is significant.
+- Per agent: 4 of 5 higher under treatment; Charlie -0.007 (about flat).
+- Good-team win rate 35.0% vs 30.3% (Fisher p=0.70); judge-free mission success 52.4% vs 50.4% of missions (per-game p=0.78).
+- Power: at the observed effect (d about 0.24) about 270 episodes per condition would be needed for 80% power (about 130 for 50%).
 
-**Honest conclusion**: coaching shows a real, consistent, positive direction — but it isn't statistically proven at this sample size. As more games were added over the course of the experiment, the result kept trending toward significance (p went 0.41 → 0.18 → 0.09), suggesting a real small effect that a larger sample would likely confirm — but reaching full significance for an effect this small would need on the order of ~175 episodes per group, which wasn't pursued further given time constraints.
-
-**Recommended framing for the paper**: report this as a consistent, suggestive improvement, not a proven one. Don't inflate it, don't discard it.
+**Honest conclusion**: we detect no effect. The interval includes zero and rules out an improvement much larger than +0.057 in baseline credit. The result is also sensitive to which control block is used (against the first 50 controls alone p=0.41; the later 15-episode control block scored lower than the earlier one with no coaching difference), the design is not randomized, only 42% of injected notes came from an episode on the same side as the receiving episode, and the stored judge scores agree only weakly with a second judge (r=0.055). Report it as a pilot with no detectable effect. Run `python compare_treatment_control.py` and `python validity_checks.py` to regenerate every number.
 
 ## What's in this repo you should look at
 
@@ -41,6 +40,6 @@ The real Postgres database runs in a Docker container named **`pgvector`** that 
 
 ## Open items, if anyone wants to push this further
 
-1. Scale to ~175 episodes/group for a properly powered significance test (large time/compute commitment).
+1. Scale to ~270 episodes/group for 80% power at the observed effect (large time/compute commitment), ideally as parallel interleaved arms with a placebo-note arm. Note: the generating model (`llama-3.1-8b-instant`) is no longer offered by Groq, so a rerun needs a different model for every condition.
 2. Two feedback rows are still missing for 2 treatment episodes (`avalon_20260802_182804`, `avalon_20260802_200515`) — cosmetic gap, doesn't affect the credit-score numbers above.
 3. Substitute these final numbers into the paper's Component 3 results section (VI-C).

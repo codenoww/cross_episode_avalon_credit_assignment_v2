@@ -104,7 +104,8 @@ class LearningAvalonGame(AvalonGame):
             context = build_injected_system_prompt(
                 base_system_prompt=context,
                 agent_id=player.name,
-                current_episode_id=episode_ref
+                current_episode_id=episode_ref,
+                current_role=player.role
             )
 
             # Show injection happening in terminal -- once per player per game,
@@ -113,7 +114,7 @@ class LearningAvalonGame(AvalonGame):
             if self.game_number > 1 and player.name not in self._injection_logged:
                 try:
                     from injection import get_latest_one_liner
-                    result = get_latest_one_liner(player.name, episode_ref)
+                    result = get_latest_one_liner(player.name, episode_ref, current_role=player.role)
                     if result:
                         print(f"  [INJECTED → {player.name}]: {result['one_liner'][:80]}...")
                         self._injection_logged.add(player.name)
